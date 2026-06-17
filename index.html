@@ -3258,7 +3258,8 @@
         function buildSubmissionMailSubject() {
             const userName = currentUser?.fullname || 'Kullanici';
             const schoolNumber = currentUser?.school_number || '-';
-            return `${userName} - ${schoolNumber} - 2026 Şehitleri Anma Bilgi Yarışması Puan Bildirimi`;
+            const totalPoints = getTotalPoints();
+            return `${userName} - ${schoolNumber} - Puan: ${totalPoints} - 2026 Şehitleri Anma Bilgi Yarışması Puan Bildirimi`;
         }
         function buildSubmissionMailto() {
             const subject = encodeURIComponent(buildSubmissionMailSubject());
