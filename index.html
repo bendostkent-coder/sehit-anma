@@ -898,6 +898,7 @@
             justify-content: center;
             animation: slideIn 0.4s ease-out;
             transition: all 0.3s ease;
+            pointer-events: none;
         }
 
         .app-banner.hidden {
@@ -944,6 +945,12 @@
             justify-content: center;
             transition: all 0.2s ease;
             z-index: 10;
+            pointer-events: auto;
+        }
+
+        .app-banner a,
+        .app-banner button {
+            pointer-events: auto;
         }
 
         .banner-close-btn:hover {
@@ -1418,6 +1425,54 @@
         }
         .comp-agree-btn:hover { transform: translateY(-1px); }
         .comp-agree-btn.active { background: linear-gradient(135deg, #27ae60, #1f8b4d); color: white; }
+        .comp-submit-dock {
+            position: relative;
+            margin: 22px auto 0;
+            width: 100%;
+            max-width: 760px;
+            padding: 0 20px;
+        }
+        .comp-submit-dock-inner {
+            background: linear-gradient(135deg, rgba(212,175,55,0.16), rgba(255,255,255,0.08));
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(212,175,55,0.35);
+            border-radius: 22px;
+            padding: 14px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.24);
+            text-align: center;
+        }
+        .comp-submit-dock-text { color: #fff; line-height: 1.45; }
+        .comp-submit-dock-text strong { color: #D4AF37; }
+        .comp-submit-dock-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .submission-doc-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .submission-doc-square {
+            width: 12px;
+            height: 12px;
+            border: 2px solid #D4AF37;
+            border-radius: 2px;
+            flex: 0 0 auto;
+            margin-top: 4px;
+            box-shadow: 0 0 0 1px rgba(212,175,55,0.15);
+        }
+        .submission-doc-qr {
+            width: 64px;
+            height: 64px;
+            flex: 0 0 auto;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 8px;
+            background: #fff;
+            padding: 4px;
+        }
         .competition-fields-hidden { display: none; }
         .competition-fields-visible { display: block; }
         .competition-input {
@@ -1524,7 +1579,7 @@
                 </div>
                 <div class="checkbox-group" style="display:none;">
                     <input type="checkbox" id="reg-approve-competition">
-                    <label for="reg-approve-competition"><strong>🏆 2026 Şehitleri Anma Bilgi Yarışması'na katılmak istiyorum.</strong> Yarışma kurallarını okudum, kabul ediyorum. <a onclick="alert('Yarışma Şartnamesi:\n\n1. Yarışma 28 Haziran 2026 ve 13 Eylül 2026 tarihlerinde iki aşamalıdır.\n2. Her aşama belirtilen süre içinde tamamlanmalıdır.\n3. Puanlama sistemi web sitede açıklanmıştır.\n4. Şartnameyi kabul etmeyenler yalnızca ana siteyi kullanabilir.')">(Şartnameyi Oku)</a></label>
+                    <label for="reg-approve-competition"><strong>🏆 2026 Şehitleri Anma Bilgi Yarışması'na katılmak istiyorum.</strong> Yarışma kurallarını okudum, kabul ediyorum. <a onclick="alert('Yarışma Şartnamesi:\n\n1. Yarışma 28 Haziran 2026 ve 13 Eylül 2026 tarihlerinde iki aşamalıdır.\n2. 1. aşama 20 soru ve 30 dakikadır; yalnızca şehitlik kavramı sorulur.\n3. 2. aşama 40 soru ve 1 saattir; şehit anlatıları ve roman tarzı hikayelerden soru gelir.\n4. Puanlama sistemi web sitede açıklanmıştır.\n5. Şartnameyi kabul etmeyenler yalnızca ana siteyi kullanabilir.')">(Şartnameyi Oku)</a></label>
                 </div>
                 <button class="btn-primary" onclick="registerUser()">Kayıt Ol</button>
                 <div class="register-link" onclick="showLoginForm()">Zaten hesabınız var mı? Giriş Yapın</div>
@@ -1625,7 +1680,8 @@
 
         <div id="concept-content">
             <h2 style="color: var(--primary-red); margin-bottom: 10px;">🇹🇷 Şehitlik Nedir?</h2>
-            <p style="margin-bottom: 15px; line-height: 1.6;">Şehitlik, İslam dininde ve Türk kültüründe en yüce makamlardan biri olarak kabul edilen, vatan uğrunda veya hakkı müdafaa ederken hayatını kaybeden kişilerin ulaştığı manevi derecedir.</p>
+            <p style="margin-bottom: 15px; line-height: 1.8;">Şehitlik, İslam'da yalnızca bir ölüm biçimi değil; hak, adalet ve inanç uğruna verilen mücadelenin Allah katında değer kazanmış hâlidir. Türk kültüründe ise vatanı, bayrağı, milleti ve mazlumu korurken hayatını feda eden insanın arkasında bıraktığı büyük emanetin adıdır. Bu yüzden şehitlik, bir kayıp değil; sabır, vefa, dua ve sorumlulukla taşınan kutlu bir mirastır.</p>
+            <p style="margin-bottom: 18px; line-height: 1.8;">Burada anlatılan şehitlik kavramı, hem dini kaynaklardaki yüksek makamı hem de tarih boyunca vatan savunmasında ortaya çıkan fedakârlığı birlikte düşünmek içindir. Çünkü bazı kahramanlar cephede, bazıları bir okul yolunda, bazıları adliye önünde, bazıları da halkın yanında dururken aynı ruha hizmet eder: başkasının hayatını ve ülkenin huzurunu kendi canının önüne koymak.</p>
             <div style="display: flex; flex-wrap: wrap; gap: 15px;">
                 <div class="card" style="flex:1; min-width: 200px; background: #fff5f5;">
                     <h4 style="color: var(--primary-red);">1. Derece - Savaş Şehitleri</h4>
@@ -1651,6 +1707,15 @@
                         <li>Milletimizin kalbinde ölümsüzdürler</li>
                     </ul>
                 </div>
+            </div>
+            <div class="card" style="margin-top: 15px; background: #fff8f0;">
+                <h4 style="color: #b24b00;">Şehitlik Neden Bu Kadar Önemlidir?</h4>
+                <p style="margin-top: 10px; line-height: 1.8; font-size: 0.95rem;">Çünkü şehitlik, yalnızca bir kişinin hayat hikayesini değil; arkasında bıraktığı aileyi, öğrencileri, silah arkadaşlarını ve bir milletin vicdanını da etkiler. Şehitlik anlatıları bu yüzden yalnızca tarih dersi değildir; ahlak, sorumluluk ve ortak hafıza dersidir. Bu sitede her haftanın kahramanı, vefanın ve cesaretin ayrı bir yüzünü temsil eder.</p>
+                <ul style="margin-top: 10px; margin-left: 20px; font-size: 0.9rem; line-height: 1.8;">
+                    <li>Şehitlik, fedakârlığın bilinçli bir tercih olduğunu hatırlatır.</li>
+                    <li>Vatan sevgisinin sözde değil, davranışta nasıl göründüğünü öğretir.</li>
+                    <li>Toplumda birlik, dayanışma ve dua duygusunu canlı tutar.</li>
+                </ul>
             </div>
         </div>
 
@@ -1818,6 +1883,21 @@
         </div>
 
         <div class="admin-section">
+            <h3><i class="fa-solid fa-list-check"></i> Sınav Soru Bankası</h3>
+            <p style="margin-bottom:15px;">Sorular, sitede yer alan şehit anlatımları ve şehitlik kavramı üzerinden otomatik olarak oluşturulur.</p>
+            <div class="admin-two-columns">
+                <div>
+                    <h4 style="margin-bottom:10px; color: #da291c;">1. Aşama Soru Önizlemesi</h4>
+                    <div id="adminExamStage1Preview" style="max-height: 360px; overflow-y: auto; padding-right: 6px;"></div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom:10px; color: #da291c;">2. Aşama Soru Önizlemesi</h4>
+                    <div id="adminExamStage2Preview" style="max-height: 360px; overflow-y: auto; padding-right: 6px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-section">
             <h3><i class="fa-solid fa-clock"></i> Son Ziyaretçi Kayıtları</h3>
             <div style="max-height: 300px; overflow-y: auto;">
                 <table class="admin-table">
@@ -1839,13 +1919,13 @@
             <div class="comp-nav-item active" onclick="switchCompTab('comp-tab-rules', this)"><i class="fa-solid fa-scroll"></i> Kurallar</div>
             <div class="comp-nav-item" onclick="switchCompTab('comp-tab-account', this)"><i class="fa-solid fa-user"></i> Hesabım</div>
             <div class="comp-nav-item" onclick="switchCompTab('comp-tab-exam', this)"><i class="fa-solid fa-pen"></i> Yarış</div>
-            <div class="comp-nav-item" onclick="switchCompTab('comp-tab-leaderboard', this)"><i class="fa-solid fa-trophy"></i> Sıralama</div>
+            <div class="comp-nav-item" onclick="switchCompTab('comp-tab-submit', this)"><i class="fa-solid fa-envelope"></i> Puan Gönder</div>
         </div>
         <div class="comp-tab active" id="comp-tab-rules">
             <div class="comp-glass-card"><h3>📜 Kurallar</h3><p>2026 yılına özel iki aşamalı bilgi yarışması. Sorular, web sitemizde yer alan şehit bilgileri ve açıklamalardan hazırlanır.</p>
                 <ul style="margin-left:20px;margin-top:10px;line-height:2;">
-                    <li><strong>1. Aşama:</strong> 28 Haziran 2026 - 20 soru, 15 dakika (Doğru: +5 puan)</li>
-                    <li><strong>2. Aşama:</strong> 13 Eylül 2026 - 50 soru, 40 dakika (Doğru: +10 puan)</li>
+                    <li><strong>1. Aşama:</strong> 28 Haziran 2026 - 20 soru, 30 dakika (Doğru: +5 puan)</li>
+                    <li><strong>2. Aşama:</strong> 13 Eylül 2026 - 40 soru, 1 saat (Doğru: +10 puan)</li>
                     <li>Her öğrenilen şehit: <strong>+10 puan</strong></li>
                     <li>Katılım için yarışma anlaşması ve okul numarası gerekir.</li>
                 </ul>
@@ -1863,15 +1943,31 @@
         <div class="comp-tab" id="comp-tab-exam">
             <div class="comp-glass-card" style="text-align:center;"><h3>Sınavlar</h3>
                 <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
-                    <div style="flex:1;min-width:220px;"><h4>1. Aşama</h4><p>28 Haziran 2026</p><button class="comp-btn gold" id="btn-stage1" onclick="startExam(1)" disabled>🔒</button></div>
-                    <div style="flex:1;min-width:220px;"><h4>2. Aşama</h4><p>13 Eylül 2026</p><button class="comp-btn gold" id="btn-stage2" onclick="startExam(2)" disabled>🔒</button></div>
+                    <div style="flex:1;min-width:220px;"><h4>1. Aşama</h4><p>28 Haziran 2026 · 20 Soru · 30 Dakika</p><button class="comp-btn gold" id="btn-stage1" onclick="startExam(1)" disabled>🔒</button></div>
+                    <div style="flex:1;min-width:220px;"><h4>2. Aşama</h4><p>13 Eylül 2026 · 40 Soru · 1 Saat</p><button class="comp-btn gold" id="btn-stage2" onclick="startExam(2)" disabled>🔒</button></div>
                 </div>
             </div>
             <div class="comp-glass-card" id="exam-screen" style="display:none;"><div style="display:flex;justify-content:space-between;"><h3 id="exam-title"></h3><div class="comp-timer" id="exam-timer"></div></div><div id="exam-questions-container"></div><button class="comp-btn gold" onclick="submitExam()" style="width:100%;margin-top:20px;">Tamamla</button></div>
             <div class="comp-glass-card" id="exam-result-screen" style="display:none;text-align:center;"><h3>Sonuç</h3><p>Doğru: <strong id="result-correct">0</strong></p><p>Puan: <span id="result-points">0</span></p></div>
         </div>
-        <div class="comp-tab" id="comp-tab-leaderboard">
-            <div class="comp-glass-card"><h3>🏅 Canlı Sıralama</h3><p style="margin-bottom:12px;color:#cfcfcf;">Bu tablo Supabase'ten gelir; puanlar öğrenilen şehitler + sınav sonuçlarıyla hesaplanır.</p><table class="comp-leaderboard-table"><thead><tr><th>#</th><th>Kullanıcı</th><th>Okul No</th><th>Puan</th></tr></thead><tbody id="leaderboard-body"></tbody></table></div>
+        <div class="comp-tab" id="comp-tab-submit">
+            <div class="comp-glass-card">
+                <h3>📩 Puan Gönderme Dönemi</h3>
+                <p id="submission-period-status" style="margin-bottom:12px;color:#cfcfcf;">Yarışma bitince puan gönderme dönemi açılacak.</p>
+                <div class="comp-glass-card" style="background:rgba(255,255,255,0.08);margin-top:15px;max-width:640px;margin-left:auto;margin-right:auto;text-align:center;">
+                    <p><strong>Gönderim Adresi:</strong> <span id="submission-email-address">2013musab09@gmail.com</span></p>
+                    <p><strong>Ad:</strong> <span id="submission-user-name">-</span></p>
+                    <p><strong>Okul No:</strong> <span id="submission-school-number">-</span></p>
+                    <p><strong>Toplam Puan:</strong> <span id="submission-total-points">0</span></p>
+                    <p><strong>1. Aşama:</strong> <span id="submission-stage1-points">0</span> | <strong>2. Aşama:</strong> <span id="submission-stage2-points">0</span></p>
+                </div>
+                <textarea id="submission-mail-preview" readonly style="width:100%;min-height:180px;margin-top:15px;padding:12px;border-radius:10px;border:1px solid var(--border-color);font-family:inherit;line-height:1.6;"></textarea>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;justify-content:center;align-items:center;">
+                    <span style="color:#f1e8cf;font-weight:700;">Şu metni kopyalayın:</span>
+                    <button class="comp-btn" id="btn-copy-mail" onclick="copySubmissionMail()" style="background:#444;"><i class="fa-solid fa-copy"></i> Metni Kopyala</button>
+                    <button class="comp-btn gold" id="dock-open-mail" onclick="openSubmissionMail()"><i class="fa-solid fa-envelope"></i> Gmail Aç</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1939,8 +2035,8 @@
         }
         function calculateCompetitionPoints(userData = {}) { return ((userData.learned?.length || 0) * 10) + (userData.stage1_score || 0) + (userData.stage2_score || 0); }
         async function getAllUsersFromSupabase() { if (!supabaseConnected) return []; try { const { data } = await supabaseClient.from('users').select('*'); return data || []; } catch (e) { console.warn('Supabase kullanıcı listesi okunamadı:', e); return []; } }
-        async function syncUserToSupabase(userData) { if (!supabaseConnected || !userData) return; try { await supabaseClient.from('users').upsert({ email: userData.email, fullname: userData.fullname, school_number: userData.school_number || '', learned: userData.learned || [], achievements: userData.achievements || [], reminder: userData.reminder || false, isAdmin: userData.isAdmin || false, competition_approved: userData.competition_approved || false, stage1_score: userData.stage1_score || 0, stage2_score: userData.stage2_score || 0, updated_at: new Date().toISOString() }); } catch (e) { console.warn('Supabase kullanıcı kaydı güncellenemedi:', e); } }
-        async function fetchUserDataByEmail(email) { if (!supabaseConnected || !email) return null; try { const { data } = await supabaseClient.from('users').select('email,fullname,school_number,learned,achievements,reminder,isAdmin,competition_approved,stage1_score,stage2_score').eq('email', email).single(); return data; } catch (e) { console.warn('Supabase kullanıcı verisi okunamadı:', e); return null; } }
+        async function syncUserToSupabase(userData) { if (!supabaseConnected || !userData) return; try { await supabaseClient.from('users').upsert({ email: userData.email, fullname: userData.fullname, school_number: userData.school_number || '', learned: userData.learned || [], achievements: userData.achievements || [], reminder: userData.reminder || false, isAdmin: userData.isAdmin || false, competition_approved: userData.competition_approved || false, stage1_score: userData.stage1_score || 0, stage2_score: userData.stage2_score || 0, updated_at: new Date().toISOString() }, { onConflict: 'email' }); } catch (e) { console.warn('Supabase kullanıcı kaydı güncellenemedi:', e); } }
+        async function fetchUserDataByEmail(email) { if (!supabaseConnected || !email) return null; try { const { data } = await supabaseClient.from('users').select('email,fullname,school_number,learned,achievements,reminder,isAdmin,competition_approved,stage1_score,stage2_score').eq('email', email).maybeSingle(); return data; } catch (e) { console.warn('Supabase kullanıcı verisi okunamadı:', e); return null; } }
         async function syncLocalToSupabase() { if (!supabaseConnected) { alert("Supabase bağlantısı yok!"); return; } const users = JSON.parse(localStorage.getItem('appUsers') || '[]'); if (users.length === 0) { alert("Gönderilecek kullanıcı yok!"); return; } for (const user of users) await syncUserToSupabase(user);
             alert("✅ Senkronizasyon tamamlandı!"); await loadAdminData(); }
 
@@ -2102,16 +2198,70 @@
         }
 
         const martyrsData = [
-            { week: 1, name: "Astsubay Ömer Halisdemir", imgUrl: "https://images.unsplash.com/photo-1595188689587-17ebbc69fbb7?auto=format&fit=crop&q=80&w=400", desc: "15 Temmuz darbe girişiminde Özel Kuvvetler Komutanlığı'nı ele geçirmeye çalışan darbeci general Semih Terzi'yi vurarak şehadete yürüyen kahraman.", location: "Ankara (Özel Kuvvetler Komutanlığı)", hometown: "Niğde (Bor)", story: "🗡️ ÖMER HALİSDEMİR'İN KAHRAMANLIK HİKAYESİ 🗡️\n\nÖmer Halisdemir, 15 Temmuz 2016 gecesi, Türkiye'nin en kritik noktalarından biri olan Özel Kuvvetler Komutanlığı'nda nöbetçi astsubay olarak görev yapıyordu..." },
-            { week: 2, name: "Polis Memuru Fethi Sekin", imgUrl: "https://images.unsplash.com/photo-1572889602517-5e60ce9b7e7a?auto=format&fit=crop&q=80&w=400", desc: "İzmir Adliyesi'ne yönelik düzenlenen terör saldırısını canı pahasına kahramanca önleyen polis memuru.", location: "İzmir (İzmir Adliyesi)", hometown: "Elazığ (Baskil)", story: "🔫 FETHİ SEKİN'İN DESTANSI MÜCADELESİ 🔫\n\n5 Ocak 2017 sabahı..." },
-            { week: 3, name: "Eren Bülbül", imgUrl: "https://images.unsplash.com/photo-1595188689587-17ebbc69fbb7?auto=format&fit=crop&q=80&w=400", desc: "Trabzon'un Maçka ilçesinde teröristlerin yerini güvenlik güçlerine gösterirken 15 yaşında şehit düşen vatan evladı.", location: "Trabzon (Maçka İlçesi)", hometown: "Trabzon (Maçka)", story: "🍃 EREN BÜLBÜL - 15 YAŞINDA BİR KAHRAMAN 🍃\n\nEren Bülbül..." },
-            { week: 4, name: "Öğretmen Şenay Aybüke Yalçın", imgUrl: "https://images.unsplash.com/photo-1572889602517-5e60ce9b7e7a?auto=format&fit=crop&q=80&w=400", desc: "Batman'ın Kozluk ilçesinde terör örgütü PKK'nın saldırısında gencecik yaşında şehit olan müzik öğretmeni.", location: "Batman (Kozluk İlçesi)", hometown: "Çorum (Osmancık)", story: "🎵 ŞENAY AYBÜKE YALÇIN - MÜZİĞİN VE UMUDUN SESİ 🎵\n\nŞenay Aybüke Yalçın..." }
+            { week: 1, name: "Astsubay Ömer Halisdemir", imgUrl: "https://images.unsplash.com/photo-1595188689587-17ebbc69fbb7?auto=format&fit=crop&q=80&w=400", desc: "15 Temmuz darbe girişiminde Özel Kuvvetler Komutanlığı'nı ele geçirmeye çalışan darbeci general Semih Terzi'yi vurarak şehadete yürüyen kahraman.", location: "Ankara (Özel Kuvvetler Komutanlığı)", hometown: "Niğde (Bor)", story: "Ömer Halisdemir, 15 Temmuz gecesi karanlık bir planın ortasında görev başında duran bir askerdi. Komutanlık binasına yönelen tehlikeyi gördüğünde geri çekilmeyi değil, emri ve vatanı korumayı seçti. Attığı o tarihî adım, sadece bir hedefi durdurmadı; bir milletin geleceğini savunan büyük bir iradeye dönüştü.\n\nOnun hikâyesi, sessiz bir nöbetçinin en ağır anda nasıl tarihe geçtiğini anlatır. Niğde'nin Bor ilçesinden çıkan bu yiğit isim, emanetin ne demek olduğunu tek bir gecede bütün ülkeye gösterdi. Bu yüzden Ömer Halisdemir, bir kişinin adı olmaktan çok daha fazlasıdır; cesaretin ve sadakatin simgesidir." },
+            { week: 2, name: "Polis Memuru Fethi Sekin", imgUrl: "https://images.unsplash.com/photo-1572889602517-5e60ce9b7e7a?auto=format&fit=crop&q=80&w=400", desc: "İzmir Adliyesi'ne yönelik düzenlenen terör saldırısını canı pahasına kahramanca önleyen polis memuru.", location: "İzmir (İzmir Adliyesi)", hometown: "Elazığ (Baskil)", story: "Fethi Sekin, İzmir sabahına görev bilinciyle başlayan bir polis memuru olarak çıktı. Adliyeye yönelen tehdidi fark ettiğinde, birkaç saniyelik tereddüt bile yüzlerce masum insanın kaderini değiştirebilirdi; o tereddüt etmedi. Kurşunların önüne geçerken aslında korkuya değil, görevin ağırlığına karşı durmuş oldu.\n\nOnun fedakârlığı, adalet kapısının önünde duran bir emniyet neferinin ne kadar büyük bir toplumsal sorumluluk taşıdığını gösterdi. Elazığ'ın Baskil ilçesinden çıkan bu kahraman, yalnızca bir saldırıyı engellemedi; insanların güvenle yaşama hakkını da korudu. Fethi Sekin adı, soğukkanlılığın ve vatan sevgisinin yan yana yazıldığı bir destandır." },
+            { week: 3, name: "Eren Bülbül", imgUrl: "https://images.unsplash.com/photo-1595188689587-17ebbc69fbb7?auto=format&fit=crop&q=80&w=400", desc: "Trabzon'un Maçka ilçesinde teröristlerin yerini güvenlik güçlerine gösterirken 15 yaşında şehit düşen vatan evladı.", location: "Trabzon (Maçka İlçesi)", hometown: "Trabzon (Maçka)", story: "Eren Bülbül, daha çocuk denecek yaşta, bulunduğu toprağın ne kadar kıymetli olduğunu içten içe bilen bir yürek taşıyordu. Maçka'nın dağlarında güvenlik güçlerine yol gösterirken aslında bir çocuk değil, bütün bir milletin vicdanı konuşuyordu. O an, cesaretin yaşla değil kalple ölçüldüğünü herkese öğretti.\n\nEren'in hikâyesi kısa olduğu kadar sarsıcıdır; çünkü geride büyük bir sessizlik bırakır. Trabzon'un Maçka ilçesinde toprağa düşen bu genç isim, vatan sevgisinin okul çağına sığabilecek kadar temiz, ama herkesin hayatını değiştirecek kadar güçlü olabileceğini gösterdi. Onu anlatmak, sadece bir çocuğu değil, iyiliğin ve sorumluluğun saf hâlini anlatmaktır." },
+            { week: 4, name: "Öğretmen Şenay Aybüke Yalçın", imgUrl: "https://images.unsplash.com/photo-1572889602517-5e60ce9b7e7a?auto=format&fit=crop&q=80&w=400", desc: "Batman'ın Kozluk ilçesinde terör örgütü PKK'nın saldırısında gencecik yaşında şehit olan müzik öğretmeni.", location: "Batman (Kozluk İlçesi)", hometown: "Çorum (Osmancık)", story: "Şenay Aybüke Yalçın, öğrencilerine yalnızca müzik öğretmiyordu; hayata umutla bakmayı da öğretiyordu. Kozluk'a uzanan o yol, onun için bir görev yolu, bir sevgi yolu, bir emek yoluydu. Saldırının hedefi olduğunda geride bir öğretmen değil, yarım kalmış bir melodi gibi yankılanan büyük bir iyilik bıraktı.\n\nAybüke öğretmenin adı bugün sadece bir okulun, bir sınıfın ya da bir enstrümanın adı değildir. Çorum'un Osmancık ilçesinden çıkıp Batman'da öğrencilerinin kalbine dokunan bu genç öğretmen, merhametin ve idealizmin yüzü oldu. Onu anlatmak, bir sınıfın içinde büyüyen vatan sevgisini anlatmaktır." }
         ];
-        for (let i = 5; i <= 52; i++) {
-            let sehitIsimleri = [ "Piyade Uzman Çavuş Musa Özkan", "Jandarma Uzman Çavuş Ferhat Gedik", "Polis Memuru Ozan Ölmez", "Astsubay Çavuş İbrahim Özbek" ];
-            let name = sehitIsimleri[(i - 5) % sehitIsimleri.length];
-            martyrsData.push({ week: i, name, imgUrl: "https://images.unsplash.com/photo-1572889602517-5e60ce9b7e7a?auto=format&fit=crop&q=80&w=400", desc: `Vatan uğruna canını feda eden kahraman şehidimiz. ${i}. hafta kahramanımızı saygıyla anıyoruz.`, location: "Vatanın Dört Bir Yanı", hometown: "Türkiye'mizin Farklı Köşeleri", story: `🇹🇷 ${name} - VATANIN KAHRAMAN EVLADI 🇹🇷\n\n${name}, vatanı ve milleti için canını feda eden aziz şehitlerimizdendir...` });
+
+        const memorialImageUrl = "https://images.unsplash.com/photo-1572889602517-5e60ce9b7e7a?auto=format&fit=crop&q=80&w=400";
+        function buildMartyrStory(entry) {
+            return `🇹🇷 ${entry.name} 🇹🇷\n\n${entry.story}\n\nBu anlatı, ${entry.week}. haftada ${entry.hometown} ile ${entry.location} arasında kurulan vefa bağını da hatırlatır. ${entry.desc} Her cümlesi, bir insanın görevini yerine getirirken nasıl bir hafıza bıraktığını anlatır. ${entry.name}, bu sitede sadece bir kayıt değil; saygıyla tekrar edilen bir emanet cümlesidir.`;
         }
+        const weeklyMartyrEntries = [
+            { week: 5, name: "Hasan Tahsin", desc: "İzmir'in işgaline karşı ilk kurşunu atarak milli direnişin sembolü oldu.", location: "İzmir (Konak)", hometown: "Selanik", story: "Hasan Tahsin, 15 Mayıs 1919'da İzmir'in işgali sırasında işgal kuvvetlerine karşı ilk kurşunu atan isim olarak hafızalara kazındı. Bu davranış, milletin işgale boyun eğmeyeceğinin güçlü bir işaretiydi. Onun adı, cesaretin ve bağımsızlık iradesinin ilk cümlelerinden biri oldu." },
+            { week: 6, name: "Şehit Kubilay", desc: "Menemen'de Cumhuriyet'e yönelen saldırıya karşı hayatını kaybeden öğretmen subaydır.", location: "İzmir (Menemen)", hometown: "Girit", story: "Mustafa Fehmi Kubilay, Menemen'de Cumhuriyet'e ve çağdaş yaşama yönelen saldırıya karşı görevini yerine getirirken şehit edildi. Olay, genç Cumhuriyet'in değerlerine yapılan saldırının sembolü haline geldi. Kubilay'ın adı, hukukun ve düzenin yanında dimdik duran bir öğretmen subayın adı olarak anılır." },
+            { week: 7, name: "Yüzbaşı Cengiz Topel", desc: "Kıbrıs'ta görev uçuşunda vuruldu, esir düştükten sonra şehit edildi.", location: "Kıbrıs", hometown: "İzmit", story: "Cengiz Topel, 1964 Kıbrıs Harekâtı sırasında görev uçuşunda uçağı vurulunca paraşütle atladı ve esir düştü. Sonrasında gördüğü muamele onu Türkiye'nin hafızasında bir kahramana dönüştürdü. Onun hikâyesi, gökyüzünde başlayan görevin yerde de nasıl onurlu bir duruşa dönüşebileceğini gösterir." },
+            { week: 8, name: "Polis Müdürü Gaffar Okkan", desc: "Diyarbakır'da halkla kurduğu güçlü bağ yüzünden sevilen bir emniyet müdürüydü.", location: "Diyarbakır", hometown: "Kocaeli", story: "Gaffar Okkan, Diyarbakır'da görev yaparken halkla kurduğu samimi ilişki ve suçla mücadeledeki kararlı duruşuyla tanındı. 2001'de uğradığı silahlı saldırı sonucu hayatını kaybetti. Ardında güven duygusu, halkın gönlünde yer eden bir emniyet hafızası ve çok güçlü bir adalet hissi bıraktı." },
+            { week: 9, name: "Emniyet Müdürü Arslan Kulaksız", desc: "Görev başında hedef alınan, halkın güvenliği için çalışan bir polis şefiydi.", location: "Malatya", hometown: "Malatya", story: "Arslan Kulaksız, görev yaptığı bölgede terör saldırısında şehit düşen polis şeflerinden biridir. Onun hikâyesi, güvenliğin sadece bir meslek değil, toplum için üstlenilen ağır bir sorumluluk olduğunu hatırlatır. Ardında görevine sadık, halkına yakın bir mücadele izi kaldı." },
+            { week: 10, name: "Erol Olçok", desc: "15 Temmuz gecesi halkı sokağa çağıran isimlerden biri olarak hafızaya kazındı.", location: "İstanbul", hometown: "Bilecik", story: "Erol Olçok, 15 Temmuz gecesi darbe girişimine karşı direnen isimler arasındaydı. Oğlu Abdullah Tayyip ile birlikte şehit düştü ve Türkiye'nin demokratik iradesine sahip çıkan ailelerden biri olarak anıldı. Onların hikâyesi, meydanlara inen halkın kararlılığını simgeler." },
+            { week: 11, name: "Abdullah Tayyip Olçok", desc: "Henüz genç yaşında demokrasi nöbetinde şehit olan bir yiğitti.", location: "İstanbul", hometown: "Bilecik", story: "Abdullah Tayyip Olçok, 15 Temmuz gecesi babasıyla birlikte halkın yanında yer aldı ve darbe girişimine karşı direnişin sembollerinden biri oldu. Genç yaşına rağmen gösterdiği cesaret, o gece meydanlara çıkan binlerce insanın ruhunu yansıttı. Onun adı, yarınlara bırakılmış bir vatan şuuru gibi anılır." },
+            { week: 12, name: "Mustafa Cambaz", desc: "Gazeteci kimliğiyle tanınan, 15 Temmuz gecesi sivil direnişin içindeki kahramanlardandı.", location: "İstanbul", hometown: "Gümülcine", story: "Mustafa Cambaz, fotoğrafçı ve gazeteci olarak Türkiye'nin pek çok hikâyesini kayıt altına aldı. 15 Temmuz gecesi darbe girişimine karşı halkla birlikte meydanlardaydı ve orada şehit düştü. Objektifinin arkasında duran adam, o gece tarihin tam ortasında yer aldı." },
+            { week: 13, name: "Prof. Dr. İlhan Varank", desc: "15 Temmuz gecesi üniversite dünyasından sokağa inen bir demokrasi şehidiydi.", location: "İstanbul", hometown: "İstanbul", story: "İlhan Varank, 15 Temmuz'da darbe girişimine karşı direnirken şehit oldu. Akademik kimliğinin yanında ülkesinin geleceği için sorumluluk hisseden bir isimdi. Onun fedakârlığı, bilginin ve vicdanın aynı cephede yer alabildiğini gösterdi." },
+            { week: 14, name: "Necmettin Yılmaz", desc: "Görev yaptığı yerde kaçırılıp şehit edilen genç öğretmendir.", location: "Tunceli", hometown: "Gümüşhane", story: "Necmettin Yılmaz, öğretmenlik görevini yaparken terör örgütü tarafından kaçırıldı ve şehit edildi. Genç yaşına rağmen öğrencilerine umut taşıyan bir eğitim neferiydi. Onun adı, sınıf tahtasının ötesine geçen bir öğretmenlik onurunu temsil eder." },
+            { week: 15, name: "Musa Özalkan", desc: "Afrin Harekâtı'nda şehit olan sözleşmeli bir özel harekât personelidir.", location: "Suriye (Afrin)", hometown: "Sivas", story: "Musa Özalkan, Afrin Harekâtı sırasında görevini icra ederken şehit düştü. Sınır ötesinde yürütülen harekâtların ne kadar ağır bir fedakârlık gerektirdiğini onun hikâyesi açıkça anlatır. O, görevini vatanın güvenliği olarak gören Mehmetçiklerden biridir." },
+            { week: 16, name: "Piyade Sözleşmeli Er Yener Kırıkçı", desc: "Afrin'de görev sırasında şehit düşen kahraman Mehmetçiklerdendir.", location: "Suriye (Afrin)", hometown: "Mersin", story: "Yener Kırıkçı, Afrin Harekâtı'nda görev başında şehit oldu. Sınır ötesi operasyonlarda görev yapan askerlerin sadece bir cephede değil, aynı zamanda büyük bir sorumluluk duygusu içinde yaşadığını gösterdi. Onun adı, vatan nöbetinin en ağır satırlarından biridir." },
+            { week: 17, name: "Astsubay Kıdemli Başçavuş Ömer Halisdemir", desc: "15 Temmuz gecesi darbe girişiminin seyrini değiştiren isim oldu.", location: "Ankara (Özel Kuvvetler Komutanlığı)", hometown: "Niğde (Bor)", story: "Ömer Halisdemir, 15 Temmuz 2016 gecesi Özel Kuvvetler Komutanlığı'nda darbeci Tuğgeneral Semih Terzi'yi etkisiz hale getirerek darbenin en kritik anlarından birinde tarihi bir görev üstlendi. Kendi hayatını feda ederek ülkenin kaderinde büyük bir kırılmayı önleyen isim oldu. Onun cesareti, vatanın emanet olduğunu bir kez daha hatırlattı." },
+            { week: 18, name: "Polis Memuru Fethi Sekin", desc: "İzmir Adliyesi'ne yönelen saldırıyı tek başına göğüsleyen kahraman polis memurudur.", location: "İzmir (İzmir Adliyesi)", hometown: "Elazığ (Baskil)", story: "Fethi Sekin, 5 Ocak 2017'de İzmir Adliyesi'ne saldırı planlayan teröristleri fark edip canı pahasına müdahale etti. Saldırının daha büyük bir felakete dönüşmesini engelleyerek yüzlerce insanın hayatını kurtardı. Onun hikâyesi, görev aşkının ve soğukkanlılığın örneği olarak anlatılır." },
+            { week: 19, name: "Eren Bülbül", desc: "Maçka'da teröristlerin yerini güvenlik güçlerine gösterirken şehit edilen 15 yaşındaki vatan evladıdır.", location: "Trabzon (Maçka)", hometown: "Trabzon (Maçka)", story: "Eren Bülbül, henüz 15 yaşındayken Trabzon'un Maçka ilçesinde güvenlik güçlerine yol gösterirken terör saldırısında şehit düştü. Onun kısa ömrü, cesaretin yaşla ölçülmediğini bütün Türkiye'ye anlattı. Bir çocuğun gözünden vatan sevgisi, Eren'in adıyla hafızalara kazındı." },
+            { week: 20, name: "Şenay Aybüke Yalçın", desc: "Batman Kozluk'ta görev yaparken saldırıda şehit edilen müzik öğretmenidir.", location: "Batman (Kozluk)", hometown: "Çorum (Osmancık)", story: "Şenay Aybüke Yalçın, genç bir müzik öğretmeni olarak öğrencilerine umut ve sevgi taşırken terör saldırısında şehit edildi. Onun adı, bir sınıfın içinden ülkenin kalbine ulaşan öğretmenliğin simgesi oldu. Aybüke'nin sesi, notalardan çok daha uzun bir yankı bıraktı." },
+            { week: 21, name: "Gölbaşı Özel Harekat Şehitleri", desc: "15 Temmuz gecesi Özel Harekat Daire Başkanlığı'nda görev başında şehit düşen kahramanlardır.", location: "Ankara (Gölbaşı)", hometown: "Türkiye'nin farklı şehirleri", story: "15 Temmuz gecesi Gölbaşı'ndaki Özel Harekat Daire Başkanlığı ağır saldırıya uğradı. Orada görev yapan polisler, son ana kadar görev yerlerini terk etmeden direndi ve şehit düştü. Bu saldırı, Türkiye'nin hafızasında devletin kalbine yönelmiş en ağır darbelerden biri olarak kaldı." },
+            { week: 22, name: "TBMM Önü Direniş Şehitleri", desc: "Meclis'i bombalara karşı savunmak için meydanlarda duran sivil ve görevli kahramanlardır.", location: "Ankara (TBMM çevresi)", hometown: "Türkiye", story: "15 Temmuz gecesi TBMM çevresinde toplanan insanlar, milli iradeyi korumak için tankların ve bombaların karşısında durdu. Orada hayatını kaybedenler, meclisin sadece bir bina değil, milletin sesi olduğunu dünyaya gösterdi. Onların direnişi, demokrasi tarihinin en güçlü cümlelerinden biri oldu." },
+            { week: 23, name: "Boğaziçi Köprüsü Şehitleri", desc: "Köprü üstünde darbeci askerlerin karşısında duran sivil kahramanlardır.", location: "İstanbul (15 Temmuz Şehitler Köprüsü)", hometown: "Türkiye", story: "Boğaziçi Köprüsü'nde toplanan vatandaşlar, darbeci askerlere karşı ellerinde yalnızca inanç ve kararlılık varken direndi. O gece köprü, bir ulaşım hattı olmaktan çıkıp halkın iradesinin sembolüne dönüştü. Şehitler, bir milletin korku karşısında nasıl birleşebileceğini gösterdi." },
+            { week: 24, name: "Kahramankazan Halkı", desc: "Hava saldırılarına rağmen meydanı boş bırakmayan sivil direnişin simgesidir.", location: "Ankara (Kahramankazan)", hometown: "Türkiye", story: "Kahramankazan'da halk, darbe girişimi sırasında meydanları terk etmedi ve hava saldırılarına rağmen geri adım atmadı. Oradaki direniş, 15 Temmuz'un en sıcak ve en sert yüzlerinden birini oluşturdu. Bu şehir, halkın bir araya geldiğinde nasıl bir set kurabildiğinin adı oldu." },
+            { week: 25, name: "Marmaris Cumhurbaşkanlığı Koruma Şehitleri", desc: "Cumhurbaşkanlığı konutuna yönelik baskında görev başında şehit edilen kahramanlardır.", location: "Muğla (Marmaris)", hometown: "Türkiye", story: "Marmaris'te Cumhurbaşkanına yönelik suikast girişimi sırasında görev yapan koruma ve güvenlik personeli saldırıya direndi. O gece yaşananlar, devletin en kritik noktalarında görev yapan insanların ne kadar ağır risk üstlendiğini gösterdi. Şehitler, görev sadakatinin en somut örneklerindendir." },
+            { week: 26, name: "Genelkurmay Başkanlığı Önü Direnişi", desc: "Ankara'da komuta merkezini savunurken şehit olan güvenlik görevlilerini anlatır.", location: "Ankara (Genelkurmay Başkanlığı)", hometown: "Türkiye", story: "15 Temmuz gecesi Genelkurmay Başkanlığı çevresinde görev yapan güvenlik personeli ve vatandaşlar darbeci saldırıya karşı direndi. Bu direniş, komuta merkezinin teslim alınamamasında belirleyici oldu. Onların cesareti, karanlık bir gecenin içindeki kararlı aydınlıktı." },
+            { week: 27, name: "Ankara Emniyet Müdürlüğü Şehitleri", desc: "Başkentte emniyet binasını korurken hayatını kaybeden polis kahramanlarıdır.", location: "Ankara", hometown: "Türkiye", story: "Ankara Emniyet Müdürlüğü çevresinde görev yapan polisler, darbe gecesinde hedef alınan kritik noktalardan birini savundu. Görev yerlerinde kalmaları ve ateş altında direnmeleri, başkentin teslim alınmasını zorlaştırdı. Onların adı, karakol nöbetinin nasıl bir vatan meselesi olabileceğini anlatır." },
+            { week: 28, name: "Vatan Caddesi Polisleri", desc: "İstanbul'da emniyet birimlerini korurken şehit düşen polislerdir.", location: "İstanbul (Vatan Caddesi)", hometown: "Türkiye", story: "Vatan Caddesi, 15 Temmuz gecesi darbeci baskının en sert hissedildiği adreslerden biri oldu. Orada görev yapan polisler, geri çekilmek yerine görev noktalarını savundu. Bu direniş, emniyet teşkilatının o gece yazdığı kahramanlık sayfalarından biridir." },
+            { week: 29, name: "Afrin Harekâtı Şehitleri", desc: "Sınır ötesinde güvenlik için yürütülen operasyonda şehit olan Mehmetçiklerdir.", location: "Suriye (Afrin)", hometown: "Türkiye", story: "Afrin Harekâtı sırasında görev yapan askerler, sınır güvenliğini korumak için zorlu şartlarda ilerledi. Şehit olan Mehmetçikler, operasyonların sadece askeri değil, aynı zamanda büyük bir insanlık ve sorumluluk meselesi olduğunu hatırlattı. Onlar, sınırın ötesinde bile vatan nöbeti tutan kahramanlardı." },
+            { week: 30, name: "Pençe-Kilit Şehitleri", desc: "Terörle mücadelede sınır hattında görev yaparken şehit olan askerlere adanmıştır.", location: "Kuzey Irak", hometown: "Türkiye", story: "Pençe-Kilit operasyon bölgesinde görev yapan askerler, terörün kökünü kazımak için zorlu arazi şartlarında nöbet tuttu. Şehit olanlar, sınır güvenliğinin bedelini kendi canlarıyla ödeyen kahramanlardır. Bu anlatım, görünmeyen cephede verilen mücadeleyi görünür kılar." },
+            { week: 31, name: "Pençe-Yıldırım Şehitleri", desc: "Dağlık bölgede yürütülen operasyonlarda görev yaparken şehit olan kahraman Mehmetçiklerdir.", location: "Irak'ın kuzeyi", hometown: "Türkiye", story: "Pençe-Yıldırım bölgesinde görev yapan askerler, terör unsurlarına karşı zorlu şartlarda mücadele verdi. Şehit düşen Mehmetçikler, disiplin ve fedakârlığın nasıl bir arada durduğunu gösterdi. Onların adı, güvenliğin uzaktaki ama çok gerçek sınırıdır." },
+            { week: 32, name: "Cudi Dağı Nöbetçileri", desc: "Cudi çevresinde görev yaparken terörle mücadelede şehit olan güvenlik kahramanlarını anlatır.", location: "Şırnak (Cudi Dağı)", hometown: "Türkiye", story: "Cudi Dağı çevresinde görev yapan güvenlik personeli, yıllarca süren terör baskısına rağmen geri adım atmadı. O bölgedeki şehitler, vatanın en zor coğrafyalarında bile nöbetin bırakılmadığını gösterdi. Bu hikâye, sabrın ve kararlılığın adıdır." },
+            { week: 33, name: "Şırnak Gabar Şehitleri", desc: "Gabar bölgesinde operasyon ve güvenlik görevlerinde şehit düşen kahramanlardır.", location: "Şırnak (Gabar)", hometown: "Türkiye", story: "Gabar Dağı'nda görev yapan asker ve polisler, zorlu arazi şartlarında terörle mücadele etti. Şehit olanlar, dağ başında bile görevini terk etmeyen bir neslin temsilcileridir. Onların hikâyesi, vatan nöbetinin ne kadar ağır ama onurlu olduğunu anlatır." },
+            { week: 34, name: "Hakkari Sınır Hattı Mehmetçikleri", desc: "Sınır hattında kar, tipi ve çatışma altında görev yaparken şehit olan askerlerdir.", location: "Hakkari", hometown: "Türkiye", story: "Hakkari sınır hattında görev yapan Mehmetçikler, her türlü hava ve arazi şartında nöbet tuttu. Şehit olanlar, vatan sınırının haritada değil, insanın yüreğinde de korunduğunu gösterdi. Onlar, susmadan sürdürülen bir güvenlik mücadelesinin adıdır." },
+            { week: 35, name: "Nusaybin Operasyonu Kahramanları", desc: "Şehir içi terörle mücadelede görev yaparken şehit olan güvenlik güçlerine adanmıştır.", location: "Mardin (Nusaybin)", hometown: "Türkiye", story: "Nusaybin'de yürütülen operasyonlarda güvenlik güçleri, şehir içi çatışmanın en zor yüzüyle karşılaştı. Şehit olan kahramanlar, sokak sokak verilen mücadelenin ne kadar ağır olduğunu gösterdi. Bu isimler, huzurun bedelini unutturmayan hafızalardır." },
+            { week: 36, name: "Diyarbakır Sur Şehitleri", desc: "Sur ilçesinde görev yaparken terörle mücadelede şehit edilen kahramanlardır.", location: "Diyarbakır (Sur)", hometown: "Türkiye", story: "Sur ilçesinde yürütülen operasyonlarda görev yapan güvenlik personeli, dar sokaklarda ve ağır şartlarda mücadele etti. Şehit olanlar, şehir içi terörün ne kadar büyük bir bedel doğurduğunu hatırlattı. Onlar, görev yerini terk etmeyen kararlılığın temsilcileridir." },
+            { week: 37, name: "El Bab Harekâtı Şehitleri", desc: "Suriye'de yürütülen El Bab operasyonunda şehit düşen askerlerdir.", location: "Suriye (El Bab)", hometown: "Türkiye", story: "El Bab Harekâtı sırasında görev yapan Mehmetçikler, sınır ötesi güvenliği sağlamak için ağır çatışmaların içine girdi. Şehit olanlar, operasyon bölgelerinde verilen mücadelenin ne kadar yüksek bir fedakârlık gerektirdiğini gösterdi. Onların adı, sınır ötesi görevlerin sessiz kahramanlarıdır." },
+            { week: 38, name: "Barış Pınarı Hattı Kahramanları", desc: "Barış Pınarı bölgesinde görev yaparken şehit olan güvenlik güçlerine ayrılmıştır.", location: "Suriye sınır hattı", hometown: "Türkiye", story: "Barış Pınarı Hattı'nda görev yapan asker ve güvenlik personeli, bölgeyi güvenli hale getirmek için büyük bir çaba gösterdi. Şehit olanlar, barışın sadece bir isim değil, büyük bir emek olduğunu anlattı. Bu anlatım, görünmeyen cephedeki nöbetin hikâyesidir." },
+            { week: 39, name: "Fırat Kalkanı Şehitleri", desc: "Fırat Kalkanı operasyonunda görev yaparken şehit olan Mehmetçiklere adanmıştır.", location: "Suriye (Fırat Kalkanı Bölgesi)", hometown: "Türkiye", story: "Fırat Kalkanı Harekâtı sırasında askerler, terör unsurlarını bölgeden uzaklaştırmak için zor şartlarda görev yaptı. Şehit düşenler, operasyonların sahadaki gerçek bedelini temsil eder. Onların hikâyesi, vatan güvenliğinin sınır çizgisinin çok ötesinde korunduğunu gösterir." },
+            { week: 40, name: "Hudut Karakolu Nöbetçileri", desc: "Sınır karakollarında gece gündüz nöbet tutarken şehit olan asker ve güvenlik görevlileridir.", location: "Türkiye'nin sınır hattı", hometown: "Türkiye", story: "Hudut karakollarında görev yapmak, sadece beklemek değil, her an hazırlıklı olmak demektir. Şehit olan nöbetçiler, sınırın sessizliğini korumak için hayatlarını ortaya koydu. Onlar, vatanın en uzun nöbetinin görünmeyen kahramanlarıdır." },
+            { week: 41, name: "Polis Özel Harekat Şehitleri", desc: "Zor operasyonlarda ve kritik güvenlik görevlerinde hayatını kaybeden PÖH kahramanlarıdır.", location: "Türkiye'nin farklı illeri", hometown: "Türkiye", story: "Polis Özel Harekat personeli, terör ve asayiş operasyonlarının en ön hattında görev yaptı. Şehit olanlar, zor anlarda en önde durmanın ne demek olduğunu öğretti. Onların adı, polislik mesleğinin cesaret tarafını temsil eder." },
+            { week: 42, name: "Jandarma Uzman Çavuşlar", desc: "Kırsalda, dağda ve sınır bölgelerinde görev yaparken şehit olan jandarma kahramanlarıdır.", location: "Türkiye'nin kırsal bölgeleri", hometown: "Türkiye", story: "Jandarma uzman çavuşlar, en zor coğrafyalarda düzeni ve güvenliği sağlamak için görev yapar. Şehit olanlar, kırsal mücadelenin görünmeyen ama çok ağır tarafını temsil eder. Onların fedakârlığı, köyden dağa uzanan bir nöbet çizgisidir." },
+            { week: 43, name: "Öğretmen Şehitleri", desc: "Çocuklara umut taşırken saldırılarda hayatını kaybeden eğitim neferlerine adanmıştır.", location: "Türkiye'nin farklı şehirleri", hometown: "Türkiye", story: "Öğretmen şehitleri, sınıfları sadece bilgiyle değil, sevgi ve umutla doldurmak için görev yapıyordu. Onların kaybı, bir ders ziliyle başlayan hayatların ne kadar kıymetli olduğunu gösterdi. Bu anlatım, eğitimle vatan sevgisinin nasıl birleştiğini hatırlatır." },
+            { week: 44, name: "Sağlık Görevlisi Şehitleri", desc: "İnsan hayatını korurken saldırılarda hayatını kaybeden sağlık emekçileridir.", location: "Türkiye'nin farklı şehirleri", hometown: "Türkiye", story: "Sağlık çalışanları, en zor anlarda hayat kurtarmak için görev başında olur. Şehit olan sağlık görevlileri, bir hayatı kurtarmak için kendi hayatını riske atan insanlığın temsilcileridir. Onların hikâyesi, beyaz önlüğün de bir fedakârlık bayrağı olduğunu anlatır." },
+            { week: 45, name: "Adliye Önü Polisleri", desc: "Adliye ve kamu binalarını korurken saldırılarda şehit düşen güvenlik görevlileridir.", location: "Türkiye'nin adliye binaları", hometown: "Türkiye", story: "Adliyeler, adaletin kapısıdır; onları korumak için görev yapan polisler ise bu kapının sessiz bekçileridir. Şehit olan adliye önü polisleri, devletin adalet damarını korurken hayatlarını kaybetti. Bu hikâye, kamu düzeninin ne kadar kırılgan ama ne kadar değerli olduğunu gösterir." },
+            { week: 46, name: "Sivil Direnişçiler", desc: "Tankların önüne çıkan, ellerinde silah değil irade olan vatandaşlardır.", location: "Türkiye'nin çeşitli meydanları", hometown: "Türkiye", story: "15 Temmuz gecesi meydanlara çıkan siviller, silaha karşı en güçlü şeyin inanç olduğunu gösterdi. Şehit olan sivil direnişçiler, ellerinde sadece bayrakla karanlığa karşı durdu. Onların adı, halkın kendi iradesini koruma gücüdür." },
+            { week: 47, name: "Çanakkale Şehitleri", desc: "Bir milletin var olma mücadelesinde toprağa düşen adsız kahramanların tamamına adanmıştır.", location: "Çanakkale", hometown: "Anadolu'nun dört bir yanı", story: "Çanakkale'de şehit olan binlerce asker, bir cepheden çok daha fazlasını savundu: bağımsızlık fikrini. Bir kısmının adı bilinmiyor ama hikâyeleri bütün bir milletin hafızasında yaşıyor. Çanakkale, fedakârlığın toplu adı olarak kalmıştır." },
+            { week: 48, name: "Sarıkamış Kahramanları", desc: "Karlı dağlarda ilerlerken donarak şehit düşen Mehmetçiklerin ortak adıdır.", location: "Kars (Sarıkamış)", hometown: "Anadolu'nun dört bir yanı", story: "Sarıkamış'ta savaşan askerler, düşmanla değil çoğu zaman soğukla ve imkânsızlıklarla mücadele etti. Şehit düşen Mehmetçikler, ağır şartların içinde bile vazgeçmeyen bir iradenin sembolü oldu. Onların hikâyesi, sabrın ve fedakârlığın en hüzünlü satırıdır." },
+            { week: 49, name: "Sakarya Meydan Muharebesi Şehitleri", desc: "Milli mücadelenin dönüm noktasında cepheyi tutan adsız kahramanlardır.", location: "Sakarya", hometown: "Anadolu'nun dört bir yanı", story: "Sakarya Meydan Muharebesi, yalnızca bir savaş değil, bir milletin geri dönmemek üzere ayağa kalkışıydı. Orada şehit olanlar, savunmayı bırakmayan ve her karışı emanet bilen askerlerdi. Bu mücadele, bağımsızlığın bedelini hatırlatan büyük bir dönüm noktasıdır." },
+            { week: 50, name: "Büyük Taarruz Şehitleri", desc: "Kurtuluş Savaşı'nın son büyük yürüyüşünde toprağa düşen kahramanlardır.", location: "Afyon ve çevresi", hometown: "Anadolu'nun dört bir yanı", story: "Büyük Taarruz sırasında şehit düşen askerler, son zafere giden yolu kanlarıyla açtı. Bu zaferin ardında görünmeyen binlerce emek ve kayıp vardı. Şehitler, bağımsızlığın sadece bir sonuç değil, aynı zamanda büyük bir fedakârlık olduğunu gösterdi." },
+            { week: 51, name: "Kurtuluş Savaşı Adsız Kahramanları", desc: "Cephe gerisinde, cephede ve yollarda mücadele eden isimsiz vatan evlatlarını anlatır.", location: "Anadolu", hometown: "Anadolu'nun dört bir yanı", story: "Kurtuluş Savaşı'nın adsız kahramanları, çoğu zaman kayda geçmeyen ama milletin kaderini değiştiren insanlardı. Onlar, mermi taşırken, yaralı sararken, haber götürürken ya da köprü kurarken vatanı ayakta tuttular. Tarih, adlarını tek tek yazmasa da onların izini asla silemedi." },
+            { week: 52, name: "Vatan Nöbeti Tutan Gençler", desc: "Bugünün gençliğine örnek olan, ülkesini korumak için görev başında bulunan genç şehitlerdir.", location: "Türkiye", hometown: "Türkiye", story: "Vatan nöbeti tutan gençler, yaşlarının büyüklüğünden değil, yüreklerinin büyüklüğünden güç aldı. Onlar, gerektiğinde en önde durmayı, gerektiğinde de sessizce beklemeyi bildi. Bu son hafta, bütün yılın ortak mesajını toplar: vatan, sahip çıkanların omuzlarında ayakta kalır." }
+        ];
+
+        weeklyMartyrEntries.forEach(entry => {
+            martyrsData.push({ ...entry, imgUrl: memorialImageUrl, story: buildMartyrStory(entry) });
+        });
 
         const ADMIN_EMAIL = "admin@gmail.com", ADMIN_PASSWORD = "admin2013";
         let learnedMartyrs = [], currentActiveWeek = 1, selectedModalMartyrWeek = 1, currentUser = null, isAdmin = false;
@@ -2169,8 +2319,7 @@
                     reminder: false,
                     competition_approved: false,
                     stage1_score: 0,
-                    stage2_score: 0,
-                    competition_points: 0
+                    stage2_score: 0
                 };
                 users.push(adminUser);
                 localStorage.setItem('appUsers', JSON.stringify(users));
@@ -2222,6 +2371,29 @@
             if (analytics.visitorLogs.length > 200) analytics.visitorLogs = analytics.visitorLogs.slice(-200);
             localStorage.setItem('siteAnalytics', JSON.stringify(analytics));
         }
+        function normalizeCompetitionUser(userData) {
+            if (!userData) return null;
+            return {
+                ...userData,
+                learned: Array.isArray(userData.learned) ? userData.learned : [],
+                achievements: Array.isArray(userData.achievements) ? userData.achievements : [],
+                reminder: !!userData.reminder,
+                isAdmin: !!userData.isAdmin,
+                competition_approved: !!userData.competition_approved,
+                stage1_score: Number(userData.stage1_score) || 0,
+                stage2_score: Number(userData.stage2_score) || 0
+            };
+        }
+        function lockCompetitionPoints(userData) {
+            if (!userData) return null;
+            Object.defineProperty(userData, 'competition_points', {
+                configurable: true,
+                enumerable: true,
+                get() { return calculateCompetitionPoints(userData); },
+                set() {}
+            });
+            return userData;
+        }
         function getCurrentWeek() { const now = new Date(); const start = new Date(now.getFullYear(), 0, 1); return Math.min(Math.ceil(((now - start) / 86400000 + start.getDay() + 1) / 7), 52); }
 
         window.onload = async () => {
@@ -2246,7 +2418,7 @@
                     if (session?.user?.email) {
                         const remoteUser = await fetchUserDataByEmail(session.user.email);
                         if (remoteUser) {
-                            currentUser = {
+                            currentUser = lockCompetitionPoints(normalizeCompetitionUser({
                                 email: remoteUser.email,
                                 fullname: remoteUser.fullname || remoteUser.email,
                                 school_number: remoteUser.school_number || '',
@@ -2256,9 +2428,8 @@
                                 isAdmin: remoteUser.isAdmin || false,
                                 competition_approved: remoteUser.competition_approved || false,
                                 stage1_score: remoteUser.stage1_score || 0,
-                                stage2_score: remoteUser.stage2_score || 0,
-                                competition_points: remoteUser.competition_points || 0
-                            };
+                                stage2_score: remoteUser.stage2_score || 0
+                            }));
                         }
                     }
                 } catch (e) {
@@ -2268,13 +2439,12 @@
 
             const storedUser = localStorage.getItem('currentUser');
             if (!currentUser && storedUser) {
-                try { currentUser = JSON.parse(storedUser); } catch (e) { currentUser = null; }
+                try { currentUser = lockCompetitionPoints(normalizeCompetitionUser(JSON.parse(storedUser))); } catch (e) { currentUser = null; }
             }
 
             if (currentUser) {
                 learnedMartyrs = currentUser.learned || [];
                 isAdmin = currentUser.isAdmin || (currentUser.email === ADMIN_EMAIL);
-                currentUser.competition_points = (learnedMartyrs.length * 10) + (currentUser.stage1_score || 0) + (currentUser.stage2_score || 0);
                 document.getElementById('top-header').style.display = 'flex';
                 document.getElementById('bottom-nav').style.display = isAdmin ? 'flex' : 'block';
                 document.getElementById('user-name-display').innerText = currentUser.fullname || currentUser.email;
@@ -2303,8 +2473,7 @@
                 school_number: currentUser.school_number || '',
                 competition_approved: currentUser.competition_approved || false,
                 stage1_score: currentUser.stage1_score || 0,
-                stage2_score: currentUser.stage2_score || 0,
-                competition_points: currentUser.competition_points || ((currentUser.learned?.length || 0) * 10) + (currentUser.stage1_score || 0) + (currentUser.stage2_score || 0)
+                stage2_score: currentUser.stage2_score || 0
             };
             localStorage.setItem('currentUser', JSON.stringify(storedUser));
 
@@ -2537,7 +2706,7 @@
             const users = JSON.parse(localStorage.getItem('appUsers') || '[]');
             if (users.find(u => u.email.toLowerCase() === email)) { alert('Bu e-posta adresi zaten kayıtlı.'); return; }
 
-            const newUser = { email, fullname, school_number: schoolNumber, learned: [], achievements: [], isAdmin: false, reminder: false, competition_approved: approved, stage1_score: 0, stage2_score: 0, competition_points: 0 };
+            const newUser = lockCompetitionPoints(normalizeCompetitionUser({ email, fullname, school_number: schoolNumber, learned: [], achievements: [], isAdmin: false, reminder: false, competition_approved: approved, stage1_score: 0, stage2_score: 0 }));
 
             if (supabaseConnected) {
                 const { error } = await supabaseClient.auth.signUp({ email, password, options: { data: { fullname } } });
@@ -2572,7 +2741,7 @@
                 if (!error && data?.user) {
                     const remoteUser = await fetchUserDataByEmail(email);
                     if (remoteUser) {
-                        user = {
+                        user = lockCompetitionPoints(normalizeCompetitionUser({
                             email: remoteUser.email,
                             fullname: remoteUser.fullname || email,
                             school_number: remoteUser.school_number || '',
@@ -2582,11 +2751,10 @@
                             isAdmin: remoteUser.isAdmin || false,
                             competition_approved: remoteUser.competition_approved || false,
                             stage1_score: remoteUser.stage1_score || 0,
-                            stage2_score: remoteUser.stage2_score || 0,
-                            competition_points: remoteUser.competition_points || 0
-                        };
+                            stage2_score: remoteUser.stage2_score || 0
+                        }));
                     } else {
-                        user = { email, fullname: email, learned: [], achievements: [], reminder: false, isAdmin: false, competition_approved: false, stage1_score: 0, stage2_score: 0, competition_points: 0 };
+                        user = lockCompetitionPoints(normalizeCompetitionUser({ email, fullname: email, learned: [], achievements: [], reminder: false, isAdmin: false, competition_approved: false, stage1_score: 0, stage2_score: 0 }));
                         await syncUserToSupabase(user);
                     }
                 }
@@ -2596,7 +2764,7 @@
                 const users = JSON.parse(localStorage.getItem('appUsers') || '[]');
                 const localUser = users.find(u => u.email.toLowerCase() === email && u.password === password);
                 if (!localUser) { alert('E-posta veya şifre hatalı.'); return; }
-                user = {
+                user = lockCompetitionPoints(normalizeCompetitionUser({
                     email: localUser.email,
                     fullname: localUser.fullname || email,
                     school_number: localUser.school_number || '',
@@ -2606,9 +2774,8 @@
                     isAdmin: localUser.isAdmin || false,
                     competition_approved: localUser.competition_approved || false,
                     stage1_score: localUser.stage1_score || 0,
-                    stage2_score: localUser.stage2_score || 0,
-                    competition_points: localUser.competition_points || 0
-                };
+                    stage2_score: localUser.stage2_score || 0
+                }));
             }
 
             currentUser = user;
@@ -2729,6 +2896,7 @@
             loadAdminWeeklyLearns(analytics);
             loadAdminPageViews(analytics);
             loadAdminVisitorLogs(analytics);
+            renderAdminQuestionBank();
             updateAdminDebugInfo(analytics);
         }
 
@@ -2821,6 +2989,34 @@
             `;
         }
 
+        function escapeHtml(text) {
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function renderAdminQuestionBank() {
+            const stage1Preview = document.getElementById('adminExamStage1Preview');
+            const stage2Preview = document.getElementById('adminExamStage2Preview');
+            if (!stage1Preview || !stage2Preview) return;
+
+            const renderQuestions = (questions) => questions.map((question, index) => `
+                <div class="card" style="margin-bottom:10px; padding:12px;">
+                    <div style="font-weight:700; margin-bottom:6px;">Soru ${index + 1}</div>
+                    <div style="margin-bottom:8px; line-height:1.5;">${escapeHtml(question.question)}</div>
+                    <div style="font-size:0.85rem; line-height:1.6; color: var(--text-gray);">
+                        ${question.options.map((option, optionIndex) => `${String.fromCharCode(65 + optionIndex)}) ${escapeHtml(option)}`).join('<br>')}
+                    </div>
+                </div>
+            `).join('');
+
+            stage1Preview.innerHTML = renderQuestions(stage1Questions);
+            stage2Preview.innerHTML = renderQuestions(stage2Questions);
+        }
+
         function adminExportCSV() {
             const users = JSON.parse(localStorage.getItem('appUsers') || '[]');
             const analytics = ensureAnalyticsStructure();
@@ -2893,63 +3089,203 @@
         let competitionData = { stage1_score: 0, stage2_score: 0, stage1_completed: false, stage2_completed: false };
         let currentExam = null, examTimerInterval = null;
 
-        const stage1Questions = [
-            { question: "Ömer Halisdemir hangi şehirdendir?", options: ["Niğde (Bor)", "Ankara", "İzmir", "Elazığ"], correct: 0 },
-            { question: "Fethi Sekin hangi terör saldırısını önledi?", options: ["İzmir Adliyesi", "Ankara Garı", "İstanbul Havalimanı", "Reina"], correct: 0 },
-            { question: "Eren Bülbül kaç yaşında şehit oldu?", options: ["15", "22", "30", "12"], correct: 0 },
-            { question: "Şenay Aybüke Yalçın hangi branş öğretmeniydi?", options: ["Müzik", "Matematik", "Türkçe", "Resim"], correct: 0 },
-            { question: "Ömer Halisdemir hangi darbe girişiminde şehit oldu?", options: ["15 Temmuz", "28 Şubat", "27 Mayıs", "12 Eylül"], correct: 0 },
-            { question: "Fethi Sekin'in memleketi neresidir?", options: ["Elazığ (Baskil)", "Malatya", "Diyarbakır", "İzmir"], correct: 0 },
-            { question: "Eren Bülbül nerede şehit oldu?", options: ["Trabzon Maçka", "Rize", "Artvin", "Giresun"], correct: 0 },
-            { question: "Şehitlikle ilgili hangi ayet doğrudur?", options: ["Allah yolunda öldürülenlere ölü demeyin (Bakara 154)", "Namazı dosdoğru kılın", "Oruç tutun", "Zekat verin"], correct: 0 },
-            { question: "1. derece şehitler için hangisi geçerlidir?", options: ["Günahları silinir", "Kabir sorgusu vardır", "Yıkanırlar", "Ahirette şefaat etmezler"], correct: 0 },
-            { question: "Şehitler için 'Kabir sorgusu yoktur' ifadesi hangi derece için doğrudur?", options: ["Hakiki şehit", "Hükmi şehit", "Vatan şehidi", "Hiçbiri"], correct: 0 },
-            { question: "Aşağıdakilerden hangisi hükmi şehit değildir?", options: ["Savaşta ölen", "Suda boğulan", "Yangında ölen", "Doğumda ölen kadın"], correct: 0 },
-            { question: "Ömer Halisdemir'in vurduğu darbeci general kimdir?", options: ["Semih Terzi", "Adil Öksüz", "Fethullah Gülen", "Akın Öztürk"], correct: 0 },
-            { question: "Fethi Sekin hangi yıl şehit oldu?", options: ["2017", "2016", "2018", "2015"], correct: 0 },
-            { question: "Eren Bülbül'ün annesinin meşhur sözü nedir?", options: ["Vatan sağ olsun", "Oğlum şehit oldu", "Kahramanım benim", "Allah sabır versin"], correct: 0 },
-            { question: "Şenay Aybüke Yalçın'ın memleketi neresidir?", options: ["Çorum (Osmancık)", "Batman", "Ankara", "İstanbul"], correct: 0 },
-            { question: "Aşağıdakilerden hangisi şehitlik derecesi değildir?", options: ["Manevi şehit", "Hakiki şehit", "Hükmi şehit", "Vatan şehidi"], correct: 0 },
-            { question: "15 Temmuz gecesi Ömer Halisdemir nerede nöbet tutuyordu?", options: ["Özel Kuvvetler Komutanlığı", "Genelkurmay Başkanlığı", "Cumhurbaşkanlığı Külliyesi", "TBMM"], correct: 0 },
-            { question: "Fethi Sekin tek başına kaç teröristle çatıştı?", options: ["2", "3", "5", "1"], correct: 0 },
-            { question: "Eren Bülbül ile birlikte şehit olan asker kimdir?", options: ["J. Astsb. Ferhat Gedik", "Ömer Halisdemir", "Fethi Sekin", "Musa Özkan"], correct: 0 },
-            { question: "Şehitlik neden kutsaldır?", options: ["Allah katında en yüce makamlardan biridir", "Sadece Türklerde vardır", "Dünyevi bir rütbedir", "Geçici bir unvandır"], correct: 0 }
-        ];
-        const stage2Questions = [
-            ...stage1Questions,
-            { question: "Şehitler için 'doğrudan cennete giderler' ifadesi hangi dereceye aittir?", options: ["Hakiki şehit", "Hükmi şehit", "Vatan şehidi", "Manevi şehit"], correct: 0 },
-            { question: "Hangi şehidimiz 15 Temmuz'da darbeci generali vurmuştur?", options: ["Ömer Halisdemir", "Fethi Sekin", "Eren Bülbül", "Aybüke Yalçın"], correct: 0 },
-            { question: "Fethi Sekin'in kahramanlığı hangi şehirde yaşandı?", options: ["İzmir", "Ankara", "İstanbul", "Trabzon"], correct: 0 },
-            { question: "Eren Bülbül'ün şehadet tarihi nedir?", options: ["11 Ağustos 2017", "15 Temmuz 2016", "5 Ocak 2017", "9 Haziran 2017"], correct: 0 },
-            { question: "Şenay Aybüke Yalçın nerede görev yapıyordu?", options: ["Batman Kozluk", "Trabzon Maçka", "Ankara", "İzmir"], correct: 0 },
-            { question: "Kur'an-ı Kerim'de şehitlerle ilgili ayet hangi surededir?", options: ["Bakara", "Fatiha", "İhlas", "Felak"], correct: 0 },
-            { question: "Peygamberimiz şehitlerin ailesinden kaç kişiye şefaat edeceğini söylemiştir?", options: ["70", "10", "100", "50"], correct: 0 },
-            { question: "Aşağıdakilerden hangisi şehit sayılmaz?", options: ["Eceliyle ölen", "Suda boğulan", "Yangında ölen", "Doğumda ölen"], correct: 0 },
-            { question: "Ömer Halisdemir'in rütbesi nedir?", options: ["Astsubay Kıdemli Başçavuş", "Yüzbaşı", "Binbaşı", "Teğmen"], correct: 0 },
-            { question: "Fethi Sekin hangi kuvvete mensuptu?", options: ["Emniyet", "Jandarma", "Kara Kuvvetleri", "Deniz Kuvvetleri"], correct: 0 },
-            { question: "Eren Bülbül hangi ilçede şehit oldu?", options: ["Maçka", "Kozluk", "Baskil", "Bor"], correct: 0 },
-            { question: "Şehitlik kelimesinin kök anlamı nedir?", options: ["Şahit olmak, tanıklık etmek", "Ölmek", "Savaşmak", "Kazanmak"], correct: 0 },
-            { question: "Hangi şehidimiz 22 yaşında şehit olan bir öğretmendir?", options: ["Şenay Aybüke Yalçın", "Eren Bülbül", "Fethi Sekin", "Ömer Halisdemir"], correct: 0 },
-            { question: "15 Temmuz darbe girişimi hangi yıl oldu?", options: ["2016", "2015", "2017", "2018"], correct: 0 },
-            { question: "Fethi Sekin'in önlediği saldırı hangi tarihteydi?", options: ["5 Ocak 2017", "15 Temmuz 2016", "11 Ağustos 2017", "9 Haziran 2017"], correct: 0 },
-            { question: "Eren Bülbül'ün jandarmaya gösterdiği şey neydi?", options: ["Teröristlerin saklandığı yer", "Bir mağara", "Bir harita", "Bir silah deposu"], correct: 0 },
-            { question: "Aybüke öğretmenin en sevdiği türkü hangisidir?", options: ["Mağusa Limanı", "Çanakkale İçinde", "Yemen Türküsü", "Sarı Gelin"], correct: 0 },
-            { question: "Şehitler için 'yıkanmazlar' hükmü kimler için geçerlidir?", options: ["Hakiki şehitler", "Hükmi şehitler", "Vatan şehitleri", "Tüm şehitler"], correct: 0 },
-            { question: "Hangi şehidimiz 'Vatan sağ olsun' sözüyle anılır?", options: ["Eren Bülbül", "Ömer Halisdemir", "Fethi Sekin", "Aybüke Yalçın"], correct: 0 },
-            { question: "Ömer Halisdemir kaç kurşun yarası aldı?", options: ["29", "1", "15", "5"], correct: 0 },
-            { question: "İkinci aşama sınavı hangi tarihte yapılacaktır?", options: ["13 Eylül 2026", "28 Haziran 2026", "30 Ağustos 2026", "29 Ekim 2026"], correct: 0 },
-            { question: "Şehitlik ile ilgili doğru ifade hangisidir?", options: ["Allah katında yüce bir makamdır", "Sadece savaşta olur", "Sadece bir unvandır", "Her zaman aynıdır"], correct: 0 },
-            { question: "Aşağıdakilerden hangisi şehitlik eğitiminin amacıyla uyumludur?", options: ["Fedakarlığı ve vatan sevgisini öğretmek", "Sadece puan toplamak", "Zorunlu yarışma yapmak", "Reklam göstermek"], correct: 0 },
-            { question: "Hangi kahramanımız İzmir Adliyesi saldırısını önlemiştir?", options: ["Fethi Sekin", "Ömer Halisdemir", "Eren Bülbül", "Aybüke Yalçın"], correct: 0 },
-            { question: "Ömer Halisdemir hangi görevdeydi?", options: ["Astsubay Kıdemli Başçavuş", "Öğretmen", "Polis memuru", "Doktor"], correct: 0 },
-            { question: "Eren Bülbül hangi ilde şehit olmuştur?", options: ["Trabzon", "Batman", "Elazığ", "Çorum"], correct: 0 },
-            { question: "Şenay Aybüke Yalçın hangi meslekteydi?", options: ["Müzik öğretmeni", "Matematik öğretmeni", "Hemşire", "Polis"], correct: 0 },
-            { question: "Şehitleri anma yarışmasında puanlar neye göre artar?", options: ["Öğrenilen şehitler ve sınav sonucu", "Sadece giriş tarihi", "Sadece kullanıcı adı", "Sadece okul numarası"], correct: 0 },
-            { question: "Fethi Sekin'in fedakarlığı hangi şehirde oldu?", options: ["İzmir", "Ankara", "Trabzon", "Niğde"], correct: 0 },
-            { question: "Yarışma sıralamasında hangi değer baz alınır?", options: ["Toplam yarışma puanı", "Sadece kullanıcı adı", "Sadece okul numarası", "Sadece giriş saati"], correct: 0 }
+        function createExamQuestion(question, options) {
+            return { question, options, correct: 0 };
+        }
+
+        function uniqueValues(values, excludeValue, limit = 3) {
+            return values.filter(value => value !== excludeValue).filter((value, index, array) => array.indexOf(value) === index).slice(0, limit);
+        }
+
+        function getStoryTheme(entry) {
+            const text = `${entry.name} ${entry.desc} ${entry.story}`.toLowerCase();
+            if (text.includes('öğretmen') || text.includes('öğrenci')) return 'Eğitim ve umut';
+            if (text.includes('polis') || text.includes('adliye') || text.includes('emniyet')) return 'Görev bilinci ve adalet';
+            if (text.includes('asker') || text.includes('astsubay') || text.includes('mehmetçik') || text.includes('hudut')) return 'Vatan nöbeti';
+            if (text.includes('15 temmuz') || text.includes('darbe')) return 'Demokrasi direnişi';
+            if (text.includes('çocuk') || text.includes('15 yaş')) return 'Cesaret ve vefa';
+            if (text.includes('gazeteci') || text.includes('fotoğrafçı')) return 'Hafıza ve tanıklık';
+            return 'Fedakârlık ve vefa';
+        }
+
+        function getStoryEvent(entry) {
+            const text = `${entry.name} ${entry.desc} ${entry.story}`.toLowerCase();
+            if (text.includes('15 temmuz') || text.includes('darbe')) return '15 Temmuz direnişi';
+            if (text.includes('izmir adliyesi')) return 'İzmir Adliyesi saldırısı';
+            if (text.includes('maçka')) return "Maçka'da teröristlere yol gösterme";
+            if (text.includes('kozluk')) return 'Kozluk saldırısı';
+            if (text.includes('afrin')) return 'Afrin harekâtı';
+            if (text.includes('nusaybin')) return 'Nusaybin operasyonu';
+            if (text.includes('sur ')) return 'Sur operasyonu';
+            if (text.includes('gölbaşı')) return "Gölbaşı'nda Özel Harekat saldırısı";
+            if (text.includes('tbmm')) return 'Meclis çevresindeki direniş';
+            if (text.includes('köprü')) return 'Köprü üstündeki sivil direniş';
+            if (text.includes('marmaris')) return 'Marmaris koruma görevi';
+            if (text.includes('öğretmen')) return 'Eğitim yolunda görev';
+            if (text.includes('gazeteci') || text.includes('fotoğrafçı')) return 'Sivil direniş ve tanıklık';
+            if (text.includes('sınır') || text.includes('hudut')) return 'Sınır nöbeti';
+            return 'Vatan için görev anı';
+        }
+
+        function getStoryRole(entry) {
+            const text = `${entry.name} ${entry.desc} ${entry.story}`.toLowerCase();
+            if (text.includes('öğretmen')) return 'Öğretmen';
+            if (text.includes('polis')) return 'Polis';
+            if (text.includes('asker') || text.includes('astsubay') || text.includes('mehmetçik')) return 'Asker';
+            if (text.includes('gazeteci') || text.includes('fotoğrafçı')) return 'Gazeteci';
+            if (text.includes('öğrenci') || text.includes('çocuk')) return 'Çocuk / Genç';
+            if (text.includes('sivil')) return 'Sivil vatandaş';
+            return 'Görev insanı';
+        }
+
+        function getStoryAction(entry) {
+            const text = `${entry.name} ${entry.desc} ${entry.story}`.toLowerCase();
+            if (text.includes('15 temmuz') || text.includes('semih terzi')) return "Darbeci Semih Terzi'yi etkisiz hale getirdi";
+            if (text.includes('izmir adliyesi')) return 'İzmir Adliyesi saldırısını önledi';
+            if (text.includes('maçka')) return 'Güvenlik güçlerine teröristlerin yerini gösterdi';
+            if (text.includes('kozluk')) return 'Öğrencilerine müzik öğretirken saldırıda şehit oldu';
+            if (text.includes('afrin')) return 'Afrin harekâtında görev yaptı';
+            if (text.includes('gölbaşı')) return "Özel Harekat Daire Başkanlığı'na yönelik saldırıda görev başında direndi";
+            if (text.includes('tbmm')) return 'Meclis çevresinde milli iradeyi korumak için direndi';
+            if (text.includes('köprü')) return 'Köprü üstünde darbeye karşı sivil direnişe katıldı';
+            if (text.includes('marmaris')) return 'Cumhurbaşkanlığı koruma görevinde yer aldı';
+            if (text.includes('öğretmen')) return 'Öğrencileri için görev başındaydı';
+            if (text.includes('gazeteci') || text.includes('fotoğrafçı')) return 'Sivil direnişi kayıt altına aldı';
+            if (text.includes('sınır') || text.includes('hudut')) return 'Sınırda vatan nöbeti tuttu';
+            return 'Vatan için görev yaptı';
+        }
+
+        function buildStoryQuestion(martyr, index) {
+            const mode = index % 4;
+            const event = getStoryEvent(martyr);
+            const role = getStoryRole(martyr);
+            const action = getStoryAction(martyr);
+            const namePool = martyrsData.map(item => item.name);
+            const eventPool = martyrsData.map(item => getStoryEvent(item));
+            const rolePool = martyrsData.map(item => getStoryRole(item));
+            if (mode === 0) {
+                return createExamQuestion(`Bu hikaye hangi kahramana aittir?`, [martyr.name, ...uniqueValues(namePool, martyr.name)]);
+            }
+            if (mode === 1) {
+                return createExamQuestion(`Bu hikayede hangi olay anlatılıyor?`, [event, ...uniqueValues(eventPool, event)]);
+            }
+            if (mode === 2) {
+                return createExamQuestion(`Kahraman bu hikayede ne yaptı?`, [action, 'Tatil yaptı', 'Sınava girdi', 'Gezmeye çıktı']);
+            }
+            return createExamQuestion(`Bu kahraman hangi görev/meslekle anılıyor?`, [role, ...uniqueValues(rolePool, role)]);
+        }
+
+        const conceptQuestions = [
+            createExamQuestion('Şehitlik kavramı sitede nasıl tanımlanıyor?', ['Hak, adalet ve inanç uğruna verilen mücadelenin yüce makamı', 'Sadece askeri rütbe', 'Geçici bir ünvan', 'Sadece okul başarısı']),
+            createExamQuestion('Şehitlik hangi değerlerle ilişkilendirilir?', ['Fedakârlık ve vefa', 'Küçük başarı ve tesadüf', 'Sadece ödül', 'Sadece savaş ganimeti']),
+            createExamQuestion('Şehitlik anlatıları hangi amaca hizmet eder?', ['Ortak hafızayı ve sorumluluğu canlı tutmaya', 'Yalnızca puan vermeye', 'Sadece eğlenceye', 'Reklama']),
+            createExamQuestion('Şehitlikte öne çıkan temel duygulardan biri hangisidir?', ['Sorumluluk', 'Kıskançlık', 'Üşengeçlik', 'Bencillik']),
+            createExamQuestion('1. derece şehitler için hangi ifade doğrudur?', ['Günahları tamamen silinir', 'Kabir sorgusu vardır', 'Yıkanırlar', 'Ahirette sevap almazlar']),
+            createExamQuestion('1. derece şehitlik hangi tür fedakârlığı temsil eder?', ['Hakiki şehitlik', 'Geçici görev', 'Dünyevi unvan', 'Sadece anma günü']),
+            createExamQuestion('2. derece olarak verilen şehitlik tanımı hangisidir?', ['Hükmi şehitler', 'Vatan şehitleri', 'Manevi şehitler', 'Adsız kahramanlar']),
+            createExamQuestion('3. derece olarak verilen şehitlik tanımı hangisidir?', ['Vatan şehitleri', 'Savaş şehitleri', 'Hükmi şehitler', 'Geçici şehitler']),
+            createExamQuestion('Şehitlik kavramı hangi alanları bir araya getirir?', ['İnanç, vefa ve sorumluluk', 'Sadece spor ve rekabet', 'Sadece para ve unvan', 'Sadece eğlence']),
+            createExamQuestion('Şehitlik anlatılarında hangi davranış öne çıkar?', ['Canı pahasına sorumluluk almak', 'Geri çekilmek', 'Kayıtsız kalmak', 'Sadece konuşmak']),
+            createExamQuestion('Şehitlik neden önemlidir?', ['Toplumsal hafızayı diri tuttuğu için', 'Puan sayısını artırdığı için', 'Zorunlu olduğu için', 'Kısa olduğu için']),
+            createExamQuestion('Şehitlik hangi duyguyu güçlendirir?', ['Dayanışma', 'Kırgınlık', 'İlgisizlik', 'Unutkanlık']),
+            createExamQuestion('Şehitlikte anlatılan kahramanlık kime örnek olur?', ['Gelecek nesillere', 'Sadece yöneticilere', 'Sadece öğretmenlere', 'Sadece askerlere']),
+            createExamQuestion('Şehitlikte öne çıkan kelimelerden biri hangisidir?', ['Emanet', 'Rekabet', 'Tesadüf', 'Hız']),
+            createExamQuestion('Şehitlik anlatısının amacı nedir?', ['Vefayı yaşatmak', 'Sınavı zorlaştırmak', 'Siteyi kalabalık göstermek', 'Sürekli aynı şeyi tekrar etmek']),
+            createExamQuestion('Şehitlikte en güçlü değerlerden biri hangisidir?', ['Sorumluluk', 'Çıkar', 'Kibir', 'Baskı']),
+            createExamQuestion('Şehitlikte hangi unsur hem dini hem toplumsal anlam taşır?', ['Emanet', 'Rastgelelik', 'Rekabet', 'Şans']),
+            createExamQuestion('Şehitlik anlatılarının ortak sesi hangisidir?', ['Vefa', 'Kayıtsızlık', 'Baskı', 'Hız']),
+            createExamQuestion('Şehitlik neden tekrar tekrar anlatılır?', ['Unutulmaması için', 'Sadece puan için', 'Sadece tarih olsun diye', 'Tesadüfen']),
+            createExamQuestion('Şehitlikte hangi bağ öne çıkar?', ['Toplumun ortak vicdanı', 'Bireysel çıkar', 'Rekabet duygusu', 'Günlük koşuşturma'])
         ];
 
+        const storyQuestionBank = martyrsData.map((martyr, index) => buildStoryQuestion(martyr, index));
+        const stage1Questions = conceptQuestions.slice(0, 20);
+        const stage2Questions = storyQuestionBank.slice(0, 40);
+
+        const COMPETITION_REPORT_EMAIL = '2013musab09@gmail.com';
+        const COMPETITION_STAGE2_END = new Date('2026-09-13T23:59:59');
+        const COMPETITION_SUBMISSION_END = new Date('2026-09-20T23:59:59');
+
         function getTotalPoints() { return (learnedMartyrs.length * 10) + (competitionData.stage1_score || 0) + (competitionData.stage2_score || 0); }
+        function isSubmissionPeriod() { const now = new Date(); return now >= COMPETITION_STAGE2_END && now <= COMPETITION_SUBMISSION_END; }
+        function isCompetitionFinished() { const now = new Date(); return now > COMPETITION_SUBMISSION_END; }
+        function buildSubmissionMailBody() {
+            const totalPoints = getTotalPoints();
+            const stage1Points = competitionData.stage1_score || 0;
+            const stage2Points = competitionData.stage2_score || 0;
+            const siteUrl = window.location.href;
+            return [
+                '■ BELGE KODU: 2026-SY-POY-01',
+                '2026 Şehitleri Anma Bilgi Yarışması Puan Bildirimi',
+                '',
+                `Ad Soyad: ${currentUser?.fullname || '-'}`,
+                `E-posta: ${currentUser?.email || '-'}`,
+                `Okul Numarası: ${currentUser?.school_number || '-'}`,
+                `Web Site: ${siteUrl}`,
+                `Öğrenilen Şehit Sayısı: ${learnedMartyrs.length}`,
+                `1. Aşama Puanı: ${stage1Points}`,
+                `2. Aşama Puanı: ${stage2Points}`,
+                `Toplam Puan: ${totalPoints}`,
+                '',
+                'Not: Bu belge otomatik olarak oluşturulmuştur ve düzenlenmesi önerilmez.',
+                'Kazanan, gönderilen puanlar içinden en yüksek toplam puana göre belirlenecektir.'
+            ].join('\n');
+        }
+        function buildSubmissionMailto() {
+            const subject = encodeURIComponent('2026 Şehitleri Anma Bilgi Yarışması - Puan Bildirimi');
+            const body = encodeURIComponent(buildSubmissionMailBody());
+            return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(COMPETITION_REPORT_EMAIL)}&su=${subject}&body=${body}`;
+        }
+        function renderSubmissionPreview() {
+            const statusEl = document.getElementById('submission-period-status');
+            const previewEl = document.getElementById('submission-mail-preview');
+            const nameEl = document.getElementById('submission-user-name');
+            const schoolEl = document.getElementById('submission-school-number');
+            const totalEl = document.getElementById('submission-total-points');
+            const stage1El = document.getElementById('submission-stage1-points');
+            const stage2El = document.getElementById('submission-stage2-points');
+            const openBtn = document.getElementById('btn-open-mail');
+            const copyBtn = document.getElementById('btn-copy-mail');
+            const dockBtn = document.getElementById('dock-open-mail');
+            const body = buildSubmissionMailBody();
+
+            if (statusEl) {
+                if (isSubmissionPeriod()) {
+                    statusEl.innerText = 'Puan gönderme dönemi açık. Son gün puanını gönder.';
+                } else if (new Date() < COMPETITION_STAGE2_END) {
+                    statusEl.innerText = 'Puan gönderme dönemi 2. aşama bittikten sonra açılacak.';
+                } else if (isCompetitionFinished()) {
+                    statusEl.innerText = 'Puan gönderme dönemi kapandı.';
+                } else {
+                    statusEl.innerText = 'Yarışma bitince puan gönderme dönemi açılacak.';
+                }
+            }
+            if (nameEl) nameEl.innerText = currentUser?.fullname || '-';
+            if (schoolEl) schoolEl.innerText = currentUser?.school_number || '-';
+            if (totalEl) totalEl.innerText = getTotalPoints();
+            if (stage1El) stage1El.innerText = competitionData.stage1_score || 0;
+            if (stage2El) stage2El.innerText = competitionData.stage2_score || 0;
+            if (previewEl) previewEl.value = body;
+            if (openBtn) openBtn.disabled = false;
+            if (copyBtn) copyBtn.disabled = !currentUser;
+            if (dockBtn) dockBtn.disabled = false;
+        }
+        async function openSubmissionMail() {
+            renderSubmissionPreview();
+            const mailto = buildSubmissionMailto();
+            window.open(mailto, '_blank', 'noopener,noreferrer');
+        }
+        async function copySubmissionMail() {
+            const body = buildSubmissionMailBody();
+            try {
+                await navigator.clipboard.writeText(body);
+                alert('Mail metni kopyalandı.');
+            } catch (e) {
+                const previewEl = document.getElementById('submission-mail-preview');
+                if (previewEl) previewEl.select();
+                alert('Kopyalama başarısız, metin seçildi.');
+            }
+        }
         function syncCompetitionPointsFromState() {
             if (!currentUser) return 0;
             currentUser.learned = [...learnedMartyrs];
@@ -2980,11 +3316,12 @@
                 agreeBtn.classList.add('active');
                 agreeBtn.innerText = 'Yarışma anlaşması onaylandı';
             }
+            renderSubmissionPreview();
         }
         function updateExamButtons() {
             const now = new Date();
-            const d1 = new Date('2026-06-28T00:00:00'), d1e = new Date('2026-06-29T23:59:59');
-            const d2 = new Date('2026-09-13T00:00:00'), d2e = new Date('2026-09-14T23:59:59');
+            const d1 = new Date('2026-06-28T00:00:00'), d1e = new Date('2026-06-28T23:59:59');
+            const d2 = new Date('2026-09-13T00:00:00'), d2e = new Date('2026-09-13T23:59:59');
             const appr = currentUser?.competition_approved;
             const b1 = document.getElementById('btn-stage1'),
                 b2 = document.getElementById('btn-stage2');
@@ -2994,17 +3331,19 @@
             b2.innerText = competitionData.stage2_completed ? '✅ Tamamlandı' : (now < d2 ? '🔒 13 Eyl 2026' : (now > d2e ? '⏰ Süre Doldu' : '🚀 Başla'));
             if (!appr) { b1.innerText = '⚠️ Onay Gerekli';
                 b2.innerText = '⚠️ Onay Gerekli'; }
+            renderSubmissionPreview();
         }
         function switchCompTab(id, el) { document.querySelectorAll('.comp-tab').forEach(t => t.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             document.querySelectorAll('.comp-nav-item').forEach(n => n.classList.remove('active'));
-            el.classList.add('active'); if (id === 'comp-tab-leaderboard') refreshLeaderboard(); }
+            el.classList.add('active'); if (id === 'comp-tab-submit') renderSubmissionPreview(); }
 
         function startExam(stage) {
             if (!currentUser?.competition_approved) return alert('Önce şartnameyi onaylayın!');
             const questions = stage === 1 ? stage1Questions : stage2Questions;
-            currentExam = { stage, questions: questions.map(q => ({ ...q, selected: -1 })), timeLeft: stage === 1 ? 15 * 60 : 40 * 60 };
+            currentExam = { stage, questions: questions.map(q => ({ ...q, selected: -1 })), timeLeft: stage === 1 ? 30 * 60 : 60 * 60 };
             document.getElementById('exam-screen').style.display = 'block';
+            document.getElementById('exam-title').innerText = stage === 1 ? '1. Aşama - Şehitlik Kavramı' : '2. Aşama - Hikaye Soruları';
             document.getElementById('exam-questions-container').innerHTML = currentExam.questions.map((q, i) => `<div class="comp-glass-card"><p><strong>Soru ${i+1}:</strong> ${q.question}</p>${q.options.map((o,oi)=>`<button class="comp-option" onclick="selectAnswer(${i},${oi},this)">${String.fromCharCode(65+oi)}) ${o}</button>`).join('')}</div>`).join('');
             examTimerInterval = setInterval(() => { currentExam.timeLeft--;
                 document.getElementById('exam-timer').innerText = `${Math.floor(currentExam.timeLeft/60)}:${(currentExam.timeLeft%60).toString().padStart(2,'0')}`; if (currentExam.timeLeft <= 0) submitExam(); }, 1000);
