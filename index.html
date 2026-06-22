@@ -2876,6 +2876,7 @@ ${closing}`;
             document.getElementById('top-header').style.display = 'none';
             document.getElementById('bottom-nav').style.display = 'none';
             document.getElementById('admin-panel-btn').style.display = 'none';
+            window.location.hash = 'login';
             switchView('view-login');
         }
 
@@ -3126,15 +3127,26 @@ ${closing}`;
         }
 
         // ============= YENİ EKLENEN FONKSİYONLAR =============
-        function goToHub() { document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+        function goToHub() { window.location.hash = 'hub'; document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
             document.getElementById('view-hub').classList.add('active');
             document.getElementById('bottom-nav').style.display = 'none'; }
         function goToMainSite() {
+            const requestedView = window.location.hash.replace('#', '');
+            if (requestedView === 'competition') {
+                goToCompetition();
+                return;
+            }
+            if (requestedView === 'hub') {
+                goToHub();
+                return;
+            }
+            window.location.hash = 'home';
             switchView('view-home', document.querySelector('.nav-list .nav-item:first-child'));
             document.getElementById('bottom-nav').style.display = 'flex';
             initSystemData();
         }
         function goToCompetition() {
+            window.location.hash = 'competition';
             switchView('view-competition');
             document.getElementById('bottom-nav').style.display = 'none';
             updateCompetitionUI();
