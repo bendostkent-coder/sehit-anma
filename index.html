@@ -3134,11 +3134,12 @@ ${closing}`;
             document.getElementById('bottom-nav').style.display = 'flex';
             initSystemData();
         }
-        function goToCompetition() { document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-            document.getElementById('view-competition').classList.add('active');
+        function goToCompetition() {
+            switchView('view-competition');
             document.getElementById('bottom-nav').style.display = 'none';
             updateCompetitionUI();
-            updateExamButtons(); }
+            updateExamButtons();
+        }
 
         // Yarışma verileri
         let competitionData = { stage1_score: 0, stage2_score: 0, stage1_completed: false, stage2_completed: false };
