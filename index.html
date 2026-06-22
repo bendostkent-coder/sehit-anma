@@ -2508,7 +2508,7 @@ ${closing}`;
                 loadCompetitionData();
                 updateCompetitionUI();
                 updateExamButtons();
-                goToMainSite();
+                if (!handleCompetitionLaunchFromUrl()) goToMainSite();
                 setTimeout(() => sendWeeklyReminder(), 1000);
             } else {
                 resetToLogin();
@@ -2780,7 +2780,7 @@ ${closing}`;
             document.getElementById('profile-name').innerText = currentUser.fullname;
             document.getElementById('admin-panel-btn').style.display = 'none';
             loadCompetitionData();
-            goToMainSite();
+            if (!handleCompetitionLaunchFromUrl()) goToMainSite();
             alert('Kayıt başarılı!' + (approved ? ' Yarışmaya katılımınız onaylandı.' : ''));
         }
 
@@ -2844,7 +2844,7 @@ ${closing}`;
             document.getElementById('profile-name').innerText = currentUser.fullname || currentUser.email;
             document.getElementById('admin-panel-btn').style.display = isAdmin ? 'inline-block' : 'none';
             loadReminderSetting();
-            goToMainSite();
+            if (!handleCompetitionLaunchFromUrl()) goToMainSite();
             setTimeout(() => sendWeeklyReminder(), 1000);
         }
 
@@ -2861,7 +2861,7 @@ ${closing}`;
             document.getElementById('profile-name').innerText = 'Misafir Kullanıcı';
             loadCompetitionData();
             loadReminderSetting();
-            goToMainSite();
+            if (!handleCompetitionLaunchFromUrl()) goToMainSite();
         }
 
         async function logout() {
@@ -2901,7 +2901,7 @@ ${closing}`;
 
         function closeAdminPanel() {
             document.getElementById('bottom-nav').style.display = 'block';
-            goToMainSite();
+            if (!handleCompetitionLaunchFromUrl()) goToMainSite();
         }
 
         async function loadAdminData() {
@@ -3457,12 +3457,30 @@ ${closing}`;
 
         function openCompetitionQuiz(stage) {
             if (!currentUser?.competition_approved) return alert('Önce şartnameyi onaylayın!');
-            window.open(`quiz.html?stage=${stage}`, '_blank', 'noopener');
+            window.open(`./quiz.html?stage=${stage}#competition`, '_blank', 'noopener');
         }
-        function startExam(stage) { openCompetitionQuiz(stage); }
+        function startExam(stage, bypassChecks = false) {
+            if (!currentUser && !bypassChecks) return alert('Önce giriş yapın!');
+            if (!currentUser?.competition_approved && !bypassChecks) return alert('Önce şartnameyi onaylayın!');
+
+            const questions = stage === 1 ? stage1Questions : stage2Questions;
+            currentExam = { stage, questions: questions.map(q => ({ ...q, selected: -1 })), timeLeft: stage === 1 ? 30 * 60 : 60 * 60 };
+            document.getElementById('exam-screen').style.display = 'block';
+            document.getElementById('exam-result-screen').style.display = 'none';
+            document.getElementById('exam-title').innerText = stage === 1 ? '1. Aşama - Şehitlik Kavramı' : '2. Aşama - Hikaye Soruları';
+            document.getElementById('exam-questions-container').innerHTML = currentExam.questions.map((q, i) => `<div class="comp-glass-card"><p><strong>Soru ${i+1}:</strong> ${q.question}</p>${q.options.map((o,oi)=>`<button class="comp-option" onclick="selectAnswer(${i},${oi},this)">${String.fromCharCode(65+oi)}) ${o}</button>`).join('')}</div>`).join('');
+            document.getElementById('exam-timer').innerText = `${Math.floor(currentExam.timeLeft/60)}:${(currentExam.timeLeft%60).toString().padStart(2,'0')}`;
+            clearInterval(examTimerInterval);
+            examTimerInterval = setInterval(() => {
+                if (!currentExam) return;
+                currentExam.timeLeft -= 1;
+                document.getElementById('exam-timer').innerText = `${Math.floor(currentExam.timeLeft/60)}:${(currentExam.timeLeft%60).toString().padStart(2,'0')}`;
+                if (currentExam.timeLeft <= 0) submitExam();
+            }, 1000);
+        }
         function adminTestExam(stage) {
             if (!currentUser) return alert('Lütfen giriş yapın!');
-            window.open(`quiz.html?stage=${stage}&test=1`, '_blank', 'noopener');
+            window.open(`./quiz.html?stage=${stage}&test=1#competition`, '_blank', 'noopener');
         }
         function selectAnswer(qi, oi) { currentExam.questions[qi].selected = oi; }
         function submitExam() {
@@ -3486,6 +3504,16 @@ ${closing}`;
         }
         function saveCompData() { const k = currentUser ? `comp_${currentUser.email}` : 'comp_guest';
             localStorage.setItem(k, JSON.stringify(competitionData)); }
+
+        function handleCompetitionLaunchFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const stageParam = Number(params.get('quizStage') || 0);
+            if (!stageParam) return false;
+            const testMode = params.get('test') === '1';
+            const targetUrl = `./quiz.html?stage=${stageParam}${testMode ? '&test=1' : ''}`;
+            window.location.replace(targetUrl);
+            return true;
+        }
 
         async function refreshLeaderboard() {
             const tbody = document.getElementById('leaderboard-body');
