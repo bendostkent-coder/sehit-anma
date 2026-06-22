@@ -1546,7 +1546,7 @@
                 <div class="hub-card competition-card" onclick="goToCompetition()">
                     <span class="hub-card-icon">🏆</span>
                     <h2>Yarışma Paneli</h2>
-                    <p>2026 Şehitleri Anma Bilgi Yarışması'na katılın, puan toplayın!</p>
+                    <p>2026 Şehitleri Anma Bilgi Yarışması'nda roman tadındaki anlatılarla öğrenin, doğru cevaplarla puanınızı koruyun.</p>
                     <button class="btn-enter"><i class="fa-solid fa-trophy"></i> Yarışmaya Git</button>
                 </div>
             </div>
@@ -1558,7 +1558,7 @@
     <section id="view-login" class="view-section active">
         <div class="hero-banner">
             <h1><span class="flag-icon">🇹🇷</span> Her Hafta Yeni Bir Şehit Analım</h1>
-            <p>Her hafta yeni bir şehidimizi anarak, onların fedakarlıklarını ve kahramanlıklarını gelecek nesillere aktarıyoruz.</p>
+            <p>Her hafta bir kahramanın öyküsünü uzun, akıcı ve roman tadında anlatarak; fedakârlığı, sorumluluğu ve vefayı gelecek nesillere aktarıyoruz.</p>
         </div>
 
         <div class="login-container">
@@ -1593,17 +1593,17 @@
                 </div>
                 <div class="competition-agreement-card">
                     <h4>Yarışma Anlaşması</h4>
-                    <p>Bu platformda yarışma, şehitlerimizi öğrenmeyi teşvik eden gönüllü bir etkinliktir. Yarışmaya katılan kullanıcılar, kendi bilgileri ile sisteme kayıt olur; soruları dürüstlükle cevaplamayı, kuralları ve tarihlerle sınırlı oturumları kabul etmeyi taahhüt eder. Yarışma puanları ana sitede öğrendiğiniz şehitlerden ve sınav sonuçlarınızdan oluşur. Katılım tamamen isteğe bağlıdır; kabul etmeyen kullanıcılar ana siteyi, şehitlik içeriklerini ve diğer bölümleri sorunsuz kullanmaya devam edebilir.</p>
+                    <p>Bu platformda yarışma, şehitlerimizi daha iyi tanımak için hazırlanmış gönüllü bir öğrenme yolculuğudur. Katılan kullanıcılar kendi bilgileriyle kayıt olur, soruları dürüstçe yanıtlar ve puanın yalnızca doğru cevaplarla oluştuğunu kabul eder. Katılım, 1. aşamanın yapılacağı tarihe kadar açıktır; sonrasında yeni katılım alınmaz. Yarışmaya katılmayanlar ana siteyi, şehitlik içeriklerini ve diğer bölümleri sorunsuz kullanmaya devam edebilir. Puan üzerinde değişiklik yapanlar elenir ve ödül almadan önce puanları ayrıca kontrol edilir.</p>
                     <button type="button" class="comp-agree-btn" id="reg-agreement-btn" onclick="toggleCompetitionRegistrationAgreement()">Yarışma anlaşmasını kabul ettim ve katılıcam</button>
                     <div id="reg-school-number-block" class="competition-fields-hidden">
                         <label style="display:block;margin-top:12px;">Okul Numarası</label>
                         <input type="text" id="reg-school-number" class="competition-input" placeholder="Örn: 1234">
-                        <div class="competition-note">Yarışma sıralaması ve katılım kaydı için okul numarası gereklidir.</div>
+                        <div class="competition-note">Yarışma sıralaması ve katılım kaydı için okul numarası gereklidir. Katılım 1. aşama tarihine kadar açıktır.</div>
                     </div>
                 </div>
                 <div class="checkbox-group" style="display:none;">
                     <input type="checkbox" id="reg-approve-competition">
-                    <label for="reg-approve-competition"><strong>🏆 2026 Şehitleri Anma Bilgi Yarışması'na katılmak istiyorum.</strong> Yarışma kurallarını okudum, kabul ediyorum. <a onclick="alert('Yarışma Şartnamesi:\n\n1. Yarışma 28 Haziran 2026 ve 13 Eylül 2026 tarihlerinde iki aşamalıdır.\n2. 1. aşama 20 soru ve 30 dakikadır; yalnızca şehitlik kavramı sorulur.\n3. 2. aşama 40 soru ve 1 saattir; şehit anlatıları ve roman tarzı hikayelerden soru gelir.\n4. Puanlama sistemi web sitede açıklanmıştır.\n5. Şartnameyi kabul etmeyenler yalnızca ana siteyi kullanabilir.')">(Şartnameyi Oku)</a></label>
+                    <label for="reg-approve-competition"><strong>🏆 2026 Şehitleri Anma Bilgi Yarışması'na katılmak istiyorum.</strong> Yarışma kurallarını okudum, kabul ediyorum. Katılım 1. aşama tarihine kadar açıktır. <a onclick="alert('Yarışma Şartnamesi:\n\n1. Yarışma 5 Temmuz 2026 ve 13 Eylül 2026 tarihlerinde iki aşamalıdır.\n2. 1. aşama 20 soru ve 30 dakikadır; yalnızca şehitlik kavramı sorulur.\n3. 2. aşama 40 soru ve 1 saattir; şehit anlatıları roman tarzında ve uzun hikayelerden hazırlanır.\n4. Puanlama sistemi doğru cevaplara göre işler ve sistem sonuçları otomatik kontrol eder.\n5. Puan üzerinde değişiklik yapanlar elenir, ödül almadan önce puan kontrolü yapılır.\n6. Şartnameyi kabul etmeyenler yalnızca ana siteyi kullanabilir.')">(Şartnameyi Oku)</a></label>
                 </div>
                 <button class="btn-primary" onclick="registerUser()">Kayıt Ol</button>
                 <div class="register-link" onclick="showLoginForm()">Zaten hesabınız var mı? Giriş Yapın</div>
@@ -1909,6 +1909,10 @@
         <div class="admin-section">
             <h3><i class="fa-solid fa-list-check"></i> Sınav Soru Bankası</h3>
             <p style="margin-bottom:15px;">Sorular, sitede yer alan şehit anlatımları ve şehitlik kavramı üzerinden otomatik olarak oluşturulur.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px;">
+                <button class="admin-export-btn" onclick="adminTestExam(1)" style="background:#d35400;"><i class="fa-solid fa-pen"></i> 1. Aşamayı Test Et</button>
+                <button class="admin-export-btn" onclick="adminTestExam(2)" style="background:#8e44ad;"><i class="fa-solid fa-pen-to-square"></i> 2. Aşamayı Test Et</button>
+            </div>
             <div class="admin-two-columns">
                 <div>
                     <h4 style="margin-bottom:10px; color: #da291c;">1. Aşama Soru Önizlemesi</h4>
@@ -1946,12 +1950,13 @@
             <div class="comp-nav-item" onclick="switchCompTab('comp-tab-submit', this)"><i class="fa-solid fa-envelope"></i> Puan Gönder</div>
         </div>
         <div class="comp-tab active" id="comp-tab-rules">
-            <div class="comp-glass-card"><h3>📜 Kurallar</h3><p>2026 yılına özel iki aşamalı bilgi yarışması. Sorular, web sitemizde yer alan şehit bilgileri ve açıklamalardan hazırlanır.</p>
+            <div class="comp-glass-card"><h3>📜 Kurallar</h3><p>2026 yılına özel bu yarışma, şehitlerimizi daha yakından tanımak, roman tadında anlatılarla hafızayı canlı tutmak ve doğru bilgiyle ilerlemek için hazırlanmıştır. Sorular web sitemizde yer alan şehit bilgileri, uzun hikayeler ve açıklamalardan otomatik olarak üretilir.</p>
                 <ul style="margin-left:20px;margin-top:10px;line-height:2;">
-                    <li><strong>1. Aşama:</strong> 28 Haziran 2026 - 20 soru, 30 dakika (Doğru: +5 puan)</li>
-                    <li><strong>2. Aşama:</strong> 13 Eylül 2026 - 40 soru, 1 saat (Doğru: +10 puan)</li>
+                    <li><strong>1. Aşama:</strong> 5 Temmuz 2026 - 20 soru, 30 dakika (Doğru: +5 puan)</li>
+                    <li><strong>2. Aşama:</strong> 13 Eylül 2026 - 40 soru, 1 saat (Doğru: +10 puan; sorular anlatılan hikayelerle doğrudan bağlantılıdır)</li>
                     <li>Her öğrenilen şehit: <strong>+10 puan</strong></li>
                     <li>Katılım için yarışma anlaşması ve okul numarası gerekir.</li>
+                    <li>Puan değiştirenler elenir ve ödül öncesi puan kontrolü yapılır.</li>
                 </ul>
             </div>
         </div>
@@ -1967,8 +1972,8 @@
         <div class="comp-tab" id="comp-tab-exam">
             <div class="comp-glass-card" style="text-align:center;"><h3>Sınavlar</h3>
                 <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
-                    <div style="flex:1;min-width:220px;"><h4>1. Aşama</h4><p>28 Haziran 2026 · 20 Soru · 30 Dakika</p><button class="comp-btn gold" id="btn-stage1" onclick="startExam(1)" disabled>🔒</button></div>
-                    <div style="flex:1;min-width:220px;"><h4>2. Aşama</h4><p>13 Eylül 2026 · 40 Soru · 1 Saat</p><button class="comp-btn gold" id="btn-stage2" onclick="startExam(2)" disabled>🔒</button></div>
+                    <div style="flex:1;min-width:220px;"><h4>1. Aşama</h4><p>5 Temmuz 2026 · 20 Soru · 30 Dakika</p><button class="comp-btn gold" id="btn-stage1" onclick="openCompetitionQuiz(1)" disabled>🔒</button></div>
+                    <div style="flex:1;min-width:220px;"><h4>2. Aşama</h4><p>13 Eylül 2026 · 40 Soru · 1 Saat</p><button class="comp-btn gold" id="btn-stage2" onclick="openCompetitionQuiz(2)" disabled>🔒</button></div>
                 </div>
             </div>
             <div class="comp-glass-card" id="exam-screen" style="display:none;"><div style="display:flex;justify-content:space-between;"><h3 id="exam-title"></h3><div class="comp-timer" id="exam-timer"></div></div><div id="exam-questions-container"></div><button class="comp-btn gold" onclick="submitExam()" style="width:100%;margin-top:20px;">Tamamla</button></div>
@@ -1978,6 +1983,7 @@
             <div class="comp-glass-card">
                 <h3>📩 Puan Gönderme Dönemi</h3>
                 <p id="submission-period-status" style="margin-bottom:12px;color:#cfcfcf;">Yarışma bitince puan gönderme dönemi açılacak.</p>
+                <p id="submission-warning-note" style="margin-bottom:12px;color:#ffb3b3;font-weight:600;">Uyarı: Puan üzerinde değişiklik yapanlar elenir; ödül almadan önce puanınız kontrol edilecektir.</p>
                 <div class="comp-glass-card" style="background:rgba(255,255,255,0.08);margin-top:15px;max-width:640px;margin-left:auto;margin-right:auto;text-align:center;">
                     <p><strong>Gönderim Adresi:</strong> <span id="submission-email-address">2013musab09@gmail.com</span></p>
                     <p><strong>Ad:</strong> <span id="submission-user-name">-</span></p>
@@ -2228,9 +2234,33 @@
             { week: 4, name: "Öğretmen Şenay Aybüke Yalçın", imgUrl: "https://images.unsplash.com/photo-1572889602517-5e60ce9b7e7a?auto=format&fit=crop&q=80&w=400", desc: "Batman'ın Kozluk ilçesinde terör örgütü PKK'nın saldırısında gencecik yaşında şehit olan müzik öğretmeni.", location: "Batman (Kozluk İlçesi)", hometown: "Çorum (Osmancık)", story: "Şenay Aybüke Yalçın, öğrencilerine yalnızca müzik öğretmiyordu; hayata umutla bakmayı da öğretiyordu. Kozluk'a uzanan o yol, onun için bir görev yolu, bir sevgi yolu, bir emek yoluydu. Saldırının hedefi olduğunda geride bir öğretmen değil, yarım kalmış bir melodi gibi yankılanan büyük bir iyilik bıraktı.\n\nAybüke öğretmenin adı bugün sadece bir okulun, bir sınıfın ya da bir enstrümanın adı değildir. Çorum'un Osmancık ilçesinden çıkıp Batman'da öğrencilerinin kalbine dokunan bu genç öğretmen, merhametin ve idealizmin yüzü oldu. Onu anlatmak, bir sınıfın içinde büyüyen vatan sevgisini anlatmaktır." }
         ];
 
+        function buildDetailedMartyrStory(entry, sourceStory = entry.story || entry.desc || '') {
+            const theme = getStoryTheme(entry);
+            const opening = `${entry.name}, ${entry.hometown} ile ${entry.location} arasında uzanan hayat çizgisinde sadece bir isim değil, görev ve vicdan duygusunu erken yaşta taşımış bir kahraman olarak yer alır. ${entry.desc} Bu yüzden onun hikâyesi, doğduğu yerden yürüdüğü yola kadar insanın değerleriyle büyüyen bir ömrün romanı gibi okunur.`;
+            const middle = `${sourceStory}
+
+Bu anlatı, ${entry.week}. haftada anılan yolculuğun neden bu kadar derin hissedildiğini de gösterir. ${theme} duygusu, onun hayatında bir başlık gibi değil, adım adım örülen bir karakter gibi görünür. ${entry.name} için söylenen her söz, aslında fedakârlığın ve sadakatin nasıl sessizce büyüdüğünü anlatır.`;
+            const closing = `${entry.name}, milletin vicdanında yer eden örnek bir kahramandır. Onun hatırası, cesaretin ve sadakatin en temiz hâli olarak daima saygıyla anılacaktır.`;
+            return `🇹🇷 ${entry.name} 🇹🇷
+
+${opening}
+
+${middle}
+
+${closing}`;
+        }
+
+        function buildRomanMartyrStory(entry) {
+            return buildDetailedMartyrStory(entry);
+        }
+
+        martyrsData.forEach(entry => {
+            entry.story = buildRomanMartyrStory(entry);
+        });
+
         const memorialImageUrl = "https://images.unsplash.com/photo-1572889602517-5e60ce9b7e7a?auto=format&fit=crop&q=80&w=400";
         function buildMartyrStory(entry) {
-            return `🇹🇷 ${entry.name} 🇹🇷\n\n${entry.story}\n\nBu anlatı, ${entry.week}. haftada ${entry.hometown} ile ${entry.location} arasında kurulan vefa bağını da hatırlatır. ${entry.desc} Her cümlesi, bir insanın görevini yerine getirirken nasıl bir hafıza bıraktığını anlatır. ${entry.name}, bu sitede sadece bir kayıt değil; saygıyla tekrar edilen bir emanet cümlesidir.`;
+            return buildDetailedMartyrStory(entry, entry.story);
         }
         const weeklyMartyrEntries = [
             { week: 5, name: "Hasan Tahsin", desc: "İzmir'in işgaline karşı ilk kurşunu atarak milli direnişin sembolü oldu.", location: "İzmir (Konak)", hometown: "Selanik", story: "Hasan Tahsin, 15 Mayıs 1919'da İzmir'in işgali sırasında işgal kuvvetlerine karşı ilk kurşunu atan isim olarak hafızalara kazındı. Bu davranış, milletin işgale boyun eğmeyeceğinin güçlü bir işaretiydi. Onun adı, cesaretin ve bağımsızlık iradesinin ilk cümlelerinden biri oldu." },
@@ -2726,6 +2756,7 @@
             if (!fullname || !email || !password) { alert('Lütfen tüm alanları doldurun.'); return; }
             if (email === ADMIN_EMAIL) { alert('Bu e-posta adresi admin hesabına aittir.'); return; }
             if (approved && !schoolNumber) { alert('Yarışmaya katılmak için okul numaranızı girin.'); return; }
+            if (approved && !isCompetitionJoinOpen()) { alert('Yarışmaya katılım 1. aşama tarihine kadar açıktır.'); return; }
 
             const users = JSON.parse(localStorage.getItem('appUsers') || '[]');
             if (users.find(u => u.email.toLowerCase() === email)) { alert('Bu e-posta adresi zaten kayıtlı.'); return; }
@@ -3113,8 +3144,8 @@
         let competitionData = { stage1_score: 0, stage2_score: 0, stage1_completed: false, stage2_completed: false };
         let currentExam = null, examTimerInterval = null;
 
-        function createExamQuestion(question, options) {
-            return { question, options, correct: 0 };
+        function createExamQuestion(question, options, correct = 0) {
+            return { question, options, correct };
         }
 
         function uniqueValues(values, excludeValue, limit = 3) {
@@ -3188,49 +3219,91 @@
             const eventPool = martyrsData.map(item => getStoryEvent(item));
             const rolePool = martyrsData.map(item => getStoryRole(item));
             if (mode === 0) {
-                return createExamQuestion(`Bu hikaye hangi kahramana aittir?`, [martyr.name, ...uniqueValues(namePool, martyr.name)]);
+                return createExamQuestion(`Bu roman tarzı anlatının kahramanı kimdir?`, [martyr.name, ...uniqueValues(namePool, martyr.name)]);
             }
             if (mode === 1) {
-                return createExamQuestion(`Bu hikayede hangi olay anlatılıyor?`, [event, ...uniqueValues(eventPool, event)]);
+                return createExamQuestion(`Bu uzun anlatıda hangi olay öne çıkıyor?`, [event, ...uniqueValues(eventPool, event)]);
             }
             if (mode === 2) {
-                return createExamQuestion(`Kahraman bu hikayede ne yaptı?`, [action, 'Tatil yaptı', 'Sınava girdi', 'Gezmeye çıktı']);
+                return createExamQuestion(`Hikayenin dönüm noktasında kahraman ne yaptı?`, [action, 'Tatil yaptı', 'Sınava girdi', 'Gezmeye çıktı']);
             }
-            return createExamQuestion(`Bu kahraman hangi görev/meslekle anılıyor?`, [role, ...uniqueValues(rolePool, role)]);
+            return createExamQuestion(`Bu kahraman anlatıda hangi görev/meslek kimliğiyle anılıyor?`, [role, ...uniqueValues(rolePool, role)]);
         }
 
         const conceptQuestions = [
-            createExamQuestion('Şehitlik kavramı sitede nasıl tanımlanıyor?', ['Hak, adalet ve inanç uğruna verilen mücadelenin yüce makamı', 'Sadece askeri rütbe', 'Geçici bir ünvan', 'Sadece okul başarısı']),
-            createExamQuestion('Şehitlik hangi değerlerle ilişkilendirilir?', ['Fedakârlık ve vefa', 'Küçük başarı ve tesadüf', 'Sadece ödül', 'Sadece savaş ganimeti']),
-            createExamQuestion('Şehitlik anlatıları hangi amaca hizmet eder?', ['Ortak hafızayı ve sorumluluğu canlı tutmaya', 'Yalnızca puan vermeye', 'Sadece eğlenceye', 'Reklama']),
-            createExamQuestion('Şehitlikte öne çıkan temel duygulardan biri hangisidir?', ['Sorumluluk', 'Kıskançlık', 'Üşengeçlik', 'Bencillik']),
-            createExamQuestion('1. derece şehitler için hangi ifade doğrudur?', ['Günahları tamamen silinir', 'Kabir sorgusu vardır', 'Yıkanırlar', 'Ahirette sevap almazlar']),
-            createExamQuestion('1. derece şehitlik hangi tür fedakârlığı temsil eder?', ['Hakiki şehitlik', 'Geçici görev', 'Dünyevi unvan', 'Sadece anma günü']),
-            createExamQuestion('2. derece olarak verilen şehitlik tanımı hangisidir?', ['Hükmi şehitler', 'Vatan şehitleri', 'Manevi şehitler', 'Adsız kahramanlar']),
-            createExamQuestion('3. derece olarak verilen şehitlik tanımı hangisidir?', ['Vatan şehitleri', 'Savaş şehitleri', 'Hükmi şehitler', 'Geçici şehitler']),
-            createExamQuestion('Şehitlik kavramı hangi alanları bir araya getirir?', ['İnanç, vefa ve sorumluluk', 'Sadece spor ve rekabet', 'Sadece para ve unvan', 'Sadece eğlence']),
-            createExamQuestion('Şehitlik anlatılarında hangi davranış öne çıkar?', ['Canı pahasına sorumluluk almak', 'Geri çekilmek', 'Kayıtsız kalmak', 'Sadece konuşmak']),
-            createExamQuestion('Şehitlik neden önemlidir?', ['Toplumsal hafızayı diri tuttuğu için', 'Puan sayısını artırdığı için', 'Zorunlu olduğu için', 'Kısa olduğu için']),
-            createExamQuestion('Şehitlik hangi duyguyu güçlendirir?', ['Dayanışma', 'Kırgınlık', 'İlgisizlik', 'Unutkanlık']),
-            createExamQuestion('Şehitlikte anlatılan kahramanlık kime örnek olur?', ['Gelecek nesillere', 'Sadece yöneticilere', 'Sadece öğretmenlere', 'Sadece askerlere']),
-            createExamQuestion('Şehitlikte öne çıkan kelimelerden biri hangisidir?', ['Emanet', 'Rekabet', 'Tesadüf', 'Hız']),
-            createExamQuestion('Şehitlik anlatısının amacı nedir?', ['Vefayı yaşatmak', 'Sınavı zorlaştırmak', 'Siteyi kalabalık göstermek', 'Sürekli aynı şeyi tekrar etmek']),
+            createExamQuestion('Şehitlik kavramı sitede nasıl açıklanır?', ['Hak, adalet, inanç ve vatan uğruna verilen fedakârlığın yüce makamı', 'Sadece askeri bir görev', 'Geçici bir ünvan', 'Sadece okul başarısı']),
+            createExamQuestion('Şehitlik hangi temel değerleri birlikte taşır?', ['Fedakârlık, vefa, sorumluluk ve emanet bilinci', 'Rekabet, hız ve şans', 'Sadece ödül ve unvan', 'Sadece güç gösterisi']),
+            createExamQuestion('Şehitlik anlatılarının asıl amacı nedir?', ['Toplumsal hafızayı, vefa duygusunu ve sorumluluk bilincini canlı tutmak', 'Yalnızca puan vermek', 'Sadece eğlendirmek', 'Sayfayı kalabalık göstermek']),
+            createExamQuestion('Şehitlik neden bir hayat dersi olarak görülür?', ['Çünkü insanın korkuya rağmen görevini seçmesini anlatır', 'Çünkü yalnızca kısa bir başlıktır', 'Çünkü sadece resmi bir terimdir', 'Çünkü güncel bir moda ifadedir']),
+            createExamQuestion('Hakiki şehitlik ifadesi neyi anlatır?', ['İnanç ve sorumluluk uğruna canı pahasına verilen mücadeleyi', 'Sadece iyi bir notu', 'Gündelik bir görev dağılımını', 'Sadece askeri kıyafeti']),
+            createExamQuestion('Hükmi şehitler hangi grubu ifade eder?', ['Dinî ve toplumsal kaynaklarda şehitlik hükmü verilenleri', 'Yalnızca tarihçileri', 'Sadece öğretmenleri', 'Sadece sporcuları']),
+            createExamQuestion('Vatan şehitleri denince hangi anlam öne çıkar?', ['Ülkenin güvenliği ve bağımsızlığı için verilen fedakârlık', 'Sadece bir şehir adı', 'Bir ödül türü', 'Geçici bir görev belgesi']),
+            createExamQuestion('Şehitlikte emanet kavramı neden önemlidir?', ['Çünkü vatanın, değerlerin ve geleceğin korunması gerektiğini anlatır', 'Çünkü yalnızca maddi bir eşyayı anlatır', 'Çünkü bir tesadüf kelimesidir', 'Çünkü yarışma puanıyla ilgilidir']),
+            createExamQuestion('Şehitlik anlatıları hangi hafızayı canlı tutar?', ['Milletin ortak vicdanını ve tarih bilincini', 'Sadece kişisel çıkarları', 'Sadece günlük haberleri', 'Yalnızca eğlence kültürünü']),
+            createExamQuestion('Şehitlik en çok hangi duyguyu güçlendirir?', ['Dayanışma ve vefa', 'Kıskançlık ve yarış', 'İlgisizlik ve unutkanlık', 'Bencillik ve acelecilik']),
+            createExamQuestion('Şehitlikte vefa ne anlama gelir?', ['Fedakârlığı unutmadan saygıyla hatırlamak', 'Sadece alkışlamak', 'Bir kez anıp bırakmak', 'Sessiz kalmak']),
+            createExamQuestion('Şehitlik hangi davranışla ilişkilendirilir?', ['Canı pahasına sorumluluk almak', 'Geri çekilmek', 'Sadece konuşmak', 'Yükümlülükten kaçmak']),
+            createExamQuestion('Şehitlikte kahramanlık kime örnek olur?', ['Gelecek nesillere ve topluma', 'Sadece yöneticilere', 'Sadece öğretmenlere', 'Sadece askerlere']),
+            createExamQuestion('Şehitlik anlatılarında öne çıkan kelimelerden biri hangisidir?', ['Emanet', 'Rekabet', 'Tesadüf', 'Hız']),
+            createExamQuestion('Şehitlik neden tekrar tekrar anlatılır?', ['Unutulmaması ve anlamının gelecek kuşaklara aktarılması için', 'Sadece sınav zor olsun diye', 'Sadece tarih sayfası dolsun diye', 'Tesadüfen']),
             createExamQuestion('Şehitlikte en güçlü değerlerden biri hangisidir?', ['Sorumluluk', 'Çıkar', 'Kibir', 'Baskı']),
-            createExamQuestion('Şehitlikte hangi unsur hem dini hem toplumsal anlam taşır?', ['Emanet', 'Rastgelelik', 'Rekabet', 'Şans']),
-            createExamQuestion('Şehitlik anlatılarının ortak sesi hangisidir?', ['Vefa', 'Kayıtsızlık', 'Baskı', 'Hız']),
-            createExamQuestion('Şehitlik neden tekrar tekrar anlatılır?', ['Unutulmaması için', 'Sadece puan için', 'Sadece tarih olsun diye', 'Tesadüfen']),
+            createExamQuestion('Şehitlik hangi alanları bir araya getirir?', ['İnanç, vefa, sorumluluk ve toplumsal bilinç', 'Sadece spor ve rekabet', 'Sadece para ve unvan', 'Sadece eğlence']),
+            createExamQuestion('Şehitlik anlatısının ortak sesi hangisidir?', ['Vefa', 'Kayıtsızlık', 'Baskı', 'Hız']),
+            createExamQuestion('Şehitlik kavramı neden önemlidir?', ['Toplumun değerlerini ve hafızasını ayakta tuttuğu için', 'Puan sayısını artırdığı için', 'Kısa olduğu için', 'Rastgele seçildiği için']),
             createExamQuestion('Şehitlikte hangi bağ öne çıkar?', ['Toplumun ortak vicdanı', 'Bireysel çıkar', 'Rekabet duygusu', 'Günlük koşuşturma'])
         ];
 
-        const storyQuestionBank = martyrsData.map((martyr, index) => buildStoryQuestion(martyr, index));
         const stage1Questions = conceptQuestions.slice(0, 20);
-        const stage2Questions = storyQuestionBank.slice(0, 40);
+        const stage2QuestionData = [
+            { question: 'Ömer Halisdemir hikâyede hangi kritik görevi üstlenmiştir?', options: ["Darbeci Semih Terzi'yi etkisiz hale getirmesi", 'Komutanlıktan ayrılması', 'Meydanı terk etmesi', 'Görev değişimi istemesi'], correct: 0 },
+            { question: "Fethi Sekin'in müdahalesi neyi önlemiştir?", options: ['Bir konserin iptalini', 'Daha büyük bir felaketi', 'Bir okul gezisini', 'Bir trafik sıkışıklığını'], correct: 1 },
+            { question: "Eren Bülbül'ün hikâyesi en çok hangi mesajı verir?", options: ['Başarı parayla ölçülür', 'Cesaret sadece yetişkinlere aittir', 'Cesaret yaşla değil kalple ölçülür', 'Görev sadece büyükler içindir'], correct: 2 },
+            { question: 'Şenay Aybüke Yalçın öğrencilerine hangi duyguyu taşımıştır?', options: ['Korku ve baskı', 'Rekabet ve hız', 'Sessizlik ve uzaklık', 'Umut ve sevgi'], correct: 3 },
+            { question: "Necmettin Yılmaz'ın hikâyesinde hangi yön özellikle öne çıkar?", options: ['Öğretmenlik göreviyle umut taşıması', 'Spor başarısı', 'Siyasi bir lider oluşu', 'Müzik yarışması kazanması'], correct: 0 },
+            { question: "İlhan Varank'ın fedakârlığı hangi iki değeri yan yana gösterir?", options: ['Güç ve para', 'Bilgi ve vicdan', 'Hız ve rekabet', 'Şöhret ve unvan'], correct: 1 },
+            { question: 'Mustafa Cambaz için hangi ifade doğrudur?', options: ['Doktorluk mesleğiyle tanınır', 'Polis olarak görev yapmıştır', 'Gazeteci ve fotoğrafçıydı', 'Öğretmen olarak çalışmıştır'], correct: 2 },
+            { question: 'Abdullah Tayyip Olçok hangi özelliğiyle hatırlanır?', options: ['Genç yaşta gösterdiği cesaret', 'Sporcu olması', 'Yurt dışında yaşaması', 'Sanatçı olması'], correct: 3 },
+            { question: 'Gölbaşı Özel Harekat şehitleri hangi davranışlarıyla öne çıkmıştır?', options: ['Son ana kadar görev yerlerini terk etmemeleriyle', 'Görevden kaçmalarıyla', 'Şehir değiştirmeleriyle', 'Tatilde olmalarıyla'], correct: 0 },
+            { question: 'TBMM önü direniş şehitleri neyi korumak için meydanda durmuştur?', options: ['Bir spor salonunu', 'Milli iradeyi', 'Bir konser alanını', 'Bir ulaşım hattını'], correct: 1 },
+            { question: "Boğaziçi Köprüsü'nde toplanan vatandaşlar neyi göstermiştir?", options: ['Korkunun galip geldiğini', 'Suskunluğu', 'Birliğin ve direnişin gücünü', 'Ticari çıkarları'], correct: 2 },
+            { question: 'Kahramankazan halkının direnişinde hangi özellik öne çıkar?', options: ['Meydanı terk etmemek', 'Şehir dışına çıkmak', 'Beklemek', 'Sessiz kalmak'], correct: 3 },
+            { question: "Marmaris'teki koruma şehitlerinin hikâyesinde hangi görev anlatılır?", options: ['Cumhurbaşkanlığı koruma görevi', 'Spor müsabakası', 'Okul nöbeti', 'Kütüphane yönetimi'], correct: 0 },
+            { question: 'Genelkurmay Başkanlığı çevresindeki direniş neyi belirleyici kılmıştır?', options: ['Komuta merkezinin teslim alınamamasını', 'Bir müzenin açılmasını', 'Bir festivalin düzenlenmesini', 'Bir yarışmanın ertelenmesini'], correct: 1 },
+            { question: 'Ankara Emniyet Müdürlüğü şehitleri neyi savunmuştur?', options: ['Başkentteki kritik güvenlik noktasını', 'Bir stadyumu', 'Bir oteli', 'Bir alışveriş merkezini'], correct: 2 },
+            { question: 'Vatan Caddesi polisleri hangi tutumlarıyla anılır?', options: ['Görev yerini terk etmeleriyle', 'Geri çekilmeleriyle', 'Görev noktalarını savunmalarıyla', 'Seyirci kalmalarıyla'], correct: 3 },
+            { question: 'Afrin Harekâtı şehitleri hangi gerçeği hatırlatır?', options: ['Sınır ötesi görevlerin fedakârlık gerektirdiğini', 'Sporun önemini', 'Eğitimin gücünü', 'Reklamın etkisini'], correct: 0 },
+            { question: 'Pençe-Kilit şehitleri hangi mücadeleyi temsil eder?', options: ['Şehir içi turizmi', 'Terörle mücadelede sınır hattı nöbetini', 'Kültürel etkinlikleri', 'Ticari bir projeyi'], correct: 1 },
+            { question: 'Cudi Dağı nöbetçilerinin hikâyesinde hangi duygu baskındır?', options: ['İlgisizlik', 'Sabır ve kararlılık', 'Kibir', 'Umursamazlık'], correct: 2 },
+            { question: 'Gabar bölgesindeki şehitler neyi göstermektedir?', options: ['Dağ başında bile görev terk edilmez', 'Savaşın kolay olduğunu', 'Görevin önemsizliğini', 'Dinlenmenin daha değerli olduğunu'], correct: 3 },
+            { question: 'Hakkari sınır hattı Mehmetçikleri hangi koşullarda görev yapmıştır?', options: ['Kar, tipi ve çatışma altında', 'Sadece ofis ortamında', 'Sadece şehir merkezinde', 'Sadece tatil beldesinde'], correct: 0 },
+            { question: 'Nusaybin operasyonu kahramanlarının ortak özelliği nedir?', options: ['Hızlı koşmaları', 'Şehir içi çatışmada ağır sorumluluk üstlenmeleri', 'Festival düzenlemeleri', 'Seyahat etmeleri'], correct: 1 },
+            { question: 'Sur şehitlerinin hikâyesi hangi gerçeği anlatır?', options: ['Görev yerini terk etmeyen kararlılık', 'Kısa süreli bir macera', 'Rahat bir hizmet dönemi', 'Sadece protokol görevi'], correct: 2 },
+            { question: 'El Bab Harekâtı şehitleri hangi alanla ilişkilidir?', options: ['Sınır ötesi güvenlik görevi', 'Müzik yarışması', 'Okul projeleri', 'Spor turnuvası'], correct: 3 },
+            { question: 'Barış Pınarı hattındaki görevler hangi mesajı verir?', options: ['Barışın büyük bir emek olduğu', 'Barışın kendiliğinden geldiği', 'Görevin kolay olduğu', 'Sınırların önemsiz olduğu'], correct: 0 },
+            { question: 'Fırat Kalkanı şehitleri neyi temsil eder?', options: ['Vatan güvenliğinin sınır çizgisinin çok ötesinde korunduğunu', 'Bir kültür etkinliğini', 'Bir okul başarısını', 'Bir spor madalyasını'], correct: 1 },
+            { question: 'Hudut karakolu nöbetçileri hangi görevi hatırlatır?', options: ['Sınırın sessizliğini korumak', 'Trafiği düzenlemek', 'Sahne kurmak', 'Etkinlik planlamak'], correct: 2 },
+            { question: 'Polis Özel Harekat şehitleri hangi yönleriyle öne çıkar?', options: ['En ön hatta durmalarıyla', 'Arka planda kalmalarıyla', 'Görevden uzak durmalarıyla', 'Seyahat etmeleriyle'], correct: 3 },
+            { question: 'Jandarma uzman çavuşların hikâyesinde hangi ortam anlatılır?', options: ['Kırsal ve dağlık bölgelerde görev', 'Alışveriş merkezleri', 'Sahne arkası', 'Kütüphane salonları'], correct: 0 },
+            { question: 'Öğretmen şehitleri hangi değeri sınıfa taşır?', options: ['Rekabeti', 'Sevgiyi ve umudu', 'Ticari başarıyı', 'Gösterişi'], correct: 1 },
+            { question: 'Sağlık görevlisi şehitlerinin ortak özelliği nedir?', options: ['İnsan hayatını korumaya çalışmaları', 'Seyahat etmeleri', 'Spor yarışmaları', 'Sanatsal gösteriler'], correct: 2 },
+            { question: 'Adliye önü polislerinin hikâyesinde hangi görev öne çıkar?', options: ['Adalet kapısını korumak', 'Spor alanı kurmak', 'Tatil köyü yönetmek', 'Konser düzenlemek'], correct: 3 },
+            { question: 'Sivil direnişçilerin ellerinde ne vardı?', options: ['Sadece irade ve bayrak', 'Silah ve üniforma', 'Para ve unvan', 'Mikrofon ve afiş'], correct: 0 },
+            { question: 'Çanakkale şehitlerinin savunduğu temel şey nedir?', options: ['Bağımsızlık fikri', 'Ticaret yolları', 'Eğlence kültürü', 'Seyahat özgürlüğü'], correct: 1 },
+            { question: 'Sarıkamış kahramanları en çok hangi mücadeleyi simgeler?', options: ['Soğuk ve imkânsızlıklar karşısında direnmek', 'Spor müsabakası kazanmak', 'Şehir planlamak', 'Eğitim reformu yapmak'], correct: 2 },
+            { question: 'Sakarya Meydan Muharebesi şehitleri neyi temsil eder?', options: ['Bir milletin geri dönmemek üzere ayağa kalkışını', 'Bir tatil dönemini', 'Bir fuar organizasyonunu', 'Bir kültür gezisini'], correct: 3 },
+            { question: 'Büyük Taarruz şehitleri hangi sürecin parçasıdır?', options: ['Kurtuluşun son büyük yürüyüşü', 'Bir okul projesi', 'Bir spor ligi', 'Bir konser turnesi'], correct: 0 },
+            { question: 'Kurtuluş Savaşı adsız kahramanlarının ortak yönü nedir?', options: ['Adlarının kayda geçmemesi ama izlerinin kalması', 'Sadece ünlü olmaları', 'Sadece zengin olmaları', 'Sadece şehir değiştirmeleri'], correct: 1 },
+            { question: 'Vatan nöbeti tutan gençlerin anlattığı temel mesaj nedir?', options: ['Vatanı sahip çıkanların ayakta tuttuğu', 'Gücün para olduğu', 'Tatilin önemli olduğu', 'Seyahatin öncelikli olduğu'], correct: 2 }
+        ];
+        const stage2Questions = stage2QuestionData.map(item => createExamQuestion(item.question, item.options, item.correct));
 
         const COMPETITION_REPORT_EMAIL = '2013musab09@gmail.com';
+        const COMPETITION_STAGE1_END = new Date('2026-07-05T23:59:59');
         const COMPETITION_STAGE2_END = new Date('2026-09-13T23:59:59');
         const COMPETITION_SUBMISSION_END = new Date('2026-09-20T23:59:59');
 
         function getTotalPoints() { return (learnedMartyrs.length * 10) + (competitionData.stage1_score || 0) + (competitionData.stage2_score || 0); }
+        function isCompetitionJoinOpen() { const now = new Date(); return now <= COMPETITION_STAGE1_END; }
         function isSubmissionPeriod() { const now = new Date(); return now >= COMPETITION_STAGE2_END && now <= COMPETITION_SUBMISSION_END; }
         function isCompetitionFinished() { const now = new Date(); return now > COMPETITION_SUBMISSION_END; }
         function buildSubmissionMailBody() {
@@ -3252,6 +3325,7 @@
                 `Toplam Puan: ${totalPoints}`,
                 '',
                 'Not: Bu belge otomatik olarak oluşturulmuştur ve düzenlenmesi önerilmez.',
+                'Uyarı: Puan üzerinde değişiklik yapanlar elenir; ödül almadan önce puanınız ayrıca kontrol edilir.',
                 'Kazanan, gönderilen puanlar içinden en yüksek toplam puana göre belirlenecektir.'
             ].join('\n');
         }
@@ -3350,13 +3424,13 @@
         }
         function updateExamButtons() {
             const now = new Date();
-            const d1 = new Date('2026-06-28T00:00:00'), d1e = new Date('2026-06-28T23:59:59');
+            const d1 = new Date('2026-07-05T00:00:00'), d1e = new Date('2026-07-05T23:59:59');
             const d2 = new Date('2026-09-13T00:00:00'), d2e = new Date('2026-09-13T23:59:59');
             const appr = currentUser?.competition_approved;
             const b1 = document.getElementById('btn-stage1'),
                 b2 = document.getElementById('btn-stage2');
             b1.disabled = !(appr && now >= d1 && now <= d1e && !competitionData.stage1_completed);
-            b1.innerText = competitionData.stage1_completed ? '✅ Tamamlandı' : (now < d1 ? '🔒 28 Haz 2026' : (now > d1e ? '⏰ Süre Doldu' : '🚀 Başla'));
+            b1.innerText = competitionData.stage1_completed ? '✅ Tamamlandı' : (now < d1 ? '🔒 5 Tem 2026' : (now > d1e ? '⏰ Süre Doldu' : '🚀 Başla'));
             b2.disabled = !(appr && now >= d2 && now <= d2e && !competitionData.stage2_completed);
             b2.innerText = competitionData.stage2_completed ? '✅ Tamamlandı' : (now < d2 ? '🔒 13 Eyl 2026' : (now > d2e ? '⏰ Süre Doldu' : '🚀 Başla'));
             if (!appr) { b1.innerText = '⚠️ Onay Gerekli';
@@ -3368,15 +3442,14 @@
             document.querySelectorAll('.comp-nav-item').forEach(n => n.classList.remove('active'));
             el.classList.add('active'); if (id === 'comp-tab-submit') renderSubmissionPreview(); }
 
-        function startExam(stage) {
+        function openCompetitionQuiz(stage) {
             if (!currentUser?.competition_approved) return alert('Önce şartnameyi onaylayın!');
-            const questions = stage === 1 ? stage1Questions : stage2Questions;
-            currentExam = { stage, questions: questions.map(q => ({ ...q, selected: -1 })), timeLeft: stage === 1 ? 30 * 60 : 60 * 60 };
-            document.getElementById('exam-screen').style.display = 'block';
-            document.getElementById('exam-title').innerText = stage === 1 ? '1. Aşama - Şehitlik Kavramı' : '2. Aşama - Hikaye Soruları';
-            document.getElementById('exam-questions-container').innerHTML = currentExam.questions.map((q, i) => `<div class="comp-glass-card"><p><strong>Soru ${i+1}:</strong> ${q.question}</p>${q.options.map((o,oi)=>`<button class="comp-option" onclick="selectAnswer(${i},${oi},this)">${String.fromCharCode(65+oi)}) ${o}</button>`).join('')}</div>`).join('');
-            examTimerInterval = setInterval(() => { currentExam.timeLeft--;
-                document.getElementById('exam-timer').innerText = `${Math.floor(currentExam.timeLeft/60)}:${(currentExam.timeLeft%60).toString().padStart(2,'0')}`; if (currentExam.timeLeft <= 0) submitExam(); }, 1000);
+            window.open(`quiz.html?stage=${stage}`, '_blank', 'noopener');
+        }
+        function startExam(stage) { openCompetitionQuiz(stage); }
+        function adminTestExam(stage) {
+            if (!currentUser) return alert('Lütfen giriş yapın!');
+            window.open(`quiz.html?stage=${stage}&test=1`, '_blank', 'noopener');
         }
         function selectAnswer(qi, oi) { currentExam.questions[qi].selected = oi; }
         function submitExam() {
@@ -3436,6 +3509,7 @@
         function approveCompetitionLater() {
             if (!currentUser) return alert('Lütfen giriş yapın!');
             if (!currentUser.school_number) return alert('Önce okul numaranızı kaydetmeniz gerekiyor.');
+            if (!isCompetitionJoinOpen()) return alert('Yarışmaya katılım 1. aşama tarihine kadar açıktır.');
             currentUser.competition_approved = true;
             saveUserToStorage();
             syncUserToSupabase(currentUser);
