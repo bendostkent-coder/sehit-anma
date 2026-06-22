@@ -3457,7 +3457,10 @@ ${closing}`;
 
         function openCompetitionQuiz(stage) {
             if (!currentUser?.competition_approved) return alert('Önce şartnameyi onaylayın!');
-            window.open(`./quiz.html?stage=${stage}#competition`, '_blank', 'noopener');
+            goToCompetition();
+            const examTab = document.querySelectorAll('.comp-nav-item')[2];
+            if (examTab) switchCompTab('comp-tab-exam', examTab);
+            startExam(stage);
         }
         function startExam(stage, bypassChecks = false) {
             if (!currentUser && !bypassChecks) return alert('Önce giriş yapın!');
@@ -3480,7 +3483,10 @@ ${closing}`;
         }
         function adminTestExam(stage) {
             if (!currentUser) return alert('Lütfen giriş yapın!');
-            window.open(`./quiz.html?stage=${stage}&test=1#competition`, '_blank', 'noopener');
+            goToCompetition();
+            const examTab = document.querySelectorAll('.comp-nav-item')[2];
+            if (examTab) switchCompTab('comp-tab-exam', examTab);
+            startExam(stage, true);
         }
         function selectAnswer(qi, oi) { currentExam.questions[qi].selected = oi; }
         function submitExam() {
@@ -3510,8 +3516,10 @@ ${closing}`;
             const stageParam = Number(params.get('quizStage') || 0);
             if (!stageParam) return false;
             const testMode = params.get('test') === '1';
-            const targetUrl = `./quiz.html?stage=${stageParam}${testMode ? '&test=1' : ''}`;
-            window.location.replace(targetUrl);
+            goToCompetition();
+            const examTab = document.querySelectorAll('.comp-nav-item')[2];
+            if (examTab) switchCompTab('comp-tab-exam', examTab);
+            startExam(stageParam, testMode);
             return true;
         }
 
