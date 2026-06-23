@@ -1508,7 +1508,18 @@
             background: #fff;
         }
         .competition-note { font-size: 0.75rem; color: #7f8c8d; margin-top: 8px; }
-    </style>
+    @keyframes ripple-anim {
+    to { transform: scale(4); opacity: 0; }
+}
+.comp-option {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.18s ease;
+}
+.comp-option:active {
+    transform: scale(0.97) !important;
+}
+</style>
 </head>
 <body>
 
@@ -1982,8 +1993,8 @@
         <div class="comp-tab" id="comp-tab-submit">
             <div class="comp-glass-card">
                 <h3>📩 Puan Gönderme Dönemi</h3>
-                <p id="submission-period-status" style="margin-bottom:12px;color:#cfcfcf;">Yarışma bitince puan gönderme dönemi açılacak.</p>
-                <p id="submission-warning-note" style="margin-bottom:12px;color:#ffb3b3;font-weight:600;">Uyarı: Puan üzerinde değişiklik yapanlar elenir; ödül almadan önce puanınız kontrol edilecektir.</p>
+                <p id="submission-period-status" style="margin-bottom:12px;color:#cfcfcf;">Not:eğer gmail açılmazsa tarayıcınızdan masaüstü modunu kullanmalısınız.Fakat probleminiz çözülmezse aşadaki yazıyı kopyalayım 2013musab09@gmail.com gmail atınız</p>
+                <p id="submission-warning-note" style="margin-bottom:12px;color:#ffb3b3;font-weight:600;">Uyarı: Puan üzerinde değişiklik yapanlar elenir; ödül almadan önce puanınız kontrol edilecektir.Eğer gmail açılmazsa tarayıcınızdan masaüstü modunu kullanmalısınız.Fakat probleminiz çözülmezse aşadaki yazıyı kopyalayım 2013musab09@gmail.com gmail atınız</p>
                 <div class="comp-glass-card" style="background:rgba(255,255,255,0.08);margin-top:15px;max-width:640px;margin-left:auto;margin-right:auto;text-align:center;">
                     <p><strong>Gönderim Adresi:</strong> <span id="submission-email-address">2013musab09@gmail.com</span></p>
                     <p><strong>Ad:</strong> <span id="submission-user-name">-</span></p>
@@ -3488,7 +3499,32 @@ ${closing}`;
             if (examTab) switchCompTab('comp-tab-exam', examTab);
             startExam(stage, true);
         }
-        function selectAnswer(qi, oi) { currentExam.questions[qi].selected = oi; }
+        function selectAnswer(qi, oi, btnEl) {
+            if (!currentExam) return;
+            const questionDiv = btnEl.closest('.comp-glass-card');
+            questionDiv.querySelectorAll('.comp-option').forEach(btn => {
+                btn.classList.remove('selected');
+                btn.style.transform = '';
+                btn.style.boxShadow = '';
+                btn.style.borderColor = '';
+                btn.style.background = '';
+                btn.style.color = '';
+                btn.style.transition = '';
+            });
+            currentExam.questions[qi].selected = oi;
+            btnEl.classList.add('selected');
+            btnEl.style.transition = 'all 0.22s cubic-bezier(0.34,1.56,0.64,1)';
+            btnEl.style.transform = 'scale(1.04)';
+            btnEl.style.boxShadow = '0 0 0 3px rgba(212,175,55,0.5), 0 4px 20px rgba(212,175,55,0.25)';
+            btnEl.style.borderColor = '#D4AF37';
+            btnEl.style.background = 'rgba(212,175,55,0.28)';
+            btnEl.style.color = '#FFE47A';
+            setTimeout(() => { btnEl.style.transform = 'scale(1.015)'; }, 220);
+            const ripple = document.createElement('span');
+            ripple.style.cssText = 'position:absolute;border-radius:50%;background:rgba(212,175,55,0.35);transform:scale(0);animation:ripple-anim 0.55s linear;pointer-events:none;width:120px;height:120px;left:50%;top:50%;margin-left:-60px;margin-top:-60px;';
+            btnEl.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 560);
+        }
         function submitExam() {
             clearInterval(examTimerInterval);
             const correct = currentExam.questions.filter(q => q.selected === q.correct).length;
