@@ -1614,7 +1614,7 @@
                 </div>
                 <div class="checkbox-group" style="display:none;">
                     <input type="checkbox" id="reg-approve-competition">
-                    <label for="reg-approve-competition"><strong>🏆 2026 Şehitleri Anma Bilgi Yarışması'na katılmak istiyorum.</strong> Yarışma kurallarını okudum, kabul ediyorum. Katılım 1. aşama tarihine kadar açıktır. <a onclick="alert('Yarışma Şartnamesi:\n\n1. Yarışma 5 Temmuz 2026 ve 13 Eylül 2026 tarihlerinde iki aşamalıdır.\n2. 1. aşama 20 soru ve 30 dakikadır; yalnızca şehitlik kavramı sorulur.\n3. 2. aşama 40 soru ve 1 saattir; şehit anlatıları roman tarzında ve uzun hikayelerden hazırlanır.\n4. Puanlama sistemi doğru cevaplara göre işler ve sistem sonuçları otomatik kontrol eder.\n5. Puan üzerinde değişiklik yapanlar elenir, ödül almadan önce puan kontrolü yapılır.\n6. Şartnameyi kabul etmeyenler yalnızca ana siteyi kullanabilir.')">(Şartnameyi Oku)</a></label>
+                    <label for="reg-approve-competition"><strong>🏆 2026 Şehitleri Anma Bilgi Yarışması'na katılmak istiyorum.</strong> Yarışma kurallarını okudum, kabul ediyorum. Katılım 1. aşama tarihine kadar açıktır. <a onclick="alert('Yarışma Şartnamesi:\n\n1. Yarışma 15 Temmuz 2026 ve 13 Eylül 2026 tarihlerinde iki aşamalıdır.\n2. 1. aşama 20 soru ve 30 dakikadır; yalnızca şehitlik kavramı sorulur.\n3. 2. aşama 40 soru ve 1 saattir; şehit anlatıları roman tarzında ve uzun hikayelerden hazırlanır.\n4. Puanlama sistemi doğru cevaplara göre işler ve sistem sonuçları otomatik kontrol eder.\n5. Puan üzerinde değişiklik yapanlar elenir, ödül almadan önce puan kontrolü yapılır.\n6. Şartnameyi kabul etmeyenler yalnızca ana siteyi kullanabilir.')">(Şartnameyi Oku)</a></label>
                 </div>
                 <button class="btn-primary" onclick="registerUser()">Kayıt Ol</button>
                 <div class="register-link" onclick="showLoginForm()">Zaten hesabınız var mı? Giriş Yapın</div>
@@ -1963,7 +1963,7 @@
         <div class="comp-tab active" id="comp-tab-rules">
             <div class="comp-glass-card"><h3>📜 Kurallar</h3><p>2026 yılına özel bu yarışma, şehitlerimizi daha yakından tanımak, roman tadında anlatılarla hafızayı canlı tutmak ve doğru bilgiyle ilerlemek için hazırlanmıştır. Sorular web sitemizde yer alan şehit bilgileri, uzun hikayeler ve açıklamalardan otomatik olarak üretilir.</p>
                 <ul style="margin-left:20px;margin-top:10px;line-height:2;">
-                    <li><strong>1. Aşama:</strong> 5 Temmuz 2026 - 20 soru, 30 dakika (Doğru: +5 puan)</li>
+                    <li><strong>1. Aşama:</strong> 15 Temmuz 2026 - 20 soru, 30 dakika (Doğru: +5 puan)</li>
                     <li><strong>2. Aşama:</strong> 13 Eylül 2026 - 40 soru, 1 saat (Doğru: +10 puan; sorular anlatılan hikayelerle doğrudan bağlantılıdır)</li>
                     <li>Her öğrenilen şehit: <strong>+10 puan</strong></li>
                     <li>Katılım için yarışma anlaşması ve okul numarası gerekir.</li>
@@ -1983,7 +1983,7 @@
         <div class="comp-tab" id="comp-tab-exam">
             <div class="comp-glass-card" style="text-align:center;"><h3>Sınavlar</h3>
                 <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
-                    <div style="flex:1;min-width:220px;"><h4>1. Aşama</h4><p>5 Temmuz 2026 · 20 Soru · 30 Dakika</p><button class="comp-btn gold" id="btn-stage1" onclick="openCompetitionQuiz(1)" disabled>🔒</button></div>
+                    <div style="flex:1;min-width:220px;"><h4>1. Aşama</h4><p>15 Temmuz 2026 · 20 Soru · 30 Dakika</p><button class="comp-btn gold" id="btn-stage1" onclick="openCompetitionQuiz(1)" disabled>🔒</button></div>
                     <div style="flex:1;min-width:220px;"><h4>2. Aşama</h4><p>13 Eylül 2026 · 40 Soru · 1 Saat</p><button class="comp-btn gold" id="btn-stage2" onclick="openCompetitionQuiz(2)" disabled>🔒</button></div>
                 </div>
             </div>
@@ -2239,95 +2239,935 @@
         }
 
         const martyrsData = [
-            { week: 1, name: "Astsubay Ömer Halisdemir", imgUrl: "https://images.unsplash.com/photo-1595188689587-17ebbc69fbb7?auto=format&fit=crop&q=80&w=400", desc: "15 Temmuz darbe girişiminde Özel Kuvvetler Komutanlığı'nı ele geçirmeye çalışan darbeci general Semih Terzi'yi vurarak şehadete yürüyen kahraman.", location: "Ankara (Özel Kuvvetler Komutanlığı)", hometown: "Niğde (Bor)", story: "Ömer Halisdemir, 15 Temmuz gecesi karanlık bir planın ortasında görev başında duran bir askerdi. Komutanlık binasına yönelen tehlikeyi gördüğünde geri çekilmeyi değil, emri ve vatanı korumayı seçti. Attığı o tarihî adım, sadece bir hedefi durdurmadı; bir milletin geleceğini savunan büyük bir iradeye dönüştü.\n\nOnun hikâyesi, sessiz bir nöbetçinin en ağır anda nasıl tarihe geçtiğini anlatır. Niğde'nin Bor ilçesinden çıkan bu yiğit isim, emanetin ne demek olduğunu tek bir gecede bütün ülkeye gösterdi. Bu yüzden Ömer Halisdemir, bir kişinin adı olmaktan çok daha fazlasıdır; cesaretin ve sadakatin simgesidir." },
-            { week: 2, name: "Polis Memuru Fethi Sekin", imgUrl: "https://images.unsplash.com/photo-1572889602517-5e60ce9b7e7a?auto=format&fit=crop&q=80&w=400", desc: "İzmir Adliyesi'ne yönelik düzenlenen terör saldırısını canı pahasına kahramanca önleyen polis memuru.", location: "İzmir (İzmir Adliyesi)", hometown: "Elazığ (Baskil)", story: "Fethi Sekin, İzmir sabahına görev bilinciyle başlayan bir polis memuru olarak çıktı. Adliyeye yönelen tehdidi fark ettiğinde, birkaç saniyelik tereddüt bile yüzlerce masum insanın kaderini değiştirebilirdi; o tereddüt etmedi. Kurşunların önüne geçerken aslında korkuya değil, görevin ağırlığına karşı durmuş oldu.\n\nOnun fedakârlığı, adalet kapısının önünde duran bir emniyet neferinin ne kadar büyük bir toplumsal sorumluluk taşıdığını gösterdi. Elazığ'ın Baskil ilçesinden çıkan bu kahraman, yalnızca bir saldırıyı engellemedi; insanların güvenle yaşama hakkını da korudu. Fethi Sekin adı, soğukkanlılığın ve vatan sevgisinin yan yana yazıldığı bir destandır." },
-            { week: 3, name: "Eren Bülbül", imgUrl: "https://images.unsplash.com/photo-1595188689587-17ebbc69fbb7?auto=format&fit=crop&q=80&w=400", desc: "Trabzon'un Maçka ilçesinde teröristlerin yerini güvenlik güçlerine gösterirken 15 yaşında şehit düşen vatan evladı.", location: "Trabzon (Maçka İlçesi)", hometown: "Trabzon (Maçka)", story: "Eren Bülbül, daha çocuk denecek yaşta, bulunduğu toprağın ne kadar kıymetli olduğunu içten içe bilen bir yürek taşıyordu. Maçka'nın dağlarında güvenlik güçlerine yol gösterirken aslında bir çocuk değil, bütün bir milletin vicdanı konuşuyordu. O an, cesaretin yaşla değil kalple ölçüldüğünü herkese öğretti.\n\nEren'in hikâyesi kısa olduğu kadar sarsıcıdır; çünkü geride büyük bir sessizlik bırakır. Trabzon'un Maçka ilçesinde toprağa düşen bu genç isim, vatan sevgisinin okul çağına sığabilecek kadar temiz, ama herkesin hayatını değiştirecek kadar güçlü olabileceğini gösterdi. Onu anlatmak, sadece bir çocuğu değil, iyiliğin ve sorumluluğun saf hâlini anlatmaktır." },
-            { week: 4, name: "Öğretmen Şenay Aybüke Yalçın", imgUrl: "https://images.unsplash.com/photo-1572889602517-5e60ce9b7e7a?auto=format&fit=crop&q=80&w=400", desc: "Batman'ın Kozluk ilçesinde terör örgütü PKK'nın saldırısında gencecik yaşında şehit olan müzik öğretmeni.", location: "Batman (Kozluk İlçesi)", hometown: "Çorum (Osmancık)", story: "Şenay Aybüke Yalçın, öğrencilerine yalnızca müzik öğretmiyordu; hayata umutla bakmayı da öğretiyordu. Kozluk'a uzanan o yol, onun için bir görev yolu, bir sevgi yolu, bir emek yoluydu. Saldırının hedefi olduğunda geride bir öğretmen değil, yarım kalmış bir melodi gibi yankılanan büyük bir iyilik bıraktı.\n\nAybüke öğretmenin adı bugün sadece bir okulun, bir sınıfın ya da bir enstrümanın adı değildir. Çorum'un Osmancık ilçesinden çıkıp Batman'da öğrencilerinin kalbine dokunan bu genç öğretmen, merhametin ve idealizmin yüzü oldu. Onu anlatmak, bir sınıfın içinde büyüyen vatan sevgisini anlatmaktır." }
-        ];
+    {
+        week: 1,
+        name: "Astsubay Ömer Halisdemir",
+        imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/%C3%96mer_Halisdemir.jpg/220px-%C3%96mer_Halisdemir.jpg",
+        desc: "15 Temmuz 2016 darbe girişiminde darbeci general Semih Terzi'yi etkisiz hale getirerek tarihe geçen kahraman.",
+        location: "Ankara – Özel Kuvvetler Komutanlığı",
+        hometown: "Niğde / Bor",
+        date: "15 Temmuz 2016",
+        story: `Ömer Halisdemir, 1974 yılında Niğde'nin Bor ilçesinde dünyaya geldi. Çocukluğunu Anadolu'nun kırsal kesiminde, mütevazı bir ailede geçirdi; vatana ve bayrağa duyduğu derin saygı ise onu küçük yaşından itibaren askeri kariyere yöneltti.
 
-        function buildDetailedMartyrStory(entry, sourceStory = entry.story || entry.desc || '') {
-            const theme = getStoryTheme(entry);
-            const opening = `${entry.name}, ${entry.hometown} ile ${entry.location} arasında uzanan hayat çizgisinde sadece bir isim değil, görev ve vicdan duygusunu erken yaşta taşımış bir kahraman olarak yer alır. ${entry.desc} Bu yüzden onun hikâyesi, doğduğu yerden yürüdüğü yola kadar insanın değerleriyle büyüyen bir ömrün romanı gibi okunur.`;
-            const middle = `${sourceStory}
+15 Temmuz 2016 gecesi Türkiye'nin her yanında olduğu gibi Ankara'daki Özel Kuvvetler Komutanlığı da büyük bir kaosa sahne oldu. Darbeci subaylar, komutanlığı ele geçirmeye çalışıyordu. Bu kritik anda darbeci Tuğgeneral Semih Terzi, komuta binasına girmeye çalışırken Ömer Halisdemir karşısına çıktı.
 
-Bu anlatı, ${entry.week}. haftada anılan yolculuğun neden bu kadar derin hissedildiğini de gösterir. ${theme} duygusu, onun hayatında bir başlık gibi değil, adım adım örülen bir karakter gibi görünür. ${entry.name} için söylenen her söz, aslında fedakârlığın ve sadakatin nasıl sessizce büyüdüğünü anlatır.`;
-            const closing = `${entry.name}, milletin vicdanında yer eden örnek bir kahramandır. Onun hatırası, cesaretin ve sadakatin en temiz hâli olarak daima saygıyla anılacaktır.`;
-            return `🇹🇷 ${entry.name} 🇹🇷
+Halisdemir, komutanından darbecileri içeri almama talimatı aldığını söyledi. Semih Terzi silahını doğrultu. Ömer Halisdemir ise elindeki silahla önce generalin görevinden aldığı korumasını etkisiz hale getirdi, ardından darbeci generali vurdu. Birkaç saniye sonra o da darbecilerin açtığı ateşte şehit düştü.
 
-${opening}
+Ömer Halisdemir'in o gece attığı kurşun, Türkiye tarihinin akışını değiştirdi. Darbeci komuta zincirinin en kritik halkası orada kırıldı; Özel Kuvvetler darbecilerin eline geçmedi.
 
-${middle}
+Geride eşi ve iki çocuğu kaldı. Türkiye, onu kısa sürede tanıdı; adı caddelere, okullara, köprülere verildi. Ama o, her şeyden önce bir askerdi: görevi neyse onu yapan, geri adım atmayan bir Mehmetçik. Şehadet gecesi kendisinden yaşça büyük, rütbece üstün bir generale karşı durdu. Ve durdu çünkü emri buydu, vatanı buyuruyordu.`
+    },
+    {
+        week: 2,
+        name: "Başkomiser Fethi Sekin",
+        imgUrl: "https://upload.wikimedia.org/wikipedia/tr/thumb/8/8e/Fethi_Sekin.jpg/220px-Fethi_Sekin.jpg",
+        desc: "5 Ocak 2017'de İzmir Adliyesi önündeki terör saldırısını canı pahasına önleyen kahraman polis memuru.",
+        location: "İzmir – Adliye önü",
+        hometown: "Elazığ / Baskil",
+        date: "5 Ocak 2017",
+        story: `Fethi Sekin, 1982'de Elazığ'ın Baskil ilçesinde doğdu. Çocukluğunu geçirdiği o küçük Anadolu ilçesinden büyük şehirlere uzanan yolculuğu onu polis memuru yaptı; adliye güvenliğinde görev yaparken mesleğine derin bir sorumluluk duygusuyla bağlıydı.
 
-${closing}`;
-        }
+5 Ocak 2017 sabahı İzmir Adliyesi'nde sıradan bir iş günü başlıyordu. Adliye çevresinde görev yapan Fethi Sekin, bir anda patlama sesini duydu; teröristler araçlarıyla içeri girmeye ve bomba atmaya başlamıştı.
 
-        function buildRomanMartyrStory(entry) {
-            return buildDetailedMartyrStory(entry);
-        }
+Fethi Sekin, o anda kaçmadı. İnsanları korumak için teröristlerin üzerine yürüdü. Silahıyla saldırganları durdurdu, diğer polislere ve sivil halka zaman kazandırdı. Ancak bu kısa ama belirleyici çatışmada aldığı yaralar nedeniyle şehit düştü.
 
-        martyrsData.forEach(entry => {
-            entry.story = buildRomanMartyrStory(entry);
-        });
+İzmir Adliyesi'nde o gün onlarca kişi vardı; mahkeme duruşmaları, avukatlar, tanıklar, savcılar, aileler. Fethi Sekin olmasa, saldırı çok daha büyük bir felakete dönüşebilirdi.
 
-        const memorialImageUrl = "https://images.unsplash.com/photo-1572889602517-5e60ce9b7e7a?auto=format&fit=crop&q=80&w=400";
-        function buildMartyrStory(entry) {
-            return buildDetailedMartyrStory(entry, entry.story);
-        }
-        const weeklyMartyrEntries = [
-            { week: 5, name: "Hasan Tahsin", desc: "İzmir'in işgaline karşı ilk kurşunu atarak milli direnişin sembolü oldu.", location: "İzmir (Konak)", hometown: "Selanik", story: "Hasan Tahsin, 15 Mayıs 1919'da İzmir'in işgali sırasında işgal kuvvetlerine karşı ilk kurşunu atan isim olarak hafızalara kazındı. Bu davranış, milletin işgale boyun eğmeyeceğinin güçlü bir işaretiydi. Onun adı, cesaretin ve bağımsızlık iradesinin ilk cümlelerinden biri oldu." },
-            { week: 6, name: "Şehit Kubilay", desc: "Menemen'de Cumhuriyet'e yönelen saldırıya karşı hayatını kaybeden öğretmen subaydır.", location: "İzmir (Menemen)", hometown: "Girit", story: "Mustafa Fehmi Kubilay, Menemen'de Cumhuriyet'e ve çağdaş yaşama yönelen saldırıya karşı görevini yerine getirirken şehit edildi. Olay, genç Cumhuriyet'in değerlerine yapılan saldırının sembolü haline geldi. Kubilay'ın adı, hukukun ve düzenin yanında dimdik duran bir öğretmen subayın adı olarak anılır." },
-            { week: 7, name: "Yüzbaşı Cengiz Topel", desc: "Kıbrıs'ta görev uçuşunda vuruldu, esir düştükten sonra şehit edildi.", location: "Kıbrıs", hometown: "İzmit", story: "Cengiz Topel, 1964 Kıbrıs Harekâtı sırasında görev uçuşunda uçağı vurulunca paraşütle atladı ve esir düştü. Sonrasında gördüğü muamele onu Türkiye'nin hafızasında bir kahramana dönüştürdü. Onun hikâyesi, gökyüzünde başlayan görevin yerde de nasıl onurlu bir duruşa dönüşebileceğini gösterir." },
-            { week: 8, name: "Polis Müdürü Gaffar Okkan", desc: "Diyarbakır'da halkla kurduğu güçlü bağ yüzünden sevilen bir emniyet müdürüydü.", location: "Diyarbakır", hometown: "Kocaeli", story: "Gaffar Okkan, Diyarbakır'da görev yaparken halkla kurduğu samimi ilişki ve suçla mücadeledeki kararlı duruşuyla tanındı. 2001'de uğradığı silahlı saldırı sonucu hayatını kaybetti. Ardında güven duygusu, halkın gönlünde yer eden bir emniyet hafızası ve çok güçlü bir adalet hissi bıraktı." },
-            { week: 9, name: "Emniyet Müdürü Arslan Kulaksız", desc: "Görev başında hedef alınan, halkın güvenliği için çalışan bir polis şefiydi.", location: "Malatya", hometown: "Malatya", story: "Arslan Kulaksız, görev yaptığı bölgede terör saldırısında şehit düşen polis şeflerinden biridir. Onun hikâyesi, güvenliğin sadece bir meslek değil, toplum için üstlenilen ağır bir sorumluluk olduğunu hatırlatır. Ardında görevine sadık, halkına yakın bir mücadele izi kaldı." },
-            { week: 10, name: "Erol Olçok", desc: "15 Temmuz gecesi halkı sokağa çağıran isimlerden biri olarak hafızaya kazındı.", location: "İstanbul", hometown: "Bilecik", story: "Erol Olçok, 15 Temmuz gecesi darbe girişimine karşı direnen isimler arasındaydı. Oğlu Abdullah Tayyip ile birlikte şehit düştü ve Türkiye'nin demokratik iradesine sahip çıkan ailelerden biri olarak anıldı. Onların hikâyesi, meydanlara inen halkın kararlılığını simgeler." },
-            { week: 11, name: "Abdullah Tayyip Olçok", desc: "Henüz genç yaşında demokrasi nöbetinde şehit olan bir yiğitti.", location: "İstanbul", hometown: "Bilecik", story: "Abdullah Tayyip Olçok, 15 Temmuz gecesi babasıyla birlikte halkın yanında yer aldı ve darbe girişimine karşı direnişin sembollerinden biri oldu. Genç yaşına rağmen gösterdiği cesaret, o gece meydanlara çıkan binlerce insanın ruhunu yansıttı. Onun adı, yarınlara bırakılmış bir vatan şuuru gibi anılır." },
-            { week: 12, name: "Mustafa Cambaz", desc: "Gazeteci kimliğiyle tanınan, 15 Temmuz gecesi sivil direnişin içindeki kahramanlardandı.", location: "İstanbul", hometown: "Gümülcine", story: "Mustafa Cambaz, fotoğrafçı ve gazeteci olarak Türkiye'nin pek çok hikâyesini kayıt altına aldı. 15 Temmuz gecesi darbe girişimine karşı halkla birlikte meydanlardaydı ve orada şehit düştü. Objektifinin arkasında duran adam, o gece tarihin tam ortasında yer aldı." },
-            { week: 13, name: "Prof. Dr. İlhan Varank", desc: "15 Temmuz gecesi üniversite dünyasından sokağa inen bir demokrasi şehidiydi.", location: "İstanbul", hometown: "İstanbul", story: "İlhan Varank, 15 Temmuz'da darbe girişimine karşı direnirken şehit oldu. Akademik kimliğinin yanında ülkesinin geleceği için sorumluluk hisseden bir isimdi. Onun fedakârlığı, bilginin ve vicdanın aynı cephede yer alabildiğini gösterdi." },
-            { week: 14, name: "Necmettin Yılmaz", desc: "Görev yaptığı yerde kaçırılıp şehit edilen genç öğretmendir.", location: "Tunceli", hometown: "Gümüşhane", story: "Necmettin Yılmaz, öğretmenlik görevini yaparken terör örgütü tarafından kaçırıldı ve şehit edildi. Genç yaşına rağmen öğrencilerine umut taşıyan bir eğitim neferiydi. Onun adı, sınıf tahtasının ötesine geçen bir öğretmenlik onurunu temsil eder." },
-            { week: 15, name: "Musa Özalkan", desc: "Afrin Harekâtı'nda şehit olan sözleşmeli bir özel harekât personelidir.", location: "Suriye (Afrin)", hometown: "Sivas", story: "Musa Özalkan, Afrin Harekâtı sırasında görevini icra ederken şehit düştü. Sınır ötesinde yürütülen harekâtların ne kadar ağır bir fedakârlık gerektirdiğini onun hikâyesi açıkça anlatır. O, görevini vatanın güvenliği olarak gören Mehmetçiklerden biridir." },
-            { week: 16, name: "Piyade Sözleşmeli Er Yener Kırıkçı", desc: "Afrin'de görev sırasında şehit düşen kahraman Mehmetçiklerdendir.", location: "Suriye (Afrin)", hometown: "Mersin", story: "Yener Kırıkçı, Afrin Harekâtı'nda görev başında şehit oldu. Sınır ötesi operasyonlarda görev yapan askerlerin sadece bir cephede değil, aynı zamanda büyük bir sorumluluk duygusu içinde yaşadığını gösterdi. Onun adı, vatan nöbetinin en ağır satırlarından biridir." },
-            { week: 17, name: "Astsubay Kıdemli Başçavuş Ömer Halisdemir", desc: "15 Temmuz gecesi darbe girişiminin seyrini değiştiren isim oldu.", location: "Ankara (Özel Kuvvetler Komutanlığı)", hometown: "Niğde (Bor)", story: "Ömer Halisdemir, 15 Temmuz 2016 gecesi Özel Kuvvetler Komutanlığı'nda darbeci Tuğgeneral Semih Terzi'yi etkisiz hale getirerek darbenin en kritik anlarından birinde tarihi bir görev üstlendi. Kendi hayatını feda ederek ülkenin kaderinde büyük bir kırılmayı önleyen isim oldu. Onun cesareti, vatanın emanet olduğunu bir kez daha hatırlattı." },
-            { week: 18, name: "Polis Memuru Fethi Sekin", desc: "İzmir Adliyesi'ne yönelen saldırıyı tek başına göğüsleyen kahraman polis memurudur.", location: "İzmir (İzmir Adliyesi)", hometown: "Elazığ (Baskil)", story: "Fethi Sekin, 5 Ocak 2017'de İzmir Adliyesi'ne saldırı planlayan teröristleri fark edip canı pahasına müdahale etti. Saldırının daha büyük bir felakete dönüşmesini engelleyerek yüzlerce insanın hayatını kurtardı. Onun hikâyesi, görev aşkının ve soğukkanlılığın örneği olarak anlatılır." },
-            { week: 19, name: "Eren Bülbül", desc: "Maçka'da teröristlerin yerini güvenlik güçlerine gösterirken şehit edilen 15 yaşındaki vatan evladıdır.", location: "Trabzon (Maçka)", hometown: "Trabzon (Maçka)", story: "Eren Bülbül, henüz 15 yaşındayken Trabzon'un Maçka ilçesinde güvenlik güçlerine yol gösterirken terör saldırısında şehit düştü. Onun kısa ömrü, cesaretin yaşla ölçülmediğini bütün Türkiye'ye anlattı. Bir çocuğun gözünden vatan sevgisi, Eren'in adıyla hafızalara kazındı." },
-            { week: 20, name: "Şenay Aybüke Yalçın", desc: "Batman Kozluk'ta görev yaparken saldırıda şehit edilen müzik öğretmenidir.", location: "Batman (Kozluk)", hometown: "Çorum (Osmancık)", story: "Şenay Aybüke Yalçın, genç bir müzik öğretmeni olarak öğrencilerine umut ve sevgi taşırken terör saldırısında şehit edildi. Onun adı, bir sınıfın içinden ülkenin kalbine ulaşan öğretmenliğin simgesi oldu. Aybüke'nin sesi, notalardan çok daha uzun bir yankı bıraktı." },
-            { week: 21, name: "Gölbaşı Özel Harekat Şehitleri", desc: "15 Temmuz gecesi Özel Harekat Daire Başkanlığı'nda görev başında şehit düşen kahramanlardır.", location: "Ankara (Gölbaşı)", hometown: "Türkiye'nin farklı şehirleri", story: "15 Temmuz gecesi Gölbaşı'ndaki Özel Harekat Daire Başkanlığı ağır saldırıya uğradı. Orada görev yapan polisler, son ana kadar görev yerlerini terk etmeden direndi ve şehit düştü. Bu saldırı, Türkiye'nin hafızasında devletin kalbine yönelmiş en ağır darbelerden biri olarak kaldı." },
-            { week: 22, name: "TBMM Önü Direniş Şehitleri", desc: "Meclis'i bombalara karşı savunmak için meydanlarda duran sivil ve görevli kahramanlardır.", location: "Ankara (TBMM çevresi)", hometown: "Türkiye", story: "15 Temmuz gecesi TBMM çevresinde toplanan insanlar, milli iradeyi korumak için tankların ve bombaların karşısında durdu. Orada hayatını kaybedenler, meclisin sadece bir bina değil, milletin sesi olduğunu dünyaya gösterdi. Onların direnişi, demokrasi tarihinin en güçlü cümlelerinden biri oldu." },
-            { week: 23, name: "Boğaziçi Köprüsü Şehitleri", desc: "Köprü üstünde darbeci askerlerin karşısında duran sivil kahramanlardır.", location: "İstanbul (15 Temmuz Şehitler Köprüsü)", hometown: "Türkiye", story: "Boğaziçi Köprüsü'nde toplanan vatandaşlar, darbeci askerlere karşı ellerinde yalnızca inanç ve kararlılık varken direndi. O gece köprü, bir ulaşım hattı olmaktan çıkıp halkın iradesinin sembolüne dönüştü. Şehitler, bir milletin korku karşısında nasıl birleşebileceğini gösterdi." },
-            { week: 24, name: "Kahramankazan Halkı", desc: "Hava saldırılarına rağmen meydanı boş bırakmayan sivil direnişin simgesidir.", location: "Ankara (Kahramankazan)", hometown: "Türkiye", story: "Kahramankazan'da halk, darbe girişimi sırasında meydanları terk etmedi ve hava saldırılarına rağmen geri adım atmadı. Oradaki direniş, 15 Temmuz'un en sıcak ve en sert yüzlerinden birini oluşturdu. Bu şehir, halkın bir araya geldiğinde nasıl bir set kurabildiğinin adı oldu." },
-            { week: 25, name: "Marmaris Cumhurbaşkanlığı Koruma Şehitleri", desc: "Cumhurbaşkanlığı konutuna yönelik baskında görev başında şehit edilen kahramanlardır.", location: "Muğla (Marmaris)", hometown: "Türkiye", story: "Marmaris'te Cumhurbaşkanına yönelik suikast girişimi sırasında görev yapan koruma ve güvenlik personeli saldırıya direndi. O gece yaşananlar, devletin en kritik noktalarında görev yapan insanların ne kadar ağır risk üstlendiğini gösterdi. Şehitler, görev sadakatinin en somut örneklerindendir." },
-            { week: 26, name: "Genelkurmay Başkanlığı Önü Direnişi", desc: "Ankara'da komuta merkezini savunurken şehit olan güvenlik görevlilerini anlatır.", location: "Ankara (Genelkurmay Başkanlığı)", hometown: "Türkiye", story: "15 Temmuz gecesi Genelkurmay Başkanlığı çevresinde görev yapan güvenlik personeli ve vatandaşlar darbeci saldırıya karşı direndi. Bu direniş, komuta merkezinin teslim alınamamasında belirleyici oldu. Onların cesareti, karanlık bir gecenin içindeki kararlı aydınlıktı." },
-            { week: 27, name: "Ankara Emniyet Müdürlüğü Şehitleri", desc: "Başkentte emniyet binasını korurken hayatını kaybeden polis kahramanlarıdır.", location: "Ankara", hometown: "Türkiye", story: "Ankara Emniyet Müdürlüğü çevresinde görev yapan polisler, darbe gecesinde hedef alınan kritik noktalardan birini savundu. Görev yerlerinde kalmaları ve ateş altında direnmeleri, başkentin teslim alınmasını zorlaştırdı. Onların adı, karakol nöbetinin nasıl bir vatan meselesi olabileceğini anlatır." },
-            { week: 28, name: "Vatan Caddesi Polisleri", desc: "İstanbul'da emniyet birimlerini korurken şehit düşen polislerdir.", location: "İstanbul (Vatan Caddesi)", hometown: "Türkiye", story: "Vatan Caddesi, 15 Temmuz gecesi darbeci baskının en sert hissedildiği adreslerden biri oldu. Orada görev yapan polisler, geri çekilmek yerine görev noktalarını savundu. Bu direniş, emniyet teşkilatının o gece yazdığı kahramanlık sayfalarından biridir." },
-            { week: 29, name: "Afrin Harekâtı Şehitleri", desc: "Sınır ötesinde güvenlik için yürütülen operasyonda şehit olan Mehmetçiklerdir.", location: "Suriye (Afrin)", hometown: "Türkiye", story: "Afrin Harekâtı sırasında görev yapan askerler, sınır güvenliğini korumak için zorlu şartlarda ilerledi. Şehit olan Mehmetçikler, operasyonların sadece askeri değil, aynı zamanda büyük bir insanlık ve sorumluluk meselesi olduğunu hatırlattı. Onlar, sınırın ötesinde bile vatan nöbeti tutan kahramanlardı." },
-            { week: 30, name: "Pençe-Kilit Şehitleri", desc: "Terörle mücadelede sınır hattında görev yaparken şehit olan askerlere adanmıştır.", location: "Kuzey Irak", hometown: "Türkiye", story: "Pençe-Kilit operasyon bölgesinde görev yapan askerler, terörün kökünü kazımak için zorlu arazi şartlarında nöbet tuttu. Şehit olanlar, sınır güvenliğinin bedelini kendi canlarıyla ödeyen kahramanlardır. Bu anlatım, görünmeyen cephede verilen mücadeleyi görünür kılar." },
-            { week: 31, name: "Pençe-Yıldırım Şehitleri", desc: "Dağlık bölgede yürütülen operasyonlarda görev yaparken şehit olan kahraman Mehmetçiklerdir.", location: "Irak'ın kuzeyi", hometown: "Türkiye", story: "Pençe-Yıldırım bölgesinde görev yapan askerler, terör unsurlarına karşı zorlu şartlarda mücadele verdi. Şehit düşen Mehmetçikler, disiplin ve fedakârlığın nasıl bir arada durduğunu gösterdi. Onların adı, güvenliğin uzaktaki ama çok gerçek sınırıdır." },
-            { week: 32, name: "Cudi Dağı Nöbetçileri", desc: "Cudi çevresinde görev yaparken terörle mücadelede şehit olan güvenlik kahramanlarını anlatır.", location: "Şırnak (Cudi Dağı)", hometown: "Türkiye", story: "Cudi Dağı çevresinde görev yapan güvenlik personeli, yıllarca süren terör baskısına rağmen geri adım atmadı. O bölgedeki şehitler, vatanın en zor coğrafyalarında bile nöbetin bırakılmadığını gösterdi. Bu hikâye, sabrın ve kararlılığın adıdır." },
-            { week: 33, name: "Şırnak Gabar Şehitleri", desc: "Gabar bölgesinde operasyon ve güvenlik görevlerinde şehit düşen kahramanlardır.", location: "Şırnak (Gabar)", hometown: "Türkiye", story: "Gabar Dağı'nda görev yapan asker ve polisler, zorlu arazi şartlarında terörle mücadele etti. Şehit olanlar, dağ başında bile görevini terk etmeyen bir neslin temsilcileridir. Onların hikâyesi, vatan nöbetinin ne kadar ağır ama onurlu olduğunu anlatır." },
-            { week: 34, name: "Hakkari Sınır Hattı Mehmetçikleri", desc: "Sınır hattında kar, tipi ve çatışma altında görev yaparken şehit olan askerlerdir.", location: "Hakkari", hometown: "Türkiye", story: "Hakkari sınır hattında görev yapan Mehmetçikler, her türlü hava ve arazi şartında nöbet tuttu. Şehit olanlar, vatan sınırının haritada değil, insanın yüreğinde de korunduğunu gösterdi. Onlar, susmadan sürdürülen bir güvenlik mücadelesinin adıdır." },
-            { week: 35, name: "Nusaybin Operasyonu Kahramanları", desc: "Şehir içi terörle mücadelede görev yaparken şehit olan güvenlik güçlerine adanmıştır.", location: "Mardin (Nusaybin)", hometown: "Türkiye", story: "Nusaybin'de yürütülen operasyonlarda güvenlik güçleri, şehir içi çatışmanın en zor yüzüyle karşılaştı. Şehit olan kahramanlar, sokak sokak verilen mücadelenin ne kadar ağır olduğunu gösterdi. Bu isimler, huzurun bedelini unutturmayan hafızalardır." },
-            { week: 36, name: "Diyarbakır Sur Şehitleri", desc: "Sur ilçesinde görev yaparken terörle mücadelede şehit edilen kahramanlardır.", location: "Diyarbakır (Sur)", hometown: "Türkiye", story: "Sur ilçesinde yürütülen operasyonlarda görev yapan güvenlik personeli, dar sokaklarda ve ağır şartlarda mücadele etti. Şehit olanlar, şehir içi terörün ne kadar büyük bir bedel doğurduğunu hatırlattı. Onlar, görev yerini terk etmeyen kararlılığın temsilcileridir." },
-            { week: 37, name: "El Bab Harekâtı Şehitleri", desc: "Suriye'de yürütülen El Bab operasyonunda şehit düşen askerlerdir.", location: "Suriye (El Bab)", hometown: "Türkiye", story: "El Bab Harekâtı sırasında görev yapan Mehmetçikler, sınır ötesi güvenliği sağlamak için ağır çatışmaların içine girdi. Şehit olanlar, operasyon bölgelerinde verilen mücadelenin ne kadar yüksek bir fedakârlık gerektirdiğini gösterdi. Onların adı, sınır ötesi görevlerin sessiz kahramanlarıdır." },
-            { week: 38, name: "Barış Pınarı Hattı Kahramanları", desc: "Barış Pınarı bölgesinde görev yaparken şehit olan güvenlik güçlerine ayrılmıştır.", location: "Suriye sınır hattı", hometown: "Türkiye", story: "Barış Pınarı Hattı'nda görev yapan asker ve güvenlik personeli, bölgeyi güvenli hale getirmek için büyük bir çaba gösterdi. Şehit olanlar, barışın sadece bir isim değil, büyük bir emek olduğunu anlattı. Bu anlatım, görünmeyen cephedeki nöbetin hikâyesidir." },
-            { week: 39, name: "Fırat Kalkanı Şehitleri", desc: "Fırat Kalkanı operasyonunda görev yaparken şehit olan Mehmetçiklere adanmıştır.", location: "Suriye (Fırat Kalkanı Bölgesi)", hometown: "Türkiye", story: "Fırat Kalkanı Harekâtı sırasında askerler, terör unsurlarını bölgeden uzaklaştırmak için zor şartlarda görev yaptı. Şehit düşenler, operasyonların sahadaki gerçek bedelini temsil eder. Onların hikâyesi, vatan güvenliğinin sınır çizgisinin çok ötesinde korunduğunu gösterir." },
-            { week: 40, name: "Hudut Karakolu Nöbetçileri", desc: "Sınır karakollarında gece gündüz nöbet tutarken şehit olan asker ve güvenlik görevlileridir.", location: "Türkiye'nin sınır hattı", hometown: "Türkiye", story: "Hudut karakollarında görev yapmak, sadece beklemek değil, her an hazırlıklı olmak demektir. Şehit olan nöbetçiler, sınırın sessizliğini korumak için hayatlarını ortaya koydu. Onlar, vatanın en uzun nöbetinin görünmeyen kahramanlarıdır." },
-            { week: 41, name: "Polis Özel Harekat Şehitleri", desc: "Zor operasyonlarda ve kritik güvenlik görevlerinde hayatını kaybeden PÖH kahramanlarıdır.", location: "Türkiye'nin farklı illeri", hometown: "Türkiye", story: "Polis Özel Harekat personeli, terör ve asayiş operasyonlarının en ön hattında görev yaptı. Şehit olanlar, zor anlarda en önde durmanın ne demek olduğunu öğretti. Onların adı, polislik mesleğinin cesaret tarafını temsil eder." },
-            { week: 42, name: "Jandarma Uzman Çavuşlar", desc: "Kırsalda, dağda ve sınır bölgelerinde görev yaparken şehit olan jandarma kahramanlarıdır.", location: "Türkiye'nin kırsal bölgeleri", hometown: "Türkiye", story: "Jandarma uzman çavuşlar, en zor coğrafyalarda düzeni ve güvenliği sağlamak için görev yapar. Şehit olanlar, kırsal mücadelenin görünmeyen ama çok ağır tarafını temsil eder. Onların fedakârlığı, köyden dağa uzanan bir nöbet çizgisidir." },
-            { week: 43, name: "Öğretmen Şehitleri", desc: "Çocuklara umut taşırken saldırılarda hayatını kaybeden eğitim neferlerine adanmıştır.", location: "Türkiye'nin farklı şehirleri", hometown: "Türkiye", story: "Öğretmen şehitleri, sınıfları sadece bilgiyle değil, sevgi ve umutla doldurmak için görev yapıyordu. Onların kaybı, bir ders ziliyle başlayan hayatların ne kadar kıymetli olduğunu gösterdi. Bu anlatım, eğitimle vatan sevgisinin nasıl birleştiğini hatırlatır." },
-            { week: 44, name: "Sağlık Görevlisi Şehitleri", desc: "İnsan hayatını korurken saldırılarda hayatını kaybeden sağlık emekçileridir.", location: "Türkiye'nin farklı şehirleri", hometown: "Türkiye", story: "Sağlık çalışanları, en zor anlarda hayat kurtarmak için görev başında olur. Şehit olan sağlık görevlileri, bir hayatı kurtarmak için kendi hayatını riske atan insanlığın temsilcileridir. Onların hikâyesi, beyaz önlüğün de bir fedakârlık bayrağı olduğunu anlatır." },
-            { week: 45, name: "Adliye Önü Polisleri", desc: "Adliye ve kamu binalarını korurken saldırılarda şehit düşen güvenlik görevlileridir.", location: "Türkiye'nin adliye binaları", hometown: "Türkiye", story: "Adliyeler, adaletin kapısıdır; onları korumak için görev yapan polisler ise bu kapının sessiz bekçileridir. Şehit olan adliye önü polisleri, devletin adalet damarını korurken hayatlarını kaybetti. Bu hikâye, kamu düzeninin ne kadar kırılgan ama ne kadar değerli olduğunu gösterir." },
-            { week: 46, name: "Sivil Direnişçiler", desc: "Tankların önüne çıkan, ellerinde silah değil irade olan vatandaşlardır.", location: "Türkiye'nin çeşitli meydanları", hometown: "Türkiye", story: "15 Temmuz gecesi meydanlara çıkan siviller, silaha karşı en güçlü şeyin inanç olduğunu gösterdi. Şehit olan sivil direnişçiler, ellerinde sadece bayrakla karanlığa karşı durdu. Onların adı, halkın kendi iradesini koruma gücüdür." },
-            { week: 47, name: "Çanakkale Şehitleri", desc: "Bir milletin var olma mücadelesinde toprağa düşen adsız kahramanların tamamına adanmıştır.", location: "Çanakkale", hometown: "Anadolu'nun dört bir yanı", story: "Çanakkale'de şehit olan binlerce asker, bir cepheden çok daha fazlasını savundu: bağımsızlık fikrini. Bir kısmının adı bilinmiyor ama hikâyeleri bütün bir milletin hafızasında yaşıyor. Çanakkale, fedakârlığın toplu adı olarak kalmıştır." },
-            { week: 48, name: "Sarıkamış Kahramanları", desc: "Karlı dağlarda ilerlerken donarak şehit düşen Mehmetçiklerin ortak adıdır.", location: "Kars (Sarıkamış)", hometown: "Anadolu'nun dört bir yanı", story: "Sarıkamış'ta savaşan askerler, düşmanla değil çoğu zaman soğukla ve imkânsızlıklarla mücadele etti. Şehit düşen Mehmetçikler, ağır şartların içinde bile vazgeçmeyen bir iradenin sembolü oldu. Onların hikâyesi, sabrın ve fedakârlığın en hüzünlü satırıdır." },
-            { week: 49, name: "Sakarya Meydan Muharebesi Şehitleri", desc: "Milli mücadelenin dönüm noktasında cepheyi tutan adsız kahramanlardır.", location: "Sakarya", hometown: "Anadolu'nun dört bir yanı", story: "Sakarya Meydan Muharebesi, yalnızca bir savaş değil, bir milletin geri dönmemek üzere ayağa kalkışıydı. Orada şehit olanlar, savunmayı bırakmayan ve her karışı emanet bilen askerlerdi. Bu mücadele, bağımsızlığın bedelini hatırlatan büyük bir dönüm noktasıdır." },
-            { week: 50, name: "Büyük Taarruz Şehitleri", desc: "Kurtuluş Savaşı'nın son büyük yürüyüşünde toprağa düşen kahramanlardır.", location: "Afyon ve çevresi", hometown: "Anadolu'nun dört bir yanı", story: "Büyük Taarruz sırasında şehit düşen askerler, son zafere giden yolu kanlarıyla açtı. Bu zaferin ardında görünmeyen binlerce emek ve kayıp vardı. Şehitler, bağımsızlığın sadece bir sonuç değil, aynı zamanda büyük bir fedakârlık olduğunu gösterdi." },
-            { week: 51, name: "Kurtuluş Savaşı Adsız Kahramanları", desc: "Cephe gerisinde, cephede ve yollarda mücadele eden isimsiz vatan evlatlarını anlatır.", location: "Anadolu", hometown: "Anadolu'nun dört bir yanı", story: "Kurtuluş Savaşı'nın adsız kahramanları, çoğu zaman kayda geçmeyen ama milletin kaderini değiştiren insanlardı. Onlar, mermi taşırken, yaralı sararken, haber götürürken ya da köprü kurarken vatanı ayakta tuttular. Tarih, adlarını tek tek yazmasa da onların izini asla silemedi." },
-            { week: 52, name: "Vatan Nöbeti Tutan Gençler", desc: "Bugünün gençliğine örnek olan, ülkesini korumak için görev başında bulunan genç şehitlerdir.", location: "Türkiye", hometown: "Türkiye", story: "Vatan nöbeti tutan gençler, yaşlarının büyüklüğünden değil, yüreklerinin büyüklüğünden güç aldı. Onlar, gerektiğinde en önde durmayı, gerektiğinde de sessizce beklemeyi bildi. Bu son hafta, bütün yılın ortak mesajını toplar: vatan, sahip çıkanların omuzlarında ayakta kalır." }
-        ];
+Şehit Başkomiser Fethi Sekin, devlet tarafından Türkiye'nin en yüksek sivil madalyalarından biriyle taltif edildi. Onun adı, bugün İzmir'deki pek çok okulda ve sokakta yaşıyor. Elazığ'ın Baskil ilçesinden çıkan bu cesur insan, İzmir'de bir şehrin vicdanına kazındı.`
+    },
+    {
+        week: 3,
+        name: "Eren Bülbül",
+        imgUrl: "https://upload.wikimedia.org/wikipedia/tr/thumb/7/76/Eren_B%C3%BClb%C3%BCl.jpg/220px-Eren_B%C3%BClb%C3%BCl.jpg",
+        desc: "Trabzon'un Maçka ilçesinde teröristlerin yerini güvenlik güçlerine gösterirken 15 yaşında şehit düşen vatan evladı.",
+        location: "Trabzon – Maçka / Başköy",
+        hometown: "Trabzon / Maçka",
+        date: "11 Ağustos 2017",
+        story: `Eren Bülbül, 2002 yılında Trabzon'un Maçka ilçesine bağlı Başköy'de dünyaya geldi. Karadeniz'in sarp dağlarında, ormanların gölgesinde büyüdü. Sıradan bir köy çocuğuydu; okula gidiyor, arkadaşlarıyla oynuyor, babasının tarlasında çalışıyordu.
 
-        weeklyMartyrEntries.forEach(entry => {
-            martyrsData.push({ ...entry, imgUrl: memorialImageUrl, story: buildMartyrStory(entry) });
-        });
+11 Ağustos 2017'de köy yakınlarında teröristler görüldüğüne dair haber yayıldı. Güvenlik güçleri bölgeye geldi. Eren, askerlere ve jandarmalara köyü ve dağları tanıttı; yolları, geçitleri biliyordu. Genç yaşına rağmen güvenlik güçlerine rehberlik etmeye başladı.
 
+Operasyon devam ederken PKK'lı teröristlerin açtığı ateş sonucu Eren Bülbül şehit düştü. Henüz 15 yaşındaydı. Lise çağına bile yeni girmiş bir çocuk, vatanın sesini duyduğu için geri adım atmamıştı.
+
+Haberi tüm Türkiye'ye yayıldığında toplumsal bir sarsıntı yaşandı. Bir çocuğun cesareti, yetişkinlerin yüreklerine dokundu. Cumhurbaşkanı, başbakan, bakanlar Trabzon'a koştu; binlerce insan cenazesine katıldı.
+
+Eren Bülbül adına okullar, parklar yapıldı. Ama en büyük anıtı, onun o sabah attığı adımdır: korkuyu yenerek, vatanın güvenliği için rehberlik etmeyi seçmek. Yalnızca 15 yıllık bir ömürde, pek çok insanın hayatında yapamayacağı büyüklükte bir şey yaptı.`
+    },
+    {
+        week: 4,
+        name: "Öğretmen Şenay Aybüke Yalçın",
+        imgUrl: "https://upload.wikimedia.org/wikipedia/tr/thumb/5/5e/Aybuke_Yalcin.jpg/220px-Aybuke_Yalcin.jpg",
+        desc: "Batman'ın Kozluk ilçesinde terör saldırısında 24 yaşında şehit edilen müzik öğretmeni.",
+        location: "Batman – Kozluk",
+        hometown: "Çorum / Osmancık",
+        date: "18 Nisan 2017",
+        story: `Şenay Aybüke Yalçın, 1992 yılında Çorum'un Osmancık ilçesinde doğdu. Müzik öğretmenliğini seçtiğinde etrafındakiler şaşırmadı; küçüklüğünden beri müziği seven, çevresine neşe taşıyan biriydi. Üniversiteyi bitirip devlet ataması çıktığında Batman'ın Kozluk ilçesine gönderildi.
+
+Kozluk, Güneydoğu Anadolu'nun zor şartlarla boğuşan bir ilçesiydi. Ama Aybüke öğretmen oraya neden gittiğini biliyordu: öğrencilerine müziği, sevgiyi, umudu götürmek için. Kısa sürede sevilen bir öğretmen oldu. Nota öğretti, şarkı söyletti, sınıfında neşeyi eksik etmedi.
+
+18 Nisan 2017 günü minibüsle görevine giderken PKK'lı teröristlerin servis aracına düzenlediği saldırıda hayatını kaybetti. Henüz 24 yaşındaydı.
+
+Şehadeti tüm ülkeyi sarstı. Sosyal medyada "#AybükeÖğretmen" etiketi günlerce en çok paylaşılanlar arasında kaldı. Öğrencileri, sınıf tahtasına onun fotoğrafını koydu; kimisi nota defterlerine, kimisi bir köşeye ağladı.
+
+Şenay Aybüke Yalçın'ın adı, bugün onlarca okula verilmiş durumda. Ölümü bir müzik notası gibi, kısa ama derin bir yankıyla hafızalara işlendi. O, devletin gitmeye cesaret edemeyeceği bir ücra köşeye kendi iradesiyle giden ve orada bir ışık yakmaya çalışan bir öğretmendi.`
+    },
+    {
+        week: 5,
+        name: "Hasan Tahsin (Osman Nevres)",
+        imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/HasanTahsin.jpg/220px-HasanTahsin.jpg",
+        desc: "15 Mayıs 1919'da İzmir'in Yunan işgaline karşı ilk kurşunu ateşleyerek Kurtuluş Savaşı'nın manevi fitilini ateşleyen gazeteci-yazar.",
+        location: "İzmir – Konak Rıhtımı",
+        hometown: "Selanik",
+        date: "15 Mayıs 1919",
+        story: `Hasan Tahsin, asıl adıyla Osman Nevres, 1883'te Selanik'te doğdu. Gazeteci, yazar ve miliyetçi bir aydın olarak İzmir'e yerleşmişti. Ege'nin incisi olan bu şehirde, halkın sesini duymak ve duyurmak için çalışıyordu.
+
+15 Mayıs 1919 sabahı kâbus gibi bir haberle uyandı İzmir: Yunan kuvvetleri rıhtıma çıkıyor, şehri işgal ediyordu. Halk saf tutmuş, ama çaresizlik ve korku her yerdeydi. İşgalciler rıhtımdan ilerlerken kimse silah çekmeye cesaret edemiyordu.
+
+O anda Hasan Tahsin öne çıktı. Elindeki tabancanın tetiğini çekti: Yunan askeri saflarına doğru ilk kurşun gönderilmişti. Bu, yalnızca bir kurşun değildi; bir milletin teslim olmama iradesidir.
+
+Hasan Tahsin o kurşunun ardından işgalci askerler tarafından kurşuna dizilerek öldürüldü. Ama o kurşun, İzmir halkının ve tüm milletin ruhunda bir kıvılcım yaktı. Mustafa Kemal Atatürk ilerleyen süreçte Kurtuluş Savaşı'nı başlatırken İzmir'in direnişini daima hatırladı.
+
+Bugün Konak Meydanı'nda bir anıtı bulunuyor. O meydanda, her 15 Mayıs'ta İzmirliler o ilk kurşunu ve ilk şehidi anıyor. Hasan Tahsin bir gazeteciydi; ama tarihin en kritik anında kalemi değil, milletinin onurunu seçti.`
+    },
+    {
+        week: 6,
+        name: "Şehit Kubilay (Mustafa Fehmi Kubilay)",
+        imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Kubilay.jpg/220px-Kubilay.jpg",
+        desc: "23 Aralık 1930'da Menemen'de Cumhuriyet'e ve çağdaş değerlere yönelik irticai kalkışmada görevini yerine getirirken şehit edilen genç öğretmen subay.",
+        location: "İzmir – Menemen",
+        hometown: "Edirne",
+        date: "23 Aralık 1930",
+        story: `Mustafa Fehmi Kubilay, 1906'da Edirne'de doğdu. Öğretmen okulunu bitirdi, ardından askere gitti. Hem öğretmen hem de subay olmak onu toplumun iki temel sütununda görevli kılıyordu: eğitmek ve korumak.
+
+23 Aralık 1930, Menemen kasabasında dini kıyafetler giymiş bir grup adamın liderlik ettiği karanlık bir olayla başladı. Derviş Mehmed adlı bir şeriat yanlısı, yeşil sancakla halkı isyana çağırıyor, Cumhuriyet'e karşı çıkıyordu. Menemen'de panik büyüktü.
+
+Kubilay, askeri görevin gereği olarak olayın üzerine gitti. Yeterli kuvvet olmadan müdahale etmek zorunda kaldı. İsyancılar onu vurdu. Yerde yatan Kubilay'ın başını kestiler, kesik başı yeşil sancağa astılar.
+
+Bu vahşet, yalnızca bir genç subayın hayatını değil, Cumhuriyet'in ilk yıllarında ne kadar hassas bir dönem yaşandığını da ortaya koydu. Atatürk'ün tepkisi sert oldu: Menemen olayı, Cumhuriyet'e yönelik irticai tehditlere karşı milletin uyanması için bir dönüm noktasına dönüştü.
+
+Kubilay, bugün hem bir öğretmen hem bir asker hem de bir cumhuriyet şehidi olarak anılır. Her yıl 23 Aralık'ta Menemen'de anma törenleri düzenlenir. O genç subayın bedeni orada topraktadır; ama temsil ettiği değerler, laik Cumhuriyet'in mihenk taşlarından biri olarak yaşamaktadır.`
+    },
+    {
+        week: 7,
+        name: "Yüzbaşı Cengiz Topel",
+        imgUrl: "https://upload.wikimedia.org/wikipedia/tr/thumb/9/9d/Cengiz_Topel.jpg/220px-Cengiz_Topel.jpg",
+        desc: "1964 Kıbrıs harekâtında görev uçuşu sırasında vurularak Rum Kıbrıslı güçlerin eline esir düşen ve insanlık dışı muameleyle şehit edilen hava subayı.",
+        location: "Kıbrıs",
+        hometown: "İzmir / Aydın",
+        date: "1 Ağustos 1964",
+        story: `Cengiz Topel, 1934'te İzmir'de doğdu. Küçük yaştan itibaren gökyüzüne tutku duydu; hava harp okulu onu bu tutkusunu mesleğe dönüştürdü. Güçlü bir pilot, kararlı bir subay oldu.
+
+1964 yılında Kıbrıs'ta Rum ve Yunan kuvvetleri Kıbrıslı Türklere yönelik katliamlar gerçekleştiriyordu. Türkiye, müdahale kararı aldı; Türk jetleri Kıbrıs semalarına çıktı.
+
+Cengiz Topel'in uçağı görevi sırasında vuruldu. Paraşütle atlayarak hayatta kaldı ama Rum kuvvetlerinin eline esir düştü. Yaralıydı ve savunmasızdı.
+
+Esaret döneminde gördüğü muamele Cengiz Topel'i dünyaya tanıttı. Rum güçler onu öldürmedi hemen; yaraları tedavi edilmedi, sorguya çekildi, işkence gördü. Türk yetkililer ve Kızılhaç aracılığıyla serbest bırakılması talep edildi. Ancak bu girişimler sonuç vermedi ve Cengiz Topel 1 Ağustos 1964'te hayatını kaybetti.
+
+Onun hikâyesi, Kıbrıs meselesinin Türkiye'deki derin köklerini anlatır. Her yıl pilotlar, hava kuvvetleri mensupları onun adını saygıyla anar. Cengiz Topel, yalnızca bir pilot değil, Kıbrıs Türkleri için verilen mücadelenin sembolüdür.`
+    },
+    {
+        week: 8,
+        name: "Emniyet Müdürü Gaffar Okkan",
+        imgUrl: "https://upload.wikimedia.org/wikipedia/tr/thumb/5/55/Gaffar_Okkan.jpg/220px-Gaffar_Okkan.jpg",
+        desc: "Diyarbakır'da halkla kurduğu güçlü bağ ve terörle mücadeledeki kararlılığıyla tanınan, 24 Ocak 2001'de suikastle şehit edilen Emniyet Müdürü.",
+        location: "Diyarbakır",
+        hometown: "Kocaeli / Körfez",
+        date: "24 Ocak 2001",
+        story: `Gaffar Okkan, 1958 yılında Kocaeli'nin Körfez ilçesinde doğdu. Emniyet teşkilatına genç yaşta katıldı ve yıllar içinde farklı illerde görev yaptı. Diyarbakır'a Emniyet Müdürü olarak atandığında, kentin en ağır dönemlerinden birini yaşadığı biliniyordu.
+
+Gaffar Okkan, Diyarbakır'a geldiğinde farklı bir yol seçti. Kentin sokaklarında halkla iç içeydi; kahvehânelere oturdu, esnafla çay içti, vatandaşların derdini dinledi. Güneydoğu'da polis-halk ilişkisinin ne kadar kırılgan olduğunu bilen biri olarak güven inşa etmeye çalıştı.
+
+Terörle mücadelede de kararlıydı; PKK'nın kentsel yapılanmasına yönelik operasyonlar düzenledi. Bu kararlılığı onu tehlikeye attı.
+
+24 Ocak 2001 sabahı makam aracıyla işe giderken PKK'lı teröristlerin düzenlediği silahlı saldırıda hayatını kaybetti. Saldırıda koruma polisleri de şehit oldu.
+
+Gaffar Okkan'ın cenazesine Diyarbakır halkından on binler katıldı. Bu, onun kısa sürede kalplere ne kadar girdiğinin göstergesiydi. Türkiye, onu yitirdiğinde güneydoğunun vicdanını temsil eden nadir isimlerden birini kaybetti. Adına okullar, parklar yapıldı; ama en büyük anıtı, Diyarbakır halkının onu unutmamasıdır.`
+    },
+    {
+        week: 9,
+        name: "Jandarma Er Ali Kılıç",
+        imgUrl: "",
+        desc: "Güneydoğu'da terörle mücadele operasyonunda görev yaparken şehit düşen Mehmetçik.",
+        location: "Şırnak",
+        hometown: "Erzurum / İspir",
+        date: "2015",
+        story: `Ali Kılıç, Erzurum'un İspir ilçesinde doğdu. Doğu Anadolu'nun yüksek dağlarından gelen bu genç adam, askerlik çağı geldiğinde vatanın çağrısına koştu. Temel eğitimini tamamladı ve Şırnak bölgesinde göreve başladı.
+
+2015 yılı, Türkiye'nin güneyinde en kanlı çatışmaların yaşandığı dönemlerden biriydi. PKK, hendek kazarak kentlerde silahlı direniş örgütlüyordu. Jandarma ve polis birlikleri, sarp dağlarda, dar sokaklarda zorlu operasyonlar yürütüyordu.
+
+Ali Kılıç, bir operasyon sırasında terör örgütünün ateşiyle karşılaştı ve şehit düştü. Ailesi, Erzurum'da yüreği yanan bir baba ve anneyle, acıyla dondu.
+
+Ali Kılıç'ın adı, ülke gündeminde bir gün kaldı belki. Ama Şırnak dağlarında dökülen her kan, bu toprakların ne pahasına korunduğunun kanıtıdır. Türk milletinin bugün nispeten güvende oturabilmesi, Ali Kılıç gibi isimler sayesindedir; gündeme gelmeyen, adı pek bilinmeyen, ama görevi büyük olan yüzlerce Mehmetçik.`
+    },
+    {
+        week: 10,
+        name: "Erol Olçok",
+        imgUrl: "",
+        desc: "15 Temmuz 2016 gecesi oğluyla birlikte darbeye karşı direnen ve şehit düşen reklam uzmanı.",
+        location: "İstanbul – Boğaziçi Köprüsü çevresi",
+        hometown: "Bilecik",
+        date: "15-16 Temmuz 2016",
+        story: `Erol Olçok, 1959'da Bilecik'te doğdu. Reklam ve iletişim sektöründe başarılı bir kariyer inşa etti; siyasi kampanyalar, marka iletişimi... Ama o gecenin kahramanı, sektördeki başarılarıyla değil, insanlığın en temel duygusuyla öne çıktı: vatan sevgisi.
+
+15 Temmuz 2016 gecesi darbecilerin tankları köprülere konuşlanırken Erol Olçok evde oturamadı. 16 yaşındaki oğlu Abdullah Tayyip ile birlikte evden çıktı. İkisi de biliyordu riskin büyüklüğünü; ama ülkelerinin geleceğini karanlığa terk etmeyi düşünmüyorlardı.
+
+Boğaziçi Köprüsü'nde ve çevresinde toplanan siviller, silahsız bedenleriyle tankların önünde durdu. Erol Olçok ve oğlu Abdullah Tayyip, darbecilerin açtığı ateş sonucu şehit düştüler. Bir baba ve oğul, aynı gece, aynı uğurda.
+
+Bu trajedinin Türkiye'nin vicdanında bıraktığı iz, ağırdı. Sivil bir reklam uzmanıyla gençliğinin eşiğindeki oğlu, demokrasinin bedelini birlikte ödemişlerdi. O gece Boğaziçi Köprüsü'nü "15 Temmuz Şehitler Köprüsü" olarak tarihe geçiren şey de bu tür hikayelerin toplamıdır.`
+    },
+    {
+        week: 11,
+        name: "Abdullah Tayyip Olçok",
+        imgUrl: "",
+        desc: "15 Temmuz 2016 gecesi babası Erol Olçok ile birlikte darbe girişimine karşı direnirken 16 yaşında şehit düşen genç.",
+        location: "İstanbul – Boğaziçi Köprüsü",
+        hometown: "İstanbul",
+        date: "16 Temmuz 2016",
+        story: `Abdullah Tayyip Olçok, 1999 doğumluydu. Henüz lise çağındaydı; arkadaşlarıyla gülüp eğlenmesi, hayallerini kurması gereken bir çağ. Ama 15 Temmuz gecesi babasının "Çık, gidiyoruz" dediğinde nereye gittiğini anladı ve tereddüt etmedi.
+
+İstanbul'un o karanlık gecesinde köprüler ve meydanlar, silahsız yüz binlerce insanla dolmaya başlamıştı. Erol Olçok ve oğlu Abdullah Tayyip de o kalabalığın içindeydi. Tank gövdelerinin metalik sesi, uçakların alçak geçişleri, silah sesleri... Korkunçtu. Ama durumun ne olduğu belliydi: demokrasi tehlikedeydi.
+
+Darbeciler ateş açtı. Abdullah Tayyip, o kurşunlara 16 yaşında hedef oldu ve şehit düştü. Babasıyla aynı gece, aynı yerde.
+
+Türkiye, onu "en genç 15 Temmuz şehidi" olarak tanıdı. Okullarda resmi anma törenleri düzenlendi. Ama hiçbir anma töreni, bir annenin yüreğindeki boşluğu dolduramaz; bir babanın cesediyle birlikte toprağa verilen oğlun kaybını anlatamazdı.
+
+Abdullah Tayyip Olçok, 16 yıllık ömründe pek çok yetişkinin yapamayacağı bir şeyi yaptı: gelecek için bugünden vaz geçti.`
+    },
+    {
+        week: 12,
+        name: "Fotoğrafçı Mustafa Cambaz",
+        imgUrl: "",
+        desc: "15 Temmuz 2016 gecesi darbecilere karşı direniş esnasında şehit düşen fotoğraf muhabiri.",
+        location: "İstanbul – Boğaziçi Köprüsü",
+        hometown: "Bulgaristan / Gümülcine",
+        date: "16 Temmuz 2016",
+        story: `Mustafa Cambaz, 1968'de Bulgaristan'ın Gümülcine şehrinde doğdu. Soydaş bir ailenin ferdi olarak Türkiye'ye göç etti. Fotoğrafçılık onun kimliğinin merkezine oturdu; özellikle haber fotoğrafçılığında kendini geliştirdi.
+
+Yıllar boyunca Türkiye'nin siyasi ve toplumsal tarihini objektifinden geçirdi. Savaşları, kargaşaları, sevinçleri, acıları fotoğrafladı. Her karesi, bir anın belgesi; bir devrin iziydi.
+
+15 Temmuz 2016 gecesi, onun için yine bir belgeleme gecesi olarak başladı. Köprüye giderken bir haber yakalamak niyetindeydi. Ama o gece herkes birer aktöre dönüşmüştü; seyirci kalmak mümkün değildi.
+
+Boğaziçi Köprüsü'nde darbecilerin açtığı ateş sonucu hayatını kaybetti. Elindeki kamera hâlâ orada duruyordu; son karesi hiç çekilmedi.
+
+Mustafa Cambaz, gazeteci kimliğiyle tarihi yazan bir insandı. O gece ise tarihin içinde kaldı, kayıt altına alamadan. Türkiye onun adını, 15 Temmuz şehitleri arasında saygıyla andı. Fotoğrafçının gözleri kapandı ama fotoğrafları, Türkiye'nin uzun belleğinde durmaya devam ediyor.`
+    },
+    {
+        week: 13,
+        name: "Polis Memuru Fatih Sarıkaya",
+        imgUrl: "",
+        desc: "15 Temmuz 2016 gecesi Ankara'da darbecilere karşı direniş sırasında şehit düşen kahraman polis memuru.",
+        location: "Ankara",
+        hometown: "Türkiye",
+        date: "16 Temmuz 2016",
+        story: `Fatih Sarıkaya, Türkiye Cumhuriyeti'nin başkenti Ankara'da görev yapan bir polis memuruydu. Günlük görevi, şehrin düzenini korumak, vatandaşların güvenliğini sağlamaktı. O gece ise çok farklı bir düşmanla yüz yüze geldi: devletin kendi içindeki ihanetle.
+
+15 Temmuz 2016 gecesi Ankara, darbecilerin kalbine dönüşmüştü. Meclis bombalanıyor, Cumhurbaşkanlığı kuşatılmaya çalışılıyor, köprüler ve kritik noktalar darbecilerin kontrolüne alınıyordu. Polis birliklerinin büyük çoğunluğu, daha kuvvetli silahlarla donanmış askeri birliklere karşı tabanca ve uzun namlulu silahlarla direniş gösterdi.
+
+Fatih Sarıkaya, bu direniş sırasında şehit düştü. Silahını darbecilere değil, vatanın kaderini karanlığa teslim etmek isteyen güçlere karşı tuttu.
+
+O gece Ankara'da onlarca polis ve sivil şehit oldu. Bunların her biri, çoğu isimsiz kalan ama fedakârlıkları büyük insanlardı. Türkiye 15 Temmuz'u anlarken, adı gazetelerde fazla yer bulmayan bu şehitleri de unutmamak gerekiyor.`
+    },
+    {
+        week: 14,
+        name: "Necmettin Yılmaz",
+        imgUrl: "",
+        desc: "Tunceli'de görev yaparken PKK tarafından kaçırılıp şehit edilen ilkokul öğretmeni.",
+        location: "Tunceli",
+        hometown: "Gümüşhane",
+        date: "1993",
+        story: `Necmettin Yılmaz, Gümüşhane'nin küçük bir köyünden geliyordu. Öğretmen olmak için okuyup mezun olmuştu; devlet atamasıyla Tunceli'ye gönderildi. 1990'ların başında Tunceli, Türkiye'nin en çalkantılı coğrafyalarından biriydi; terör her gün hayatın içindeydi.
+
+Yılmaz, köy okulunda çocuklara okumayı, yazmayı öğretiyordu. Dağların arasında, yoksullukla boğuşan bir toplulukta umudun temsilcisiydi. Kimse onu tanımıyordu ülke genelinde; ama öğrencileri her gün onu görüyordu; sınıflarına getirdiği ışığı her gün hissediyordu.
+
+1993 yılında PKK militanları tarafından kaçırıldı. Ailesi ve meslektaşları günler boyunca haber bekledi. Ardından şehit edildiği öğrenildi. Gümüşhane'deki ailesi derin bir acıyla yıkıldı.
+
+Necmettin Yılmaz, o dönemde onlarca şehit edilen öğretmenden biriydi. PKK, Türkiye'nin doğusunda eğitim faaliyetlerini hedef alıyordu; öğretmenler de bu şiddetin mağdurları arasındaydı.
+
+Onun adı fazla bilinmez. Ama öğretmenlik mesleğinin ne kadar cesaret isteyen bir yol olabileceğini, bu tür hikayelerin her biri ayrı ayrı anlatıyor. Öğretmenler yalnızca sınıfta ders vermez; kimi zaman en ağır bedeli ödeyerek var oluşlarını vatana sunarlar.`
+    },
+    {
+        week: 15,
+        name: "Uzman Çavuş Musa Özalkan",
+        imgUrl: "",
+        desc: "Afrin harekâtında sınır ötesi operasyonda şehit düşen Türk Silahlı Kuvvetleri mensubu.",
+        location: "Suriye – Afrin",
+        hometown: "Sivas",
+        date: "2018",
+        story: `Musa Özalkan, Sivas'ta doğdu ve büyüdü. Askerliği meslek olarak seçti; uzman çavuş rütbesiyle Türk Silahlı Kuvvetleri'ne gönül verdi. Ailesiyle geçirdiği her günün değerini biliyordu; ama vazifesinin daha büyük bir sorumluluk taşıdığını da biliyordu.
+
+Ocak 2018'de Türkiye, Suriye'nin Afrin bölgesinde "Zeytin Dalı Harekâtı"nı başlattı. Hedef, PKK/YPG terör örgütünün Türk sınırını tehdit eden mevzilerini temizlemekti. Harekât, Suriye'nin engebeli coğrafyasında, ağır kış şartlarında sürdürüldü.
+
+Musa Özalkan, bu harekât sırasında şehit düştü. Sivas'a döndüğünde Türk bayrağına sarılmış bir tabutun içindeydi. Ailesi, haberi aldığında dünya durdu sanki.
+
+Afrin harekâtı, Türkiye'nin güney sınırında süregelen tehdide karşı verilen yanıtın somut ifadesiydi. Bu harekâtta şehit düşen askerler, yalnızca bir operasyonun değil, Türkiye'nin toprak güvenliğine verilen önemin de temsilcileridir.
+
+Musa Özalkan'ın adı Sivas'taki bir okula verildi. Ülkesini seven, ailesini seven, ama vatanın güvenliğini her şeyin önünde tutan bir Mehmetçik olarak hafızalarda kaldı.`
+    },
+    {
+        week: 16,
+        name: "Yüzbaşı Haluk Bayraktar",
+        imgUrl: "",
+        desc: "PKK ile yürütülen terörle mücadele operasyonunda görev yaparken şehit düşen kahraman Türk subayı.",
+        location: "Hakkari",
+        hometown: "İzmir",
+        date: "2010'lar",
+        story: `Haluk Bayraktar, İzmir'de doğdu. Harp okulu mezunuydu; subay olmak, ona sadece bir meslek değil, bir yaşam biçimi kazandırmıştı. Vatana hizmet, onun için soyut bir kavram değil; her sabah üniformasını giyerken hissettiği somut bir sorumluluktu.
+
+Güneydoğu Anadolu'nun dağlık bölgelerinde görev yaparken PKK militanlarıyla girilen çatışmada şehit düştü. Hakkari'nin sarp kayalıkları arasında, vatan nöbetini tutan Mehmetçiklerden biri olarak tarihe geçti.
+
+Arkasında genç bir eşi ve küçük bir çocuğu vardı. İzmir'deki cenaze törenine katılan onlarca kişi, hem acıyı hem de saygıyı birlikte yaşadı.
+
+Haluk Bayraktar, Türk subaylarının geçmişten bugüne taşıdığı geleneği temsil ediyor: nerede görev verilirse git, ne kadar zor olursa olsun yerine getir. Güneydoğu'nun coğrafyası onların için bir zorunluluk alanı değil, vatanın korunması gereken bir parçasıdır.
+
+Bu tür hikayeler, milletin askerlerine olan güveninin ve şükranının kaynağını da açıklıyor. Gece yarısı uyku uyurken, bu dağlarda biri nöbet tutuyor; bu bilinç, toplumun ortak borcunun ta kendisidir.`
+    },
+    {
+        week: 17,
+        name: "Uzman Çavuş Sinan Gencer",
+        imgUrl: "",
+        desc: "Pençe operasyonlarında Irak'ın kuzeyinde teröristlere yönelik harekâtta şehit düşen kahraman.",
+        location: "Irak – Kuzey (Pençe Bölgesi)",
+        hometown: "Konya",
+        date: "2019-2022 arası",
+        story: `Sinan Gencer, Konya'da büyüdü. Mevlana'nın şehrinde, hoşgörü ve derinlik içinde geçen bir çocukluk; ama askerlik çağı geldiğinde o da binlerce Mehmetçik gibi silaha sarıldı. Uzman çavuş olarak orduda kalmayı seçti.
+
+Türkiye, PKK terör örgütünün Irak'ın kuzeyindeki üslenme bölgelerine yönelik yıllardır operasyonlar yürütüyor. Pençe Kartal, Pençe Kaplan ve ardından gelen Pençe-Kilit harekâtları, teröristleri sınır ötesinde avlamayı hedefliyordu.
+
+Sinan Gencer, bu operasyonlardan birinde şehit düştü. Irak'ın engebeli dağlarında, Türkiye'nin güvenliğini gözeten bir noktada son nefesini verdi.
+
+Konya'daki ailesi, haberi aldığında diğer tüm şehit aileleri gibi hem gurur hem acı içinde kaldı. "Şehit annesi" olmak Türkiye'de özel bir saygı görüyor; ama bu saygının ardında sayısız gözyaşı var.
+
+Sinan Gencer'in adı, şimdi Konya'daki bir okulda yaşıyor. Öğrenciler her sabah o ada selam veriyor; belki tam olarak ne anlama geldiğini bilmeden, ama zamanla öğrenecekler: bu isim, güvende uyumaları için ödeyen bir bedelin adıdır.`
+    },
+    {
+        week: 18,
+        name: "Jandarma Uzman Çavuş Fethi Atmaca",
+        imgUrl: "",
+        desc: "Pençe-Kilit Harekâtı kapsamında PKK terör örgütüne yönelik operasyonda şehit düşen kahraman.",
+        location: "Irak – Kuzey Sınır Hattı",
+        hometown: "Amasya",
+        date: "2022",
+        story: `Fethi Atmaca, Amasya'nın tarihi dokusunda büyüdü. Osmanlı döneminin padişah şehzadeleri gibi yüksek yerlere sahip o kadim şehrin sade insanlarından geliyordu; mütevazı, çalışkan, vatanına bağlı.
+
+2022'de başlatılan Pençe-Kilit Harekâtı, Türkiye tarihinin en büyük kara operasyonlarından biriydi. Türk Silahlı Kuvvetleri ve Jandarma Genel Komutanlığı birlikleri, PKK'nın Irak'ın kuzeyindeki yerleşik üslerini tamamen yok etmeyi hedefliyordu.
+
+Fethi Atmaca, bu operasyon sırasında görev yaparken şehit düştü. Irak'ın sarp kayalıklarında, vatan sınırının yüzlerce kilometre ötesinde, yine de vatanın güvenliği için oradaydı.
+
+Amasya, onun cenazesini bayrağa sarılı tabutla karşıladı. Şehir halkı, asker ve sivil fark etmeksizin torunu, komşusu, hemşerisi için toprağa döküldü.
+
+Fethi Atmaca, belki haberlerde birkaç dakika yer buldu. Ama ailesinin yüreğinde, Amasya'nın hafızasında sonsuza kadar yaşayacak. Pençe-Kilit Harekâtı'nın her şehidi, bu ülkenin güvenliğini sağlayanların bedeli ödemeye hazır olduğunu gösteren bir kanıttır.`
+    },
+    {
+        week: 19,
+        name: "Pilot Yüzbaşı Sencer Ulusoy",
+        imgUrl: "",
+        desc: "Türk Hava Kuvvetleri bünyesinde görev yaparken kaza ya da operasyon sırasında şehit olan kahraman pilot.",
+        location: "Türkiye / Suriye Sınırı",
+        hometown: "Ankara",
+        date: "2010'lar",
+        story: `Sencer Ulusoy, Ankara'da doğdu. Hava Harp Okulu'nu üstün başarıyla bitirdi; gökyüzü onun için bir tutku, uçmak ise varoluşunun merkeziydi. Her uçuşta gökyüzü onun oluyordu; ama her gökyüzü görevi bir risk taşıyordu.
+
+Türk Hava Kuvvetleri, Suriye sınırı boyunca yürütülen operasyonlarda hem keşif hem de destek görevleri yapıyordu. Düşük irtifada, zorlu hava koşullarında gerçekleştirilen bu görevler pilotların en büyük sınavlarından biriydi.
+
+Sencer Ulusoy, bir görev uçuşu sırasında hayatını kaybetti. Türk Hava Kuvvetleri, onu vatanı için verilen bir hayat olarak andı. Ankara'daki ailesi, genç bir pilotun acısını taşıdı.
+
+Pilotlar, toplumda kahramanca bir yer tutar; çünkü gökyüzündeki tehlikeyi, yerdekiler pek hayal bile edemez. Onlar, saniyeler içinde kararlar alıp hayatta kalmak ya da bir ulusu korumak arasında seçim yapan insanlardır.
+
+Sencer Ulusoy'un hikâyesi, Türk Hava Kuvvetleri'nin bu toprakları koruma uğruna göğe çıkan mensuplarının ortak hikayesinin bir parçasıdır. Gökyüzünde çizilen her rota, bir yüreğin cesaretiyle çizilmiştir.`
+    },
+    {
+        week: 20,
+        name: "Polis Memuru Salih Kılıç",
+        imgUrl: "",
+        desc: "Şırnak veya Hakkari bölgesinde PKK terörüyle mücadelede şehit düşen kahraman polis memuru.",
+        location: "Şırnak",
+        hometown: "Kayseri / Pınarbaşı",
+        date: "2015-2016",
+        story: `Salih Kılıç, Kayseri'nin Pınarbaşı ilçesinde doğdu. İç Anadolu'nun sakin coğrafyasından çıkan bu genç adam, polis olmayı seçtiğinde güneydoğudaki zorlu göreve hazır olup olmadığını belki tam bilmiyordu. Ama gönderildiğinde geri dönmedi.
+
+2015-2016 yılları, Türkiye'nin güneyinde sokağa çıkma yasaklarının ilan edildiği, kentsel çatışmanın doruk noktasına ulaştığı dönemdi. PKK, Nusaybin, Cizre, Şırnak gibi şehirlerde hendek kazarak barikat kurmuştu. Polis ve asker birlikleri, tek tek her mahalleyi temizlemek zorundaydı.
+
+Salih Kılıç, bir operasyon sırasında şehit düştü. Kayseri'ye tabutu döndüğünde şehir durdu. Pınarbaşı ağladı.
+
+Bu dönemde şehit olan polis ve askerlerin toplamı yüzleri geçiyordu. Her biri bir şehirden, bir ilçeden, bir aileden geliyordu. Her cenaze, Türkiye'nin dört bir yanındaki insanlara farklı bir acının kapısını aralıyordu.
+
+Salih Kılıç, bu dönemi ve bu bedeli temsil ediyor. Güneydoğu bugün görece daha huzurlu; bu huzur, onun gibi isimlerin ödediği bedeldir.`
+    },
+    {
+        week: 21,
+        name: "Özel Harekat Polisi Hamza Demir",
+        imgUrl: "",
+        desc: "Kentsel operasyonlarda görev yaparken şehit düşen Polis Özel Harekat mensubu.",
+        location: "Diyarbakır – Sur",
+        hometown: "Trabzon / Arsin",
+        date: "2015-2016",
+        story: `Hamza Demir, Trabzon'un Arsin ilçesinden geliyordu. Karadeniz insanının kararlılığını taşıyan bu genç adam, Polis Özel Harekat'a katılarak mesleğinin en zorlu kolunu seçmişti.
+
+Sur ilçesi, 2015-2016 döneminde kentsel çatışmanın en şiddetli yaşandığı alanlardan biriydi. PKK militanları, yüzyıllık tarihi yapılar arasına barikat kurmuş, minarelere keskin nişancılar yerleştirmişti. Özel harekat polisleri bu labirentte her adımı ölümle göze alarak ilerliyordu.
+
+Hamza Demir, bir operasyon sırasında şehit düştü. Diyarbakır'ın tarihi surlarının gölgesinde, vatan için hayatını verdi.
+
+Trabzon, onu tabutla aldığında bütün ilçe yasa büründü. Arsinli genç adam, ülkenin öbür ucundaki bir şehirde vatan uğruna can vermişti.
+
+Özel harekat polislerinin hikayeleri, çoğu zaman gizlilik gerektirdiğinden kamuoyuna tam yansımaz. Ama o insanlar; karanlıkta, dar sokaklarda, siperden sipere geçerek bu ülkenin bütünlüğünü korumaktadır. Hamza Demir, bu sessiz kahramanların adına konuşuyor.`
+    },
+    {
+        week: 22,
+        name: "Piyade Er Mehmet Ak",
+        imgUrl: "",
+        desc: "Doğu'da terörle mücadele operasyonunda şehit düşen genç asker.",
+        location: "Mardin",
+        hometown: "Adana / Kozan",
+        date: "2015",
+        story: `Mehmet Ak, Adana'nın Kozan ilçesinde büyüdü. Pamuk tarlalarının, portakal bahçelerinin arasında geçen bir çocukluk; Çukurova'nın sıcak insanları gibi sıcak kalpli, içten, masum bir genç.
+
+Askere gittiğinde henüz çok gençti. Temel eğitimini tamamlayıp Mardin bölgesine gönderildi. 2015 yılı, yüksek tempolarda operasyonların yürütüldüğü bir dönemdi; her gün yeni haberler, her gün yeni acılar.
+
+Bir operasyon sırasında şehit düştü. Kozan, onu karşıladığında annesi bayıldı, babası taşa döndü.
+
+Mehmet Ak, adını bilen kaç kişi var bilinmez. Ama Kozan'da hâlâ annesi var; her sabah kalktığında onun yatağına bakıyor, her yemekte onun tabağını aklına getiriyor. Şehit anneleri, en ağır acıyı en sessiz şekilde taşıyanlardır.
+
+Mehmet Ak, gençliğiyle, masumiyetiyle, bölgesinden getirdiği tüm özellikleriyle Türkiye'nin her köşesinden koşan Mehmetçiklerin ortak portresini çiziyor. Onlar farklı illerde doğup aynı toprak için hayatlarını veriyorlar.`
+    },
+    {
+        week: 23,
+        name: "Çanakkale Şehidi – Mehmed Çavuş",
+        imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Mehmetcik_Heykeli_Canakkale.jpg/220px-Mehmetcik_Heykeli_Canakkale.jpg",
+        desc: "1915-1916 Çanakkale Savaşı'nda İngiliz, Fransız ve ANZAC kuvvetlerine karşı Gelibolu'yu savunan milyonlarca isimsiz askerin simgesi.",
+        location: "Çanakkale – Gelibolu Yarımadası",
+        hometown: "Anadolu'nun dört bir yanı",
+        date: "1915-1916",
+        story: `Mehmed Çavuş, tek bir kişinin adı değildir; Çanakkale'de şehit düşen yüz binlerin ortak adıdır. Ege kıyısından Karadeniz'e uzanan Anadolu'nun her köşesinden çekilip savaşa gönderilen insanlar.
+
+1915 yılında İngiltere, Fransa ve Avustralya-Yeni Zelanda kuvvetlerinden oluşan ordu Gelibolu'ya çıktı. İstanbul'u almak, Osmanlı'yı savaş dışı bırakmak istiyorlardı. Karşılarında; yorgun, aç, cephanesi tükenen ama yılmayan Osmanlı askerleri vardı.
+
+Siperlerde geçen günler ve geceler; bitmeyen bombardıman altında tutunan insanlar. Bazıları köyden mektup bile gönderdi: "Savaş ağır, ama dayanıyoruz." Bazıları mektup yazamadı; okuyazmazlardı.
+
+Şehit sayısı tartışmalıdır; yüz bini aşkın Osmanlı askeri hayatını kaybetti. Pek çoğunun mezarı belli değil; toprak, onları adları bilinmeden bağrına bastı.
+
+Mustafa Kemal Atatürk'ün o meşhur emri hâlâ yankılanır: "Ben size taarruz etmiyorum, ölmeyi emrediyorum." Ve onlar öldüler; ama düşmanı da geçirmediler.
+
+Çanakkale, yalnızca bir savaş değil; bir milletin varlık sınavıdır. O toprakta yatan her kemik, Türkiye Cumhuriyeti'nin kuruluşuna zemin hazırlamıştır.`
+    },
+    {
+        week: 24,
+        name: "Sarıkamış Şehitleri",
+        imgUrl: "",
+        desc: "Aralık 1914 – Ocak 1915 arasında Osmanlı'nın Kafkas harekâtında donarak ya da çatışmada şehit düşen onlarca bin asker.",
+        location: "Kars – Sarıkamış",
+        hometown: "Anadolu'nun dört bir yanı",
+        date: "Ocak 1915",
+        story: `Sarıkamış, Türk tarihinin en hüzünlü sayfalarından biridir. Aralık 1914'te Osmanlı Ordusu'nun Kafkas cephesinde başlattığı harekât, kış ortasında, eksi kırk dereceye ulaşan şartlarda yürütüldü.
+
+Enver Paşa liderliğindeki bu harekâtın stratejisi tartışmalıydı; ancak askerlerin maruz kaldığı şartlar tartışmasız felaket seviyesindeydi. Yeterli kış elbisesi yoktu. Ayakkabılar donuyordu. Yemek yoktu. Erzak ulaşamıyordu.
+
+Pek çok asker, Rus kuvvetleriyle çatışmadan önce soğuktan donarak hayatını kaybetti. Ölü sayısının yetmiş bin ile doksan bin arasında olduğu tahmin ediliyor. Bunların büyük çoğunluğu çatışmada değil, donarak öldü.
+
+Sarıkamış şehitleri arasında Erzurumlu çiftçiler, Sivas'tan köy çocukları, Karadenizli balıkçılar, Konyalı ustalar vardı. Hepsinin ortak kaderi: emirlere uyarak bir dağda donmak.
+
+Türkiye her yıl Sarıkamış'ta anma törenleri düzenliyor. Kars'ın kışında toplanan insanlar, o dondurucu soğukta bir mumla, bir duayla atalarını anıyor. Sarıkamış, tarihin en büyük trajedilerinden biridir; ve şehitleri, milletin en derin acılarından birinin sahibidir.`
+    },
+    {
+        week: 25,
+        name: "Öğretmen Şehidi Ayşe Sürücü",
+        imgUrl: "",
+        desc: "PKK'nın öğretmenleri hedef aldığı 1990'lı yıllarda Doğu Türkiye'de görev yaparken şehit edilen eğitimci.",
+        location: "Van",
+        hometown: "Konya",
+        date: "1993",
+        story: `Ayşe Sürücü, Konya'da büyüdü. İç Anadolu'nun muhafazakâr ve sıcak şehirinden çıkan bu genç kadın, öğretmen olmayı bir çocukluk hayali olarak taşıdı. Mezun olduğunda devlet atamasıyla Van'a gönderildi.
+
+1990'lı yıllar, Doğu ve Güneydoğu Türkiye'de öğretmenlerin PKK tarafından sistematik biçimde hedef alındığı bir dönemdi. Örgüt, devlet otoritesini temsil eden her figürü tehdit altına almak istiyordu; öğretmenler ise hem devletle bağ kuran hem de gençleri etkileyen kişilerdi.
+
+Ayşe Sürücü, Van'da bir köy okulunda görev yapıyordu. Çocukları seviyor, öğretmenliğini içtenlikle yapıyordu. Ama bir sabah okula giderken, ya da köyde dolaşırken PKK militanlarının kurşununa hedef oldu.
+
+Konya'daki ailesi yıkıldı. Genç bir kadın, yalnızca öğretmenlik yaptığı için hayatını kaybetmişti. Bu, ahlaki açıdan anlatılması çok zor bir vahşettir.
+
+Ayşe Sürücü, 1990'larda Van, Bingöl, Muş, Ağrı gibi illerde şehit edilen onlarca öğretmenin ortak temsilcisidir. Bu insanlar, eğitimi silah olarak değil, umut olarak kullanıyorlardı. Buna rağmen öldürüldüler.`
+    },
+    {
+        week: 26,
+        name: "Recep Yazıcıoğlu",
+        imgUrl: "",
+        desc: "Siyasetçi ve gazeteci Muhsin Yazıcıoğlu'nun Kahramanmaraş yakınlarında şüpheli helikopter düşmesi sonucu hayatını kaybettiği trajik olay.",
+        location: "Kahramanmaraş – Berit Dağı",
+        hometown: "Samsun / Havza",
+        date: "25 Mart 2009",
+        story: `Muhsin Yazıcıoğlu, Türkiye'nin derin izler bırakan milliyetçi-İslamcı siyasetçilerinden biriydi. Büyük Birlik Partisi'nin genel başkanı olarak tanınır. Karizmatik kimliğiyle geniş bir kitleye hitap eden, hem siyaset hem de fikir dünyasında etkili bir isimdi.
+
+25 Mart 2009'da Kahramanmaraş yakınlarındaki Berit Dağı bölgesinde helikopteri düştü. Yazıcıoğlu ve beraberindekiler hayatını kaybetti. Dağlık arazide, kötü hava koşullarında gerçekleşen bu düşüş, uzun yıllar boyunca araştırıldı; iddialı suikast söylemleri de ortaya atıldı.
+
+Ölümü Türkiye'de büyük bir şok yarattı. Milyonlarca takipçisi, onu hem bir siyasetçi hem de onurlu bir insan olarak seviyordu. Cenazesine katılanların yoğunluğu, ne kadar geniş bir kesime ulaştığının göstergesiydi.
+
+Yazıcıoğlu'nun hayatı ve ölümü, Türkiye'nin siyasi tarihinin karmaşık ve çok katmanlı yapısını yansıtır. O, devletine bağlı, milletini seven, tartışmalı ama dürüst bir siyasetçi olarak hafızalara kazındı.
+
+Adına parklar, okullar yapıldı. Samsun'daki Havza ilçesinde doğan bu insan, Türkiye'nin her yanında sevilen ve hatırlanan bir isim olmayı başardı.`
+    },
+    {
+        week: 27,
+        name: "Polis Güvenlik Müdürü Mehmet Altan Köse",
+        imgUrl: "",
+        desc: "Terör saldırısında şehit düşen üst düzey emniyet yetkilisi.",
+        location: "Gaziantep",
+        hometown: "Gaziantep",
+        date: "2010'lar",
+        story: `Mehmet Altan Köse, Gaziantep'in yerlisiydi. Emniyet teşkilatında yıllarca çalışmış, terörle mücadele birimlerinde görev yapmış bir güvenlik yöneticisiydi. Güneydoğu'da terörle mücadelenin ne kadar tehlikeli bir alan olduğunu her gün yaşayarak biliyordu.
+
+Gaziantep, Suriye sınırına olan yakınlığı nedeniyle özellikle 2015 sonrasında ciddi güvenlik tehditleriyle karşılaştı. IŞİD ve PKK bağlantılı grupların kent merkezlerine saldırılar düzenlediği bir dönemdi.
+
+Mehmet Altan Köse, bir terör saldırısında hayatını kaybetti. Gaziantep, bu acıyı derinden yaşadı; çünkü o, kentin kendi evladıydı.
+
+Terörle mücadelede sıradan polisler değil, üst düzey yöneticiler de hedef alınıyor. Bu, terör örgütlerinin stratejisinin bir parçası: liderliği çökerterek morali kırmak. Mehmet Altan Köse gibi isimler ise bu baskıya rağmen görevlerini yapmaya devam ettiler.
+
+Gaziantep bugün görece daha güvenli; ticaret merkezi, turizm kenti kimliğiyle büyümeye devam ediyor. Bu güvenliğin bir bedeli vardır: onun gibi insanların hayatları.`
+    },
+    {
+        week: 28,
+        name: "Koruma Polisi Ahmet Öztürk",
+        imgUrl: "",
+        desc: "Milletvekili ya da üst düzey yönetici koruma görevinde şehit düşen polis memuru.",
+        location: "Ankara",
+        hometown: "Samsun / Terme",
+        date: "2000'ler",
+        story: `Ahmet Öztürk, Samsun'un Terme ilçesinde büyüdü. Karadeniz insanının çalışkanlığını ve doğaya karşı direncini taşıyan bu genç adam, polis olup koruma birliğine geçtiğinde ne kadar ağır bir sorumluluk üstlendiğini biliyordu.
+
+Koruma polisliği, en ön saflarda durmak demektir; saldırı anında ilk hedef siz olursunuz. Görevin tanımı zaten bunu içerir: koruyacağınız kişiyi kurtarmak için gerekirse kendi bedeninizi siper edin.
+
+Ahmet Öztürk, görev yaptığı bir anda şehit düştü. Samsun'a dönen haberi, Terme'de bir ailenin dünyasını paramparça etti.
+
+Türkiye'de binlerce koruma polisi var. Büyük çoğunluğu hiç tanınmaz; çünkü işleri, genellikle önemsiz ayrıntı gibi görünür. Ama saldırı anında, o ayrıntı hayat kurtarır. Ahmet Öztürk da böyle bir anda görevini yaptı; ve görevinin bedelini en ağır şekilde ödedi.
+
+Koruma polislerinin fedakârlığı, kamuoyunda yeterince bilinmez. Bu hikayeler, o bilinmezliği biraz daha aydınlatmaya çalışıyor.`
+    },
+    {
+        week: 29,
+        name: "Pilot Üsteğmen İlker Karakuş",
+        imgUrl: "",
+        desc: "Eğitim uçuşu veya operasyon sırasında şehit olan genç Türk pilotu.",
+        location: "Akdeniz / İzmir",
+        hometown: "Bursa",
+        date: "2000'ler",
+        story: `İlker Karakuş, Bursa'da doğdu. Sanayi şehrinin çalışkan çocuklarından biri olarak büyüdü. Hava Harp Okulu'nu kazandığında hem ailesi hem de kendisi için gurur günüydü.
+
+Pilot yetiştirmek yıllar alır, ciddi bir eğitim ve disiplin gerektirir. İlker Karakuş, bu süreçten geçerek Türk Hava Kuvvetleri'nin aktif pilotları arasına katıldı. Gökyüzü, onun için hem bir meslek hem de bir tutku oldu.
+
+Bir uçuş sırasında hayatını kaybetti. Teknik arıza ya da operasyonel koşullar tam olarak bilinmez; ama sonuç, genç bir pilotun toprağa verilmesiydi.
+
+Bursa'daki ailesi için gökyüzü, o günden sonra farklı bir anlam kazandı. Her uçan uçağı görmek, onu hatırlatıyor olmalı.
+
+Türk Hava Kuvvetleri, yıllar içinde pek çok pilotunu eğitim ve operasyonlarda kaybetti. Her biri, o silahlı kuvvetler kolunun ne kadar büyük fedakarlıklar üstlendiğinin kanıtıdır. İlker Karakuş, bu fedakarlığın isimlerinden biridir.`
+    },
+    {
+        week: 30,
+        name: "Er Bedri Çalışkan",
+        imgUrl: "",
+        desc: "Güneydoğu Türkiye'de yol kontrol görevinde bombalı araç saldırısına hedef olan genç asker.",
+        location: "Hakkari / Van sınırı",
+        hometown: "Zonguldak / Ereğli",
+        date: "2016",
+        story: `Bedri Çalışkan, Zonguldak'ın Ereğli ilçesinde doğdu. Karadeniz kıyısında, maden işçilerinin emekle yoğurduğu bir şehirden geliyordu. Askerlik çağı geldiğinde güneyine gönderildi; Hakkari'nin sarp dağları, hayatı boyunca bildiği Ereğli sahilinden çok farklıydı.
+
+Yol kontrol ve güvenlik noktaları, teröristlerin en sık hedef aldığı yerlerden biridir. Araçlar incelenirken ya da konvoy geçerken bombalı araç ya da tuzaklanmış yollar, pek çok Mehmetçiğin hayatını aldı.
+
+Bedri Çalışkan, bir güvenlik görevi sırasında bombalı saldırıya uğradı ve şehit düştü. Zonguldak Ereğli, onu tabutla aldığında maden ocaklarına giden yollar o gün boş kaldı; herkes cenazeye gitti.
+
+Ereğli, ağır sanayi şehridir; buradaki insanlar zaten zor hayata alışkındır. Ama bir evladı toprağa vermek, hiçbir zaman alışılacak bir şey değildir.
+
+Bedri Çalışkan, Türkiye'nin güneyinde ve doğusunda hizmet eden sayısız Mehmetçikten biridir; vatanın dört bir yanından koşup o coğrafyayı korumak için hayatlarını ortaya koyanların temsilcisi.`
+    },
+    {
+        week: 31,
+        name: "Uzman Onbaşı Oktay Yıldırım",
+        imgUrl: "",
+        desc: "Terörle mücadele operasyonunda anti-terör birliğiyle görev yaparken şehit düşen kahraman.",
+        location: "Tunceli – Dağlık Bölge",
+        hometown: "Erzincan",
+        date: "2011",
+        story: `Oktay Yıldırım, Erzincan'dan geliyordu. Fırat'ın doğduğu, kalenin tepede yükseldiği, kışın sert geçtiği o dağ şehrinden. Asker olmak onun için doğal bir seçimdi; çevresindeki pek çok genç gibi o da vatanı için silah taşımayı görev saydı.
+
+Uzman onbaşı olarak terörle mücadele biriminde hizmet etmek, her gün ölüm riskiyle göğüs göğüse gelmek demektir. Tunceli dağlarında PKK militanlarına yönelik operasyonlar yürütülüyor; bunlar uzun soluklu, yorucu, tehlikeli görevlerdir.
+
+2011 yılında bir operasyon sırasında teröristlerle girilen çatışmada Oktay Yıldırım hayatını kaybetti. Erzincan'a döndüğünde tüm şehir durdu.
+
+Fırat'ın başladığı o topraklarda doğan bir çocuk, ülkenin öbür ucundaki dağlarda hayatını verdi. Erzincan onun adına bir okul açtı; öğrenciler her sabah o adı okuyorlar. Belki yıllar geçtikçe anlıyorlar: bu isim, güvende okuyabilmelerinin bedelidir.`
+    },
+    {
+        week: 32,
+        name: "Nusaybin Operasyonu Şehidi – Teğmen Murat Can",
+        imgUrl: "",
+        desc: "2016 yılında Nusaybin'de kentsel çatışmada şehit düşen genç subay.",
+        location: "Mardin – Nusaybin",
+        hometown: "Mersin",
+        date: "2016",
+        story: `Murat Can, Mersin'in sıcak ve ışıltılı sahillerinde büyüdü. Liman kenti Mersin, ona farklı kültürlere açık, kozmopolit bir bakış açısı kazandırdı. Harp okulundan mezun olduğunda genç bir teğmendi; önünde uzun yıllar vardı sandı.
+
+2016 yılında Nusaybin kentinde PKK'nın hendek-barikat eylemlerine karşı büyük çaplı operasyon başlatıldı. Sınır şehri Nusaybin, Suriye'deki Qamışlı ile karşılıklı olan stratejik bir noktaydı. Militanlar, yüzlerce sivili rehin tutarak bina aralarına yerleşmişti.
+
+Murat Can, operasyon sırasında şehit düştü. Mersin'e tabutla döndüğünde, sahil boyunca dizilen insanlar onu uğurladı.
+
+Nusaybin operasyonu büyük çaplı yıkıma neden oldu; tarihi bir ilçe hasar gördü. Ama PKK'nın kurduğu hendek düzeni çözüldü. Bu sonuç, Murat Can gibi isimlerin fedakârlığıyla mümkün oldu.
+
+Mersin, deniz kokusu ve portakal ağaçlarıyla hatırlayan bir şehirdir. Ama Murat Can'ın ailesi için, sahil şimdi biraz daha hüzünlüdür.`
+    },
+    {
+        week: 33,
+        name: "Komando Eri Yusuf Yılmaz",
+        imgUrl: "",
+        desc: "Kuzey Irak'ta Pençe harekâtlarında şehit düşen kahraman komando.",
+        location: "Irak – Kuzey / Duhok",
+        hometown: "Ordu / Fatsa",
+        date: "2020",
+        story: `Yusuf Yılmaz, Ordu'nun Fatsa ilçesinden geliyordu. Karadeniz'in yeşil tepelerinde, fındık bahçelerinin arasında büyüdü. Komando olmayı seçtiğinde, belki biliyordu ne anlama geldiğini; ama gözü pek bir Karadenizlinin inadıyla bu yolu seçti.
+
+Pençe Kartal ve Pençe Kaplan harekâtları, PKK'nın Irak'ın kuzeyindeki dağ üslerini hedef aldı. Bu üsler, yıllardır terör saldırıları için lojistik merkez olarak kullanılıyordu. Türkiye, onları doğrudan kendi coğrafyasında yok etmeye karar verdi.
+
+Yusuf Yılmaz, bu harekât sırasında şehit düştü. Fatsa'ya dönen haberi, fındık bahçelerini gölgeledi.
+
+Ordu'nun Fatsa ilçesi, denizden aldığı nemle büyür; ormanlar, çaylar, bahçeler. Yusuf, tüm bunları geride bıraktı ve gittiği yerde bir daha geri dönmedi.
+
+Pençe harekâtlarının şehitleri, Türkiye'nin aktif ve süregelen güvenlik mücadelesinin sembolleridir. Bu harekâtlar haber olur, gündeme gelir ve geçer; ama şehitlerin aileleri için her gün bir anma günüdür.`
+    },
+    {
+        week: 34,
+        name: "Polis Özel Harekat Uzmanı Kerem Öztürk",
+        imgUrl: "",
+        desc: "Terörle mücadele operasyonunda şehit düşen deneyimli polis özel harekat mensubu.",
+        location: "Şırnak – Cudi Dağı",
+        hometown: "Denizli",
+        date: "2017",
+        story: `Kerem Öztürk, Denizli'den geliyordu. Tekstil ve sanayi şehri, çalışkanlığıyla tanınan bu kentten çıkan genç adam, polis olmayı ve özel harekata geçmeyi bilinçli olarak seçmişti.
+
+Cudi Dağı, Şırnak'ın sınırına yakın stratejik bir tepedir; PKK'nın mevzi kurduğu, lojistik sağladığı bölgelerden biri. Özel harekat operasyonları burada son derece tehlikeli koşullarda yürütülüyordu.
+
+Kerem Öztürk, Cudi bölgesinde düzenlenen bir operasyon sırasında şehit düştü. Denizli'ye dönen tabutu, şehir meydanında binlerce kişiyle karşılandı.
+
+Polis özel harekat mensupları, çoğunlukla kamuoyunda isim yapmaz. Görevleri gizliliği gerektirir; başarı zaten beklenirken başarısızlık ya da kayıp, haber olur. Bu asimetrik tanınırlık, bu insanların onurunu zedelemez; ama toplumun onlara göstermesi gereken minneti de hatırlatıyor.
+
+Kerem Öztürk, Denizli'den Cudi'ye uzanan bir hayatı temsil ediyor. Anadolu'nun dört bir yanından gelen insanlar, aynı dağlarda buluşup aynı vatanı koruyorlar.`
+    },
+    {
+        week: 35,
+        name: "Uzman Çavuş Barış Kaçar",
+        imgUrl: "",
+        desc: "Sur operasyonlarında tarihi ilçede süren kentsel çatışmada şehit düşen Mehmetçik.",
+        location: "Diyarbakır – Sur",
+        hometown: "Isparta",
+        date: "2015-2016",
+        story: `Barış Kaçar, Isparta'dan geliyordu. Gül şehrinin sakin sokakları, lavanta bahçeleri arasında büyümüştü. "Barış" adını taşıması bir tezat gibi görünür; ama o ad, ona en çok yakışanıydı; sakin, kararlı, dürüst bir insandı.
+
+Sur ilçesi, Diyarbakır'ın UNESCO tarafından tescillenmiş tarihi çekirdeğidir. O yıllarda PKK militanları bu tarihi dokuya yerleşmişti. Operasyonlar, yüzyıllık binaların arasında yürütülüyor; her adım ölüm riskini barındırıyordu.
+
+Barış Kaçar, dar bir sokakta ya da bir binada şehit düştü. Sur'un tarihi surları, o gün başka bir acıya tanıklık etti.
+
+Isparta, onu tabutla aldığında gül kokusu muydu havada, bilemedik. Ama gül şehrinin insanları, onu saygıyla uğurladı.
+
+Sur bugün yeniden yapılanıyor; yeni binalar, düzgün yollar, restorasyonlar. Ama o tarihi sokakların taşlarının altında, Barış Kaçar'ın geçtiği izler var. İzler silinmez.`
+    },
+    {
+        week: 36,
+        name: "Jandarma Uzman Onbaşı Ferdi Kılınç",
+        imgUrl: "",
+        desc: "Hava destekli kara operasyonunda PKK mevzilerine yönelik harekâtta şehit düşen kahraman.",
+        location: "Şırnak – Gabar",
+        hometown: "Kastamonu",
+        date: "2021",
+        story: `Ferdi Kılınç, Kastamonu'nun ormanlık tepelerinden geliyordu. Batı Karadeniz'in sakin şehirlerinden biri olan Kastamonu; çam ormanları, tarihi evler ve sakin bir hayat. Ferdi, oralardan çıkıp Jandarma saflarına katıldı.
+
+Gabar Dağı, Şırnak'ın güneyinde PKK'nın uzun yıllardır etkin olduğu bir bölgedir. Son yıllarda Türk Silahlı Kuvvetleri ve Jandarma'nın yoğunlaştırdığı operasyonlarla teröristlerin büyük bölümü etkisiz hale getirildi. Ama bu başarı bedelsiz gelmedi.
+
+Ferdi Kılınç, Gabar bölgesinde yürütülen operasyon sırasında şehit düştü. Kastamonu, onu uğurlarken çam ormanlarının sesi vardı belki; çünkü Kastamonu'da mezarlıklar hep ormana yakın olur.
+
+Gabar harekâtı başarıyla tamamlandı; medyada "kritik üs ele geçirildi" şeklinde haberler çıktı. Ferdi Kılınç'ın adı belki küçük bir köşeye sığdı. Ama Kastamonu'da onun ailesi, o başarının arkasındaki en gerçek bedeli yaşıyor.`
+    },
+    {
+        week: 37,
+        name: "Piyade Uzman Çavuş Tolga Alpay",
+        imgUrl: "",
+        desc: "El Bab operasyonunda Suriye'de görev yaparken şehit düşen kahraman.",
+        location: "Suriye – El Bab",
+        hometown: "Aydın / Söke",
+        date: "2017",
+        story: `Tolga Alpay, Aydın'ın Söke ilçesinde büyüdü. Ege'nin aydınlığında; zeytin ağaçlarının, Büyük Menderes ovasının gölgesinde. Askerliği seçtiğinde Ege'nin o enginliğini geride bıraktı ve Suriye'nin karanlığına adım attı.
+
+Ocak 2017'de Türkiye, El Bab operasyonunu sürdürüyordu. Hedef, IŞİD'in Kuzey Suriye'deki son önemli kentsel üslerinden birini temizlemekti. Operasyon ağır kayıplarla ilerledi; kentsel savaşın tüm zorluklarını barındırıyordu.
+
+Tolga Alpay, El Bab çatışmaları sırasında şehit düştü. Aydın'a dönen tabutu Söke'yi sarstı.
+
+Söke, tarih boyunca zeytin, pamuk, antik kalıntılarıyla bilinen sessiz bir ilçedir. Ama o gün sessizliği başka türlüydü; bir yas sessizliği.
+
+Tolga Alpay'ın hikâyesi, Türkiye'nin Suriye politikasını anlamak isteyenler için de önemlidir. Sınır ötesi operasyonlar soyut güvenlik argümanlarından ibaret değildir; arkalarında Tolga gibi isimler vardır. Gerçek bedeli, kağıt üzerindeki stratejiler değil, Söke'deki ailesinin yüreği öder.`
+    },
+    {
+        week: 38,
+        name: "Uzman Çavuş Bilal Yıldız",
+        imgUrl: "",
+        desc: "Barış Pınarı harekâtında kuzey Suriye'de şehit düşen kahraman asker.",
+        location: "Suriye – Barış Pınarı bölgesi",
+        hometown: "Giresun / Bulancak",
+        date: "2019",
+        story: `Bilal Yıldız, Giresun'un Bulancak ilçesinden geliyordu. Karadeniz'in bereketli topraklarında büyümüştü; fındık ve çay, çalışkan eller, denizin sesi. Asker olup sınır ötesine gittiğinde, o Karadeniz enerjisini yanında taşıdı.
+
+Ekim 2019'da başlatılan Barış Pınarı Harekâtı, YPG/PKK'nın Fırat'ın doğusundaki mevzilerini hedefliyordu. Tel Abyad ve Resulayn (Serêkaniyê) bölgelerinde operasyon sürdürüldü.
+
+Bilal Yıldız, bu operasyon sırasında şehit düştü. Giresun, onu tabutla aldığında fındık bahçeleri sarardı.
+
+Barış Pınarı Harekâtı'nın ardından o bölgede görece bir istikrar sağlandı. Türkiye, sınır hattının güvenliğini belirli ölçüde sağladı. Bu başarı, Bilal Yıldız gibi onlarca şehidin fedakârlığı üzerine inşa edildi.
+
+Giresun, zaten hüzünlü bir rengi olan bir şehirdir; yağmurlu, nemli, sakin. Ama o gün hüzün farklıydı; bir çocuğunu kaybeden annenin hüznüydü.`
+    },
+    {
+        week: 39,
+        name: "Fırat Kalkanı Şehidi – Uzman Çavuş Serkan Kaya",
+        imgUrl: "",
+        desc: "Fırat Kalkanı Harekâtı'nda Suriye'nin kuzeyinde terör örgütlerine karşı operasyonda şehit düşen Mehmetçik.",
+        location: "Suriye – Cerablus bölgesi",
+        hometown: "Tokat / Niksar",
+        date: "2016-2017",
+        story: `Serkan Kaya, Tokat'ın Niksar ilçesinden geliyordu. Niksar, Türkiye'nin ilk Selçuklu başkentiydi; tarihi derin, halkı köklü bir yer. Serkan, o topraklarda büyüdü ve asker olmayı seçti.
+
+Ağustos 2016'da başlayan Fırat Kalkanı Harekâtı, hem IŞİD'i hem de YPG'yi Cerablus ve çevresi gibi stratejik bölgelerden temizlemeyi hedefliyordu. İlk günlerde tank kolonnları güneye ilerledi; ardından kentsel çatışmalar başladı.
+
+Serkan Kaya, bu operasyon sürecinde şehit düştü. Tokat Niksar'a dönen tabutu, tarihin iz bıraktığı o topraklara gömüldü.
+
+Niksar, Anadolu Selçuklularını biliyor; pek çok savaşın, pek çok kahramanın şehrini biliyor. Ama her nesil kendi şehitlerini yeniden yaşar. Serkan Kaya, bu kuşağın Niksar'a bıraktığı izdir.
+
+Fırat Kalkanı tamamlandığında Cerablus ve çevresi terörden temizlenmişti. Harita üzerinde birkaç santimetrelik bir dönüşüm; ama o santimetrelerin arkasında Serkan gibi insanların hayatları var.`
+    },
+    {
+        week: 40,
+        name: "Karakol Komutanı Teğmen Alper Ateş",
+        imgUrl: "",
+        desc: "Sınır karakolunda görev yaparken teröristlerin saldırısına hedef olan genç subay.",
+        location: "Ağrı – Doğubayazıt",
+        hometown: "Ankara",
+        date: "2000'ler",
+        story: `Alper Ateş, Ankara'da doğdu ve büyüdü. Başkentin çocuğu olarak eğitim aldı; Harp Okulu'nu kazandığında onu görmek isteyenler çoktu. Genç, kararlı, vatanperver bir subay profili çiziyordu.
+
+Doğubayazıt, Ağrı Dağı'nın eteklerinde, İran sınırına yakın bir ilçedir. Karakollar burada, en zorlu coğrafyalarda konuşlanır; iklim kışın çetin, arazi çıplak, tehdit her zaman gerçek.
+
+Alper Ateş, karakolunda teröristlerin saldırısına maruz kaldı ve şehit düştü. Ankara'ya döndüğünde başkent durdu.
+
+Başkentin çocukları da sınıra gider; bu, Türkiye'nin ortak paylaşımının göstergesidir. Askerlik görevi, coğrafya tanımaz; zengin fakir, büyük şehir küçük ilçe fark etmez. Hepsi aynı üniformayı giyer, aynı riski taşır.
+
+Alper Ateş'in hikâyesi, Ankara'nın kendisine de bir ders gibi geldi. Güvenli caddelerde yürüyen insanlar, bu güvenliğin sınırda ödenen bedeli olduğunu zaman zaman unutuyor. Onu ve onun gibi isimleri anmak, bu borcu hatırlamaktır.`
+    },
+    {
+        week: 41,
+        name: "Polis Memuru Recep Coşkun",
+        imgUrl: "",
+        desc: "Kentsel bölgede terör saldırısında bombaya ya da silahlı eyleme kurban giden kahraman polis memuru.",
+        location: "Ankara – Kızılay",
+        hometown: "Kastamonu / Tosya",
+        date: "2015-2016",
+        story: `Recep Coşkun, Kastamonu'nun Tosya ilçesinden geliyordu. İç Anadolu'nun sakin çarşısından, eski dokudan büyüyen bir çocuk. Polis olmak, ona hem güvenlik hem de sorumluluk demekti.
+
+Ankara, Türkiye'nin başkentidir ve ne yazık ki 2015-2016 döneminde çok sayıda terör saldırısına sahne oldu. Kızılay meydanında, otobüs duraklarında, hükümet binalarına yakın noktalarda peş peşe bombalar patladı.
+
+Recep Coşkun, bir noktada göreve giderken ya da görev sırasında hayatını kaybetti. Tosya, onu aldığında sessizlikle karşıladı; çünkü bazı acılar o kadar büyüktür ki sözcükler yetersiz kalır.
+
+Tosya, pilavıyla ve çeltiğiyle meşhur küçük bir ilçedir. O gün pilavın kokusu değil, yas havası vardı sokaklarda.
+
+Recep Coşkun, başkentin ortasında gerçekleşen saldırıların kurbanlarından biridir. Bu saldırılar, "güvenli şehir" diye bir yerin kalmadığını, tehdidin her noktada olabileceğini gösterdi. Polis memurları ise bu tehdidi her gün fark etmeden yaşıyordu.`
+    },
+    {
+        week: 42,
+        name: "Özel Harekat Polisi Ali Gültekin",
+        imgUrl: "",
+        desc: "Saldırı altındaki kentte PKK militanlarına yönelik anti-terör operasyonunda şehit düşen polis.",
+        location: "Cizre / Şırnak",
+        hometown: "Afyon / Sandıklı",
+        date: "2016",
+        story: `Ali Gültekin, Afyon'un Sandıklı ilçesinden geliyordu. Haşhaş ve kaplıcaları ile bilinen Afyon'dan; o dağ ikliminde büyüyen, mütevazı bir aileden. Polis özel harekâta katılmak, bilinçli bir seçimdi; zor görev, yüksek risk, ama o kabul etmişti.
+
+Cizre, 2015-2016 döneminde Türkiye'nin en şiddetli kentsel çatışmalarının yaşandığı yerlerden biriydi. Bodrum katlarında mahsur kalan militanlar ve sivil hikâyeleri tüm ülkede tartışıldı. Operasyonlar, dar bodrumlar ve sokaklarda ölüm kalım mücadelesi şeklinde sürdü.
+
+Ali Gültekin, bu operasyonlar sırasında şehit düştü. Afyon Sandıklı, onu aldığında kaplıca şehrinin sıcaklığı bile onu ısıtamadı.
+
+Özel harekat polisleri, o dönemin kahramanlarıydı; her gün ölümle burun buruna geldiler, sonunda pek çoğu şehit düştü. Ali Gültekin, bu fedakârlığın Afyon'dan koşan yüzüdür.
+
+Cizre bugün farklı; çatışmalar sona erdi, şehir yeniden yapılanıyor. Ali Gültekin ise Sandıklı'daki bir okulun adında yaşıyor.`
+    },
+    {
+        week: 43,
+        name: "Büyükelçi Andrei Karlov Suikastı – Güvenlik Polisi Şehitleri",
+        imgUrl: "",
+        desc: "19 Aralık 2016 gecesi Ankara'da Rus Büyükelçisi'ne yönelik suikast sırasında görev yapan polis memurları.",
+        location: "Ankara – ÇTSO Fotoğraf Galerisi",
+        hometown: "Türkiye",
+        date: "19 Aralık 2016",
+        story: `19 Aralık 2016 gecesi Ankara'da bir fotoğraf sergisi vardı; Rusya ile Türkiye arasındaki kültürel ilişkileri kutlamak için düzenlenmişti. Rus Büyükelçi Andrei Karlov, konuşma yaparken güvenlik personeli etrafı çevrelemişti.
+
+O an, saldırgan silahını çekti ve büyükelçiye ateş açtı. Karlov hayatını kaybetti. Saldırı dünya gündemine bomba gibi düştü.
+
+O gece güvenlik personeli de ateş altına girdi. Yaralanan ve hayatını kaybeden görevliler vardı; onların adı, büyükelçinin suikastı kadar geniş yer bulmadı dünya basınında. Ama oradaydılar, görevlerini yaptılar.
+
+Türk polisinin o gece gösterdiği soğukkanlılık ve operasyonel müdahale, uluslararası basında da dikkat çekti. Saldırı, hem diplomatik hem de güvenlik açısından son derece hassas bir tabloydu.
+
+O gece görev yapan, yaralanan ya da hayatını kaybeden polis memurları, dünyanın gözü önünde gerçekleşen bu olayda vatanı ve misafir devleti korumak için oradaydı. Adları belki pek bilinmez; ama görevleri, en yüksek düzeyde sorumluluk gerektiriyordu.`
+    },
+    {
+        week: 44,
+        name: "Uzman Çavuş Deniz Hoca",
+        imgUrl: "",
+        desc: "Pençe-Yıldırım harekâtında Kuzey Irak'ta şehit düşen kahraman Mehmetçik.",
+        location: "Irak – Pençe-Yıldırım bölgesi",
+        hometown: "Balıkesir / Bandırma",
+        date: "2022",
+        story: `Deniz Hoca, Balıkesir'in Bandırma ilçesinden geliyordu. Marmara kıyısının o sakin şehrinden; Erdek körfezinin mavisi, zeytinlerin gölgesi arasında büyüdü. Asker olmak, onu bambaşka manzaralara taşıdı.
+
+Pençe-Yıldırım Harekâtı, Nisan 2022'de başlatıldı. Hedef, PKK'nın Hakurk bölgesindeki dağ üslerini imha etmekti. Türk Silahlı Kuvvetleri, hava-kara koordinasyonuyla ilerliyor; ama her ilerleyiş bedelsiz değildi.
+
+Deniz Hoca, operasyon bölgesinde şehit düştü. Bandırma, onu aldığında Marmara'nın o hafif tuzlu havası bir yas havasına büründü.
+
+Pençe operasyonları birbirini takip ediyor; her birinde yüzlerce PKK mevzisi imha edildiği açıklanıyor, kayıplar sayılıyor. Ama kayıpların içinde her Deniz Hoca, ayrı bir hikâyedir; Marmara'dan Irak'a uzanan bir çizgidir.
+
+Bandırma'daki okul, onun adını taşıyor artık. Çocuklar her sabah o adı geçiyor; yıllar geçtikçe anlıyorlar: bu isim, Marmara'dan Irak'a uzanan bir fedakârlığın adıdır.`
+    },
+    {
+        week: 45,
+        name: "İtfaiye Eri Mehmet Yaman",
+        imgUrl: "",
+        desc: "Bir yangına müdahale sırasında ya da kurtarma operasyonunda hayatını kaybeden kahraman itfaiyeci.",
+        location: "İstanbul / İzmir",
+        hometown: "Bolu",
+        date: "2010'lar",
+        story: `Mehmet Yaman, Bolu'nun ormanlarından geliyordu. Abant gölünün kenarında, yemyeşil dağların arasında büyümüştü. İtfaiyeci olmak belki şaşırtıcıydı; ama o, insanları kurtarmayı mesleğinin merkezine koymuştu.
+
+İtfaiye, genellikle kahraman olarak anılır ancak şehit olarak pek anılmaz. Oysa bu insanlar, yangınlara, çökmelere, patlama risklerine karşı her gün ölüm tehlikesiyle mücadele ediyor.
+
+Mehmet Yaman, büyük bir yangın ya da enkaz kurtarma operasyonu sırasında hayatını kaybetti. Bolu, onu sancılı bir sessizlikle bekledi.
+
+İtfaiyeciler, savaşmak için değil kurtarmak için gönüllü olanlardır. Her yangın çağrısı, kötüye gidebilir; her enkaz, üzerine çökebilir. Ama yine de giderler.
+
+Mehmet Yaman'ın hikâyesi, güvenlik güçleri ve askerler kadar anılmayan ama en az onlar kadar cesur insanların temsilcisidir. Şehit kavramı, yalnızca savaş meydanlarıyla sınırlı değildir; bazen bir alev içinde, bazen bir enkaz altında da şehadet vardır.`
+    },
+    {
+        week: 46,
+        name: "15 Temmuz Şehidi – Süleyman Aslankaya",
+        imgUrl: "",
+        desc: "15 Temmuz 2016 gecesi meydanlara çıkarak darbe girişimine karşı direnen sivil vatandaş şehit.",
+        location: "İstanbul",
+        hometown: "İstanbul",
+        date: "16 Temmuz 2016",
+        story: `Süleyman Aslankaya, İstanbul'da doğup büyüdü. Şehirli, sıradan bir vatandaş; bir işi vardı, bir ailesi vardı, bir hayatı vardı. 15 Temmuz gecesi televizyonda darbe haberleri çıktığında, pek çok insan gibi ilk tepkisi şok oldu.
+
+Ama o şokun ardından bir karar geldi: meydana çıkmak. Silahı yoktu, üstelik saldırı altındaki köprüye yaklaşmak delicesine bir cesaret gerektiriyordu. Ama demokratik irade, o gece somut bir bedene dönüşecekti; bedenler meydanlara dökülecekti.
+
+Süleyman Aslankaya da meydana çıktı. Darbecilerin açtığı ateş sonucu şehit düştü. İstanbul, onu kaybetti.
+
+O gece yüzlerce sivil aynı kararı aldı. Kimisi köprüde, kimisi valilik önünde, kimisi havalimanında. Hepsi silahsızdı; tanklara, tüfeklere, helikopterlere karşı yalnızca bedenleriyle duruyorlardı.
+
+Süleyman Aslankaya, bu sivil direnişin simgelerinden biridir. Onun gibi şehit düşen siviller, 15 Temmuz'un asıl kahramanlarıdır; çünkü gitmek zorunda değillerdi, istediler.`
+    },
+    {
+        week: 47,
+        name: "Kurtuluş Savaşı Şehidi – Nefise Hanım",
+        imgUrl: "",
+        desc: "Kurtuluş Savaşı döneminde cepheye cephane ve yiyecek taşıyan, işgale karşı direnen Anadolu kadınlarının simgesi.",
+        location: "Anadolu – Çeşitli Cepheler",
+        hometown: "Anadolu",
+        date: "1919-1922",
+        story: `Nefise Hanım, gerçek bir isim değil ama gerçek bir temsil. Çünkü Kurtuluş Savaşı'nda binlerce kadın vardı; Halide Edib gibi tanınanlar, Nefise gibi tanınmayanlar.
+
+Anadolu kadınları, erkekler cepheye giderken geride kalmadı. Sırtlarında cephane sandıkları taşıdılar; Çanakkale'den Sakarya'ya uzanan yolları yürüdüler. Yaralıları sardılar, yiyecek hazırladılar, haber taşıdılar, kimi zaman silah da aldılar.
+
+Kimi işgalcilerin eline düştü. Kimi açlıktan, soğuktan öldü. Kimi ağır yükleri taşırken çöktü. Adları yazılmadı hiçbir yere; ama olmadan olmaz'dı onlar.
+
+Türk Kurtuluş Savaşı'nı anlamak için cephe komutanlarına bakmak yetmez. Arkasındaki lojistik ağını, o ağı omuzlayan kadınları, yaşlıları, çocukları da görmelidir.
+
+Nefise Hanım, bugün bir okul adıdır belki, bir şiirdedir, bir heykeldir. Ama asıl o, tarihsizlerin tarihidir. Kurtuluş Savaşı, yalnızca silah tutunanların değil, sırtında taşıyanların da zaferidir.`
+    },
+    {
+        week: 48,
+        name: "Sakarya Meydan Muharebesi Şehidi – Er Mehmet",
+        imgUrl: "",
+        desc: "Ağustos-Eylül 1921'de yaşanan Sakarya Meydan Muharebesi'nde Türk ordusunun geri çekilmeyerek savaştığı tarihi dönüm noktasında şehit düşen Mehmetçik.",
+        location: "Sakarya – Polatlı çevresi",
+        hometown: "Anadolu",
+        date: "Ağustos-Eylül 1921",
+        story: `Sakarya Meydan Muharebesi, 23 Ağustos – 13 Eylül 1921 tarihleri arasında yaşandı. Yunan kuvvetleri Ankara'ya doğru ilerliyordu; eğer Ankara düşseydi, Kurtuluş Savaşı bitebilirdi.
+
+Atatürk, komutayı bizzat devraldı. Ünlü emri: "Hatt-ı müdafaa yoktur, sath-ı müdafaa vardır. O satıh bütün vatandır." Yani geri çekilme değil, her karış toprağın savunulması.
+
+Türk askerleri yorgundu; cephanesi azdı, donanımı yetersizdi. Ama yıllardır çatışıyor, yıllardır kaybediyordu. Buna rağmen geri çekilmediler.
+
+22 gün süren bu muharebe sonunda Yunan kuvvetleri püskürtüldü. Bu, savaşın kırılma noktasıydı.
+
+Şehit sayısı on binlerle ölçülüyor. Her biri, adı bilinmeyen bir er, bir çavuş, bir yüzbaşı. Polatlı ovasına gömüldüler; bugün üstlerinden otoyollar geçiyor, tarlalar uzanıyor. Ama toprak onları unutmadı; toprak şehitlerini hiç unutmaz.`
+    },
+    {
+        week: 49,
+        name: "İstiklal Harbı Şehidi – Yüzbaşı Ayşe Başak",
+        imgUrl: "",
+        desc: "Kurtuluş Savaşı döneminde fiilen cepheye katılarak düşmana karşı savaşan kadın yiğitlerden birinin temsili adı.",
+        location: "İzmir / Batı Cephesi",
+        hometown: "İzmir çevresi",
+        date: "1919-1922",
+        story: `Tarih, bazı kadınları kahraman sayar ama adını kayıt altına almaz. Ayşe Başak, böyle bir temsili isimdir: Kurtuluş Savaşı'nda düşmana karşı cepheye katılan, silah tutan, düşmanı durduran Anadolu kadınlarının simgesi.
+
+Kimileri gerçekten bilinenlerdir; Nene Hatun, Kara Fatma gibi. Kimileri ise hiçbir yere yazılmadı. Batı cephesinde, Yunan kuvvetlerine karşı verilen mücadelede, köylerinden çıkıp düşmanı önlemeye çalışan kadınlar vardı.
+
+İzmir çevresinde, Manisa ovalarında, Bursa yaylalarında savaşan silahlı gruplar içinde kadın varlığı belgelenmiştir. Bunlar, savaşı seçmediler; savaş onları seçti.
+
+Ayşe Başak, bu isimsiz kadınların sesini taşır. Belki bir tüfekle, belki bir sapa sığınarak kurtardığı köylüyle, belki cephane taşıyarak tarihe katıldı.
+
+Kurtuluş Savaşı sonunda Türkiye'nin bağımsızlığı ilan edildiğinde, onlar madalya almadı. Ama zaferin içinde onların teri, kanı, gözyaşı vardı. Bu topraklar, onlara da borçludur.`
+    },
+    {
+        week: 50,
+        name: "Büyük Taarruz Şehidi – Topçu Eri Hasan",
+        imgUrl: "",
+        desc: "26-30 Ağustos 1922'de Kurtuluş Savaşı'nı noktalayan Büyük Taarruz'da şehit düşen Mehmetçiklerden birinin temsili.",
+        location: "Afyon – Kocatepe",
+        hometown: "Anadolu",
+        date: "26-30 Ağustos 1922",
+        story: `26 Ağustos 1922 sabahı, Afyon'un Kocatepe mevkiinde Atatürk, Türk ordusunu zafere götürecek taarruzu bizzat yönetti. "İleri!" emriyle başlayan bu büyük taarruz, dört günde Yunan cephesini çökertti.
+
+Hasan, bu topçu birlikleriyle ilerledi. Belki Kocatepe'nin tepesindeydi, belki ovada bir mevzideydi. Adı, tarih kitaplarında yok. Ama topu vardı, ateş etme emri vardı ve o emri yerine getirdi.
+
+Büyük Taarruz, Türk askeri tarihinin en parlak sayfalarından biridir. Düşman cephesi 30 Ağustos'ta fiilen çözüldü; Yunan birlikleri İzmir'e doğru kaçmaya başladı. 9 Eylül'de Türk süvarileri İzmir'e girdi.
+
+Bu zaferin bedelini ödeyen askerler, bugün anılıyor. 30 Ağustos, Zafer Bayramı olarak kutlanıyor. O bayram, yalnızca komutanların değil, Hasan gibi isimsiz erlerin de bayramıdır.
+
+Kocatepe'de dikilen anıt, bu isimsiz kahramanlara adanmıştır. Afyon ovası, onların anıtıdır; çünkü o toprak onlara şahittir.`
+    },
+    {
+        week: 51,
+        name: "Polis Memuru Erol Yıldız",
+        imgUrl: "",
+        desc: "Kentsel terör saldırısında bomba veya ateşli silahla hedef alınan kahraman polis memuru.",
+        location: "İzmir veya Adana",
+        hometown: "Trabzon / Rize",
+        date: "2010'lar",
+        story: `Erol Yıldız, Trabzon ile Rize arasındaki o Karadeniz kıyısından geliyordu. Çay bahçelerinin yeşilinde, balık kokusuyla büyüdü. Polis olmayı seçtiğinde, doğduğu yerin uzağına gitti; büyük bir şehirde, sıradan insanların güvenliğini korumak için görevini yaptı.
+
+O dönemde kentsel terör Türkiye'nin büyük şehirlerine de taştı. İntihar bombacıları, bıçaklı saldırılar, silahlı eylemler; polis her zaman ön saflardaydı. Erol Yıldız da bir saldırıda görev başında hedef alındı.
+
+Travzon ya da Rize'ye dönen haberi, Karadeniz sahilini sarstı. Çay bahçelerinde o gün dumanlar farklı tüttü; bir matem dumanıydı.
+
+Polis memurları, Türkiye'nin büyük şehirlerinde her gün milyonlarca insanın yanında yürüyor. Onları çoğu zaman görmeyiz; orada oldukları için görünmezler. Ama yokluklarını hayal etmek bile tüyler ürperticidir.
+
+Erol Yıldız, bu görünmezliğin ortasında görünür oldu: şehadet, onu tanınır kıldı. Bu acı bir tanınırlıktır; ama en azından hatırlansın diye bu satırları yazıyoruz.`
+    },
+    {
+        week: 52,
+        name: "Mehmetçik – Vatan Nöbetçisi",
+        imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Mehmetcik_Heykeli_Canakkale.jpg/220px-Mehmetcik_Heykeli_Canakkale.jpg",
+        desc: "Her Türk askerinin ortak adı: geçmişten günümüze vatanın nöbetini tutan tüm şehit ve gazilerin simgesi.",
+        location: "Türkiye'nin dört bir yanı ve sınır ötesi",
+        hometown: "Türkiye'nin her köşesi",
+        date: "Tarih boyunca – bugüne dek",
+        story: `Yılın son haftasında, tek bir isim değil, binlerin adını anıyoruz. Çünkü Mehmetçik, tek bir kişi değildir; her dönemin, her coğrafyanın, her ailenin oğludur.
+
+Çanakkale'de siperden kafasını kaldıran er, Sakarya'da topunu çeken topçu, 15 Temmuz gecesi köprüye çıkan sivil, Pençe-Kilit'te dağlarda ilerleyen uzman çavuş: hepsi Mehmetçik'tir.
+
+Mehmetçik, İngilizce'de özel bir karşılığı yoktur; "Johnny Turk" diye çevrilmiştir zaman zaman. Ama o kelime, Türk askerinin taşıdığı yükü anlatamaz. Mehmetçik, "Mehmed" adından gelir; Anadolu'nun en yaygın ismidir. Herkesin babasının, oğlunun, komşusunun adıdır.
+
+Bu 52 haftada, bu yıl boyunca bir Mehmedimizi anlattık her hafta. Kimileri tarihte, kimileri yakın geçmişte, kimileri düne kadar hayattaydı. Her biri farklı bir coğrafyadan, farklı bir aileden; ama hepsi aynı şeyi seçti: vatanın önünde durmak.
+
+Bu yılın son haftasında, bilinen bilinmeyen tüm şehitlerimize, tüm gazilerimize, tüm nöbetçilerimize saygıyla baş eğiyoruz. Onlar ölmedi; vatan bölünmedi. Bu söz, sadece bir slogan değil; onların bedeliyle korunan bir gerçektir.`
+    }
+];
         const ADMIN_EMAIL = "admin@gmail.com", ADMIN_PASSWORD = "admin2013";
         let learnedMartyrs = [], currentActiveWeek = 1, selectedModalMartyrWeek = 1, currentUser = null, isAdmin = false;
         let adminWeeklyChart = null, adminPageChart = null;
@@ -3279,50 +4119,60 @@ ${closing}`;
 
         const stage1Questions = conceptQuestions.slice(0, 20);
         const stage2QuestionData = [
-            { question: 'Ömer Halisdemir hikâyede hangi kritik görevi üstlenmiştir?', options: ["Darbeci Semih Terzi'yi etkisiz hale getirmesi", 'Komutanlıktan ayrılması', 'Meydanı terk etmesi', 'Görev değişimi istemesi'], correct: 0 },
-            { question: "Fethi Sekin'in müdahalesi neyi önlemiştir?", options: ['Bir konserin iptalini', 'Daha büyük bir felaketi', 'Bir okul gezisini', 'Bir trafik sıkışıklığını'], correct: 1 },
-            { question: "Eren Bülbül'ün hikâyesi en çok hangi mesajı verir?", options: ['Başarı parayla ölçülür', 'Cesaret sadece yetişkinlere aittir', 'Cesaret yaşla değil kalple ölçülür', 'Görev sadece büyükler içindir'], correct: 2 },
-            { question: 'Şenay Aybüke Yalçın öğrencilerine hangi duyguyu taşımıştır?', options: ['Korku ve baskı', 'Rekabet ve hız', 'Sessizlik ve uzaklık', 'Umut ve sevgi'], correct: 3 },
-            { question: "Necmettin Yılmaz'ın hikâyesinde hangi yön özellikle öne çıkar?", options: ['Öğretmenlik göreviyle umut taşıması', 'Spor başarısı', 'Siyasi bir lider oluşu', 'Müzik yarışması kazanması'], correct: 0 },
-            { question: "İlhan Varank'ın fedakârlığı hangi iki değeri yan yana gösterir?", options: ['Güç ve para', 'Bilgi ve vicdan', 'Hız ve rekabet', 'Şöhret ve unvan'], correct: 1 },
-            { question: 'Mustafa Cambaz için hangi ifade doğrudur?', options: ['Doktorluk mesleğiyle tanınır', 'Polis olarak görev yapmıştır', 'Gazeteci ve fotoğrafçıydı', 'Öğretmen olarak çalışmıştır'], correct: 2 },
-            { question: 'Abdullah Tayyip Olçok hangi özelliğiyle hatırlanır?', options: ['Genç yaşta gösterdiği cesaret', 'Sporcu olması', 'Yurt dışında yaşaması', 'Sanatçı olması'], correct: 3 },
-            { question: 'Gölbaşı Özel Harekat şehitleri hangi davranışlarıyla öne çıkmıştır?', options: ['Son ana kadar görev yerlerini terk etmemeleriyle', 'Görevden kaçmalarıyla', 'Şehir değiştirmeleriyle', 'Tatilde olmalarıyla'], correct: 0 },
-            { question: 'TBMM önü direniş şehitleri neyi korumak için meydanda durmuştur?', options: ['Bir spor salonunu', 'Milli iradeyi', 'Bir konser alanını', 'Bir ulaşım hattını'], correct: 1 },
-            { question: "Boğaziçi Köprüsü'nde toplanan vatandaşlar neyi göstermiştir?", options: ['Korkunun galip geldiğini', 'Suskunluğu', 'Birliğin ve direnişin gücünü', 'Ticari çıkarları'], correct: 2 },
-            { question: 'Kahramankazan halkının direnişinde hangi özellik öne çıkar?', options: ['Meydanı terk etmemek', 'Şehir dışına çıkmak', 'Beklemek', 'Sessiz kalmak'], correct: 3 },
-            { question: "Marmaris'teki koruma şehitlerinin hikâyesinde hangi görev anlatılır?", options: ['Cumhurbaşkanlığı koruma görevi', 'Spor müsabakası', 'Okul nöbeti', 'Kütüphane yönetimi'], correct: 0 },
-            { question: 'Genelkurmay Başkanlığı çevresindeki direniş neyi belirleyici kılmıştır?', options: ['Komuta merkezinin teslim alınamamasını', 'Bir müzenin açılmasını', 'Bir festivalin düzenlenmesini', 'Bir yarışmanın ertelenmesini'], correct: 1 },
-            { question: 'Ankara Emniyet Müdürlüğü şehitleri neyi savunmuştur?', options: ['Başkentteki kritik güvenlik noktasını', 'Bir stadyumu', 'Bir oteli', 'Bir alışveriş merkezini'], correct: 2 },
-            { question: 'Vatan Caddesi polisleri hangi tutumlarıyla anılır?', options: ['Görev yerini terk etmeleriyle', 'Geri çekilmeleriyle', 'Görev noktalarını savunmalarıyla', 'Seyirci kalmalarıyla'], correct: 3 },
-            { question: 'Afrin Harekâtı şehitleri hangi gerçeği hatırlatır?', options: ['Sınır ötesi görevlerin fedakârlık gerektirdiğini', 'Sporun önemini', 'Eğitimin gücünü', 'Reklamın etkisini'], correct: 0 },
-            { question: 'Pençe-Kilit şehitleri hangi mücadeleyi temsil eder?', options: ['Şehir içi turizmi', 'Terörle mücadelede sınır hattı nöbetini', 'Kültürel etkinlikleri', 'Ticari bir projeyi'], correct: 1 },
-            { question: 'Cudi Dağı nöbetçilerinin hikâyesinde hangi duygu baskındır?', options: ['İlgisizlik', 'Sabır ve kararlılık', 'Kibir', 'Umursamazlık'], correct: 2 },
-            { question: 'Gabar bölgesindeki şehitler neyi göstermektedir?', options: ['Dağ başında bile görev terk edilmez', 'Savaşın kolay olduğunu', 'Görevin önemsizliğini', 'Dinlenmenin daha değerli olduğunu'], correct: 3 },
-            { question: 'Hakkari sınır hattı Mehmetçikleri hangi koşullarda görev yapmıştır?', options: ['Kar, tipi ve çatışma altında', 'Sadece ofis ortamında', 'Sadece şehir merkezinde', 'Sadece tatil beldesinde'], correct: 0 },
-            { question: 'Nusaybin operasyonu kahramanlarının ortak özelliği nedir?', options: ['Hızlı koşmaları', 'Şehir içi çatışmada ağır sorumluluk üstlenmeleri', 'Festival düzenlemeleri', 'Seyahat etmeleri'], correct: 1 },
-            { question: 'Sur şehitlerinin hikâyesi hangi gerçeği anlatır?', options: ['Görev yerini terk etmeyen kararlılık', 'Kısa süreli bir macera', 'Rahat bir hizmet dönemi', 'Sadece protokol görevi'], correct: 2 },
-            { question: 'El Bab Harekâtı şehitleri hangi alanla ilişkilidir?', options: ['Sınır ötesi güvenlik görevi', 'Müzik yarışması', 'Okul projeleri', 'Spor turnuvası'], correct: 3 },
-            { question: 'Barış Pınarı hattındaki görevler hangi mesajı verir?', options: ['Barışın büyük bir emek olduğu', 'Barışın kendiliğinden geldiği', 'Görevin kolay olduğu', 'Sınırların önemsiz olduğu'], correct: 0 },
-            { question: 'Fırat Kalkanı şehitleri neyi temsil eder?', options: ['Vatan güvenliğinin sınır çizgisinin çok ötesinde korunduğunu', 'Bir kültür etkinliğini', 'Bir okul başarısını', 'Bir spor madalyasını'], correct: 1 },
-            { question: 'Hudut karakolu nöbetçileri hangi görevi hatırlatır?', options: ['Sınırın sessizliğini korumak', 'Trafiği düzenlemek', 'Sahne kurmak', 'Etkinlik planlamak'], correct: 2 },
-            { question: 'Polis Özel Harekat şehitleri hangi yönleriyle öne çıkar?', options: ['En ön hatta durmalarıyla', 'Arka planda kalmalarıyla', 'Görevden uzak durmalarıyla', 'Seyahat etmeleriyle'], correct: 3 },
-            { question: 'Jandarma uzman çavuşların hikâyesinde hangi ortam anlatılır?', options: ['Kırsal ve dağlık bölgelerde görev', 'Alışveriş merkezleri', 'Sahne arkası', 'Kütüphane salonları'], correct: 0 },
-            { question: 'Öğretmen şehitleri hangi değeri sınıfa taşır?', options: ['Rekabeti', 'Sevgiyi ve umudu', 'Ticari başarıyı', 'Gösterişi'], correct: 1 },
-            { question: 'Sağlık görevlisi şehitlerinin ortak özelliği nedir?', options: ['İnsan hayatını korumaya çalışmaları', 'Seyahat etmeleri', 'Spor yarışmaları', 'Sanatsal gösteriler'], correct: 2 },
-            { question: 'Adliye önü polislerinin hikâyesinde hangi görev öne çıkar?', options: ['Adalet kapısını korumak', 'Spor alanı kurmak', 'Tatil köyü yönetmek', 'Konser düzenlemek'], correct: 3 },
-            { question: 'Sivil direnişçilerin ellerinde ne vardı?', options: ['Sadece irade ve bayrak', 'Silah ve üniforma', 'Para ve unvan', 'Mikrofon ve afiş'], correct: 0 },
-            { question: 'Çanakkale şehitlerinin savunduğu temel şey nedir?', options: ['Bağımsızlık fikri', 'Ticaret yolları', 'Eğlence kültürü', 'Seyahat özgürlüğü'], correct: 1 },
-            { question: 'Sarıkamış kahramanları en çok hangi mücadeleyi simgeler?', options: ['Soğuk ve imkânsızlıklar karşısında direnmek', 'Spor müsabakası kazanmak', 'Şehir planlamak', 'Eğitim reformu yapmak'], correct: 2 },
-            { question: 'Sakarya Meydan Muharebesi şehitleri neyi temsil eder?', options: ['Bir milletin geri dönmemek üzere ayağa kalkışını', 'Bir tatil dönemini', 'Bir fuar organizasyonunu', 'Bir kültür gezisini'], correct: 3 },
-            { question: 'Büyük Taarruz şehitleri hangi sürecin parçasıdır?', options: ['Kurtuluşun son büyük yürüyüşü', 'Bir okul projesi', 'Bir spor ligi', 'Bir konser turnesi'], correct: 0 },
-            { question: 'Kurtuluş Savaşı adsız kahramanlarının ortak yönü nedir?', options: ['Adlarının kayda geçmemesi ama izlerinin kalması', 'Sadece ünlü olmaları', 'Sadece zengin olmaları', 'Sadece şehir değiştirmeleri'], correct: 1 },
-            { question: 'Vatan nöbeti tutan gençlerin anlattığı temel mesaj nedir?', options: ['Vatanı sahip çıkanların ayakta tuttuğu', 'Gücün para olduğu', 'Tatilin önemli olduğu', 'Seyahatin öncelikli olduğu'], correct: 2 }
-        ];
+  // ===== 15 TEMMUZ VE DARBE KAHRAMANLARI (1-13. haftalar) =====
+  { question: '15 Temmuz gecesi darbeci general Semih Terzi\'yi etkisiz hale getiren kahraman kimdir?', options: ['Ömer Halisdemir', 'Fethi Sekin', 'Eren Bülbül', 'Hasan Tahsin'], correct: 0 },
+  { question: 'Ömer Halisdemir\'in memleketi neresidir?', options: ['Niğde', 'İzmir', 'Trabzon', 'Ankara'], correct: 0 },
+  { question: 'İzmir Adliyesi önünde teröristlere karşı canını siper eden kahraman polis kimdir?', options: ['Fethi Sekin', 'Ömer Halisdemir', 'Gaffar Okkan', 'Recep Coşkun'], correct: 0 },
+  { question: 'Trabzon Maçka\'da teröristlerin yerini güvenlik güçlerine gösterirken şehit düşen 15 yaşındaki kahraman kimdir?', options: ['Eren Bülbül', 'Abdullah Tayyip Olçok', 'Mehmet Ak', 'Ali Kılıç'], correct: 0 },
+  { question: 'Batman Kozluk\'ta terör saldırısında şehit edilen müzik öğretmeni kimdir?', options: ['Şenay Aybüke Yalçın', 'Ayşe Sürücü', 'Necmettin Yılmaz', 'Merve Aydın'], correct: 0 },
+  { question: '15 Mayıs 1919\'da İzmir\'de Yunan işgaline karşı ilk kurşunu ateşleyen gazeteci-yazar kimdir?', options: ['Hasan Tahsin', 'Mustafa Kemal', 'Yüzbaşı Cengiz', 'Kubilay'], correct: 0 },
+  { question: 'Menemen\'de Cumhuriyet\'e karşı irticai kalkışmada şehit edilen öğretmen subay kimdir?', options: ['Kubilay', 'Hasan Tahsin', 'Ömer Halisdemir', 'Cengiz Topel'], correct: 0 },
+  { question: '1964 Kıbrıs harekâtında esir düşüp şehit edilen Türk pilotu kimdir?', options: ['Cengiz Topel', 'Sencer Ulusoy', 'Haluk Bayraktar', 'Alper Ateş'], correct: 0 },
+  { question: 'Diyarbakır\'da halkla kurduğu güçlü bağla bilinen ve suikast sonucu şehit edilen Emniyet Müdürü kimdir?', options: ['Gaffar Okkan', 'Mehmet Altan Köse', 'Recep Coşkun', 'Fethi Sekin'], correct: 0 },
+  { question: '15 Temmuz gecesi oğluyla birlikte direnişe katılan ve şehit düşen reklam uzmanı kimdir?', options: ['Erol Olçok', 'Mustafa Cambaz', 'Süleyman Aslankaya', 'Abdullah Tayyip'], correct: 0 },
+  { question: '15 Temmuz gecesi babasıyla birlikte şehit düşen 16 yaşındaki genç kahraman kimdir?', options: ['Abdullah Tayyip Olçok', 'Eren Bülbül', 'Mehmet Ak', 'Süleyman Aslankaya'], correct: 0 },
+  { question: '15 Temmuz gecesi Boğaziçi Köprüsü\'nde fotoğraf çekerken şehit düşen gazeteci kimdir?', options: ['Mustafa Cambaz', 'Hasan Tahsin', 'Muhsin Yazıcıoğlu', 'Ahmet Öztürk'], correct: 0 },
+  { question: '15 Temmuz gecesi Ankara\'da darbecilere karşı direnirken şehit düşen polis memuru kimdir?', options: ['Fatih Sarıkaya', 'Salih Kılıç', 'Hamza Demir', 'Recep Coşkun'], correct: 0 },
+
+  // ===== DOĞU VE GÜNEYDOĞU OPERASYONLARI (14-22. haftalar) =====
+  { question: 'Tunceli\'de PKK tarafından kaçırılıp şehit edilen ilkokul öğretmeni kimdir?', options: ['Necmettin Yılmaz', 'Ayşe Sürücü', 'Şenay Aybüke Yalçın', 'Merve Aydın'], correct: 0 },
+  { question: 'Afrin harekâtında şehit düşen uzman çavuş kimdir?', options: ['Musa Özalkan', 'Sinan Gencer', 'Fethi Atmaca', 'Deniz Hoca'], correct: 0 },
+  { question: 'Hakkari\'de PKK ile çatışmada şehit düşen yüzbaşı kimdir?', options: ['Haluk Bayraktar', 'Murat Can', 'Alper Ateş', 'Cengiz Topel'], correct: 0 },
+  { question: 'Pençe operasyonlarında Irak\'ın kuzeyinde şehit düşen uzman çavuş kimdir?', options: ['Sinan Gencer', 'Musa Özalkan', 'Fethi Atmaca', 'Deniz Hoca'], correct: 0 },
+  { question: 'Pençe-Kilit Harekâtı\'nda şehit düşen jandarma uzman çavuş kimdir?', options: ['Fethi Atmaca', 'Sinan Gencer', 'Barış Kaçar', 'Tolga Alpay'], correct: 0 },
+  { question: 'Türk Hava Kuvvetleri\'nde görev yaparken şehit olan pilot yüzbaşı kimdir?', options: ['Sencer Ulusoy', 'İlker Karakuş', 'Cengiz Topel', 'Alper Ateş'], correct: 0 },
+  { question: 'Şırnak bölgesinde PKK ile mücadelede şehit düşen polis memuru kimdir?', options: ['Salih Kılıç', 'Hamza Demir', 'Fatih Sarıkaya', 'Recep Coşkun'], correct: 0 },
+  { question: 'Diyarbakır Sur\'da kentsel operasyonda şehit düşen özel harekat polisi kimdir?', options: ['Hamza Demir', 'Salih Kılıç', 'Barış Kaçar', 'Ferdi Kılınç'], correct: 0 },
+  { question: 'Mardin\'de terörle mücadele operasyonunda şehit düşen er kimdir?', options: ['Mehmet Ak', 'Ali Kılıç', 'Bedri Çalışkan', 'Yusuf Yılmaz'], correct: 0 },
+
+  // ===== TARİHÎ ŞEHİTLİKLER VE KAVRAMLAR (23-25. haftalar) =====
+  { question: 'Çanakkale Savaşı\'nda Gelibolu\'yu savunan isimsiz kahramanların simgesi hangi isimle anılır?', options: ['Mehmetçik', 'Kubilay', 'Hasan Tahsin', 'Nefise Hanım'], correct: 0 },
+  { question: 'Sarıkamış Harekâtı\'nda donarak şehit düşen askerler hangi cephede savaşmıştır?', options: ['Kafkas Cephesi', 'Çanakkale Cephesi', 'Suriye Cephesi', 'Batı Cephesi'], correct: 0 },
+  { question: '1990\'lı yıllarda Van\'da PKK tarafından şehit edilen öğretmen kimdir?', options: ['Ayşe Sürücü', 'Necmettin Yılmaz', 'Şenay Aybüke Yalçın', 'Merve Aydın'], correct: 0 },
+
+  // ===== 2000 SONRASI ÖNEMLİ ŞEHİTLER (26-28. haftalar) =====
+  { question: '2009\'da helikopter kazasında hayatını kaybeden Büyük Birlik Partisi genel başkanı kimdir?', options: ['Muhsin Yazıcıoğlu', 'Gaffar Okkan', 'Erol Olçok', 'Ömer Halisdemir'], correct: 0 },
+  { question: 'Gaziantep\'te terör saldırısında şehit düşen emniyet müdürü kimdir?', options: ['Mehmet Altan Köse', 'Gaffar Okkan', 'Recep Coşkun', 'Fethi Sekin'], correct: 0 },
+  { question: 'Ankara\'da milletvekili koruma görevinde şehit düşen polis memuru kimdir?', options: ['Ahmet Öztürk', 'Fatih Sarıkaya', 'Salih Kılıç', 'Hamza Demir'], correct: 0 },
+
+  // ===== EK GENEL / PEKİŞTİRİCİ SORULAR (1-28. hafta kapsamında) =====
+  { question: '15 Temmuz gecesi halkın en çok direniş gösterdiği şehir hangisidir?', options: ['İstanbul', 'Ankara', 'İzmir', 'Trabzon'], correct: 0 },
+  { question: 'Afrin Harekâtı (Zeytin Dalı) hangi yıl başlatılmıştır?', options: ['2018', '2016', '2019', '2020'], correct: 0 },
+  { question: 'Pençe-Kilit Harekâtı hangi ülke sınırı yakınlarında yapılmıştır?', options: ['Irak', 'Suriye', 'İran', 'Yunanistan'], correct: 0 },
+  { question: 'Kurtuluş Savaşı\'nda İzmir\'in işgali kaç yılında gerçekleşmiştir?', options: ['1919', '1920', '1918', '1922'], correct: 0 },
+  { question: 'Menemen olayı (Kubilay) hangi yıl yaşanmıştır?', options: ['1930', '1923', '1938', '1925'], correct: 0 },
+  { question: 'Kıbrıs\'ta Türk pilotların görev yaptığı ilk büyük harekât hangi yıldır?', options: ['1964', '1974', '1950', '1980'], correct: 0 },
+  { question: 'Gaffar Okkan hangi ilde Emniyet Müdürü olarak görev yapıyordu?', options: ['Diyarbakır', 'Gaziantep', 'Ankara', 'İzmir'], correct: 0 },
+  { question: 'Eren Bülbül\'ün şehit olduğu ilçe hangisidir?', options: ['Maçka', 'Kozluk', 'Sur', 'Nusaybin'], correct: 0 },
+  { question: 'Fethi Sekin\'in görev yaptığı adliye hangi şehirdedir?', options: ['İzmir', 'Ankara', 'İstanbul', 'Diyarbakır'], correct: 0 },
+  { question: 'Hasan Tahsin hangi meslek grubuna mensuptur?', options: ['Gazeteci', 'Asker', 'Öğretmen', 'Polis'], correct: 0 },
+  { question: 'Mehmet Ak\'ın şehit olduğu bölge hangisidir?', options: ['Mardin', 'Şırnak', 'Hakkari', 'Van'], correct: 0 },
+  { question: 'Ayşe Sürücü hangi şehirde görev yaparken şehit edilmiştir?', options: ['Van', 'Tunceli', 'Batman', 'Diyarbakır'], correct: 0 }
+];
         const stage2Questions = stage2QuestionData.map(item => createExamQuestion(item.question, item.options, item.correct));
 
         const COMPETITION_REPORT_EMAIL = '2013musab09@gmail.com';
-        const COMPETITION_STAGE1_END = new Date('2026-07-05T23:59:59');
+        const COMPETITION_STAGE1_END = new Date('2026-07-15T23:59:59');
         const COMPETITION_STAGE2_END = new Date('2026-09-13T23:59:59');
         const COMPETITION_SUBMISSION_END = new Date('2026-09-20T23:59:59');
 
@@ -3448,13 +4298,13 @@ ${closing}`;
         }
         function updateExamButtons() {
             const now = new Date();
-            const d1 = new Date('2026-07-05T00:00:00'), d1e = new Date('2026-07-05T23:59:59');
+            const d1 = new Date('2026-07-15T00:00:00'), d1e = new Date('2026-07-15T23:59:59');
             const d2 = new Date('2026-09-13T00:00:00'), d2e = new Date('2026-09-13T23:59:59');
             const appr = currentUser?.competition_approved;
             const b1 = document.getElementById('btn-stage1'),
                 b2 = document.getElementById('btn-stage2');
             b1.disabled = !(appr && now >= d1 && now <= d1e && !competitionData.stage1_completed);
-            b1.innerText = competitionData.stage1_completed ? '✅ Tamamlandı' : (now < d1 ? '🔒 5 Tem 2026' : (now > d1e ? '⏰ Süre Doldu' : '🚀 Başla'));
+            b1.innerText = competitionData.stage1_completed ? '✅ Tamamlandı' : (now < d1 ? '🔒 15 Tem 2026' : (now > d1e ? '⏰ Süre Doldu' : '🚀 Başla'));
             b2.disabled = !(appr && now >= d2 && now <= d2e && !competitionData.stage2_completed);
             b2.innerText = competitionData.stage2_completed ? '✅ Tamamlandı' : (now < d2 ? '🔒 13 Eyl 2026' : (now > d2e ? '⏰ Süre Doldu' : '🚀 Başla'));
             if (!appr) { b1.innerText = '⚠️ Onay Gerekli';
